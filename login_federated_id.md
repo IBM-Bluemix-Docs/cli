@@ -16,9 +16,11 @@ lastupdated: "2017-06-30"
 # Login Bluemix with Federated ID using Command Line Interface
 {: #federated_id}
 
-Logging into Bluemix with federated ID and password from command line interface will be rejected, you will need to use one time passcode and Bluemix API key instead. One time passcode will need to retrieve the code from Bluemix Console, so if you are using federated ID in your automation script, Bluemix API key is the only way.
+Logging into Bluemix with federated ID and password from command line interface will be rejected, you will need to use one time passcode or Bluemix API key instead. One time passcode will need to retrieve the code from Bluemix Console, so if you are using federated ID in your automation script, Bluemix API key is the only way.
 
-## Login with one time passcode
+Please note the API key is Bluemix API key for authentication with Bluemix platform, not the Softlayer API key or Bluemix service API key.
+
+## Login with one time asscode
 {:onetime_passcode}
 
 
