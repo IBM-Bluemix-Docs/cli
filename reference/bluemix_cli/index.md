@@ -16,13 +16,13 @@ lastupdated: "2017-06-21"
 # Getting started with {{site.data.keyword.Bluemix_notm}} CLI
 {: #getting-started}
 
-{{site.data.keyword.Bluemix_notm}} CLI provides a unified way for you to interact with your applications, containers, infrastructures and other services by using a command line interface. 
+{{site.data.keyword.Bluemix_notm}} CLI provides a unified way for you to interact with your applications, containers, infrastructures and other services by using a command-line interface. 
 
 **Restriction**: The {{site.data.keyword.Bluemix_notm}} CLI is not supported by Cygwin, so do not use the {{site.data.keyword.Bluemix_notm}} CLI in the Cygwin command line window.
 
 **Note**: If your network contains an HTTP proxy server between the host that runs the CLI and {{site.data.keyword.Bluemix_notm}}, you must specify the host name or IP address of the proxy server in the HTTP_PROXY environment variable.
 
-**Note:** {{site.data.keyword.Bluemix_notm}} CLI tool bundled a Cloud Foundry command line interface in its installation. However, it is not allowed to mix-use {{site.data.keyword.Bluemix_notm}} CLI commands `bx xxx` and Cloud Foundry CLI commands `cf xxx` if you have your own cf cli installation. Instead, use `bluemix cf` if you want to use cf cli to manage Cloud Foundry resources. In the back end, it runs commands of the bundled Cloud Foundry CLI in a shared context with the {{site.data.keyword.Bluemix_notm}} CLI.  Besides,  `bluemix cf api/login/logout/target` is not allowed, use `bluemix api/login/logout/target` instead.
+**Note:** {{site.data.keyword.Bluemix_notm}} CLI tool bundled a Cloud Foundry command-line interface in its installation. However, it is not allowed to mix-use {{site.data.keyword.Bluemix_notm}} CLI commands `bx xxx` and Cloud Foundry CLI commands `cf xxx` if you have your own cf cli installation. Instead, use `bluemix cf` if you want to use cf cli to manage Cloud Foundry resources. In the back end, it runs commands of the bundled Cloud Foundry CLI in a shared context with the {{site.data.keyword.Bluemix_notm}} CLI.  Besides,  `bluemix cf api/login/logout/target` is not allowed, use `bluemix api/login/logout/target` instead.
 
 ## Installing {{site.data.keyword.Bluemix_notm}} CLI
 {: #install_bluemix_cli}
