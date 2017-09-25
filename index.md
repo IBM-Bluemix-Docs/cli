@@ -24,7 +24,7 @@ lastupdated: "2017-06-30"
 
 Both CLI tools use 443 port by default. If you have HTTP proxy between the CLI tools and {{site.data.keyword.Bluemix_notm}} environment, you must configure the `HTTP_PROXY` environment variable with the actual HTTP proxy URL and port if there is one. See [Using the CLI with an HTTP Proxy Server ![External link icon](../icons/launch-glyph.svg)](http://docs.cloudfoundry.org/cf-cli/http-proxy.html){: new_window} for more details.
 
-[Download {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} 
+[Download {{site.data.keyword.Bluemix_notm}} CLI ![External link icon](../icons/launch-glyph.svg)](https://github.com/IBM-Bluemix/bluemix-cli-release/releases/){: new_window}
 
 If you're on macOS, the easiest way to get started with IBM Cloud tools is by using [IBM Cloud Application Tools 2](/docs/cli/icat.html).
 {: tip}

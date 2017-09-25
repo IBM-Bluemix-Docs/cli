@@ -20,7 +20,6 @@ CLI and Dev Tools
 	
 	{: .navgroup id="reference"}
 	reference/bluemix_cli/bx_cli.md
-	reference/bluemix_cli/all_versions.md
 	reference/softlayer/index.md
 	reference/cfcommands/index.md
 	reference/cloudcli/index.md
