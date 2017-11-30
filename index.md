@@ -43,5 +43,7 @@ Download and install plug-ins to integrate your favorite {{site.data.keyword.Blu
 
 | *Liberty for Java* | *MobileFirst* | *{{site.data.keyword.rules_short}}* | *API Connect* | *Eclipse Tools for {{site.data.keyword.Bluemix_notm}}* |
 |----------|----------|----------|----------|----------|
-| [Liberty Eclipse Plug-in ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/){: new_window} | [Eclipse Plug-in ![External link icon](../icons/launch-glyph.svg)](https://marketplace.eclipse.org/content/ibm-mobilefirst-platform-studio){: new_window} | [Rules Designer Eclipse Plug-in](../services/rules/index.html#rulov002) | [Developer Toolkit](/docs/services/apiconnect/apic_003.html#apic_001 ) | [{{site.data.keyword.Bluemix_notm}} Eclipse Plug-in](/docs/manageapps/eclipsetools/eclipsetools.html) |
-{: caption="Table 6. Plug-ins" caption-side="top"}
+| [Liberty Eclipse Plug-in ![External link icon](../icons/launch-glyph.svg)](https://developer.ibm.com/wasdev/downloads/liberty-profile-using-eclipse/){: new_window} | [Eclipse Plug-in ![External link icon](../icons/launch-glyph.svg)](https://marketplace.eclipse.org/content/ibm-mobilefirst-platform-studio){: new_window} | [Rules Designer Eclipse Plug-in](../services/rules/index.html#rulov002) | [Developer Toolkit ![External link icon](../icons/launch-glyph.svg)](/docs/services/apiconnect/creating_apis.html){: new_window} | [{{site.data.keyword.Bluemix_notm}} Eclipse Plug-in](/docs/manageapps/eclipsetools/eclipsetools.html) |
+{: caption="Table 5. Plug-ins" caption-side="top"}
+
+
