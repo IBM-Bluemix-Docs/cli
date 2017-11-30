@@ -90,7 +90,7 @@ cf api [BluemixServerURL] [--skip-ssl-validation] [--unset]
 
 <strong>Prerequisiti</strong>: Nessuno.
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>BluemixServerURL (facoltativo)</dt>
@@ -112,13 +112,13 @@ cf api
 
 Rimuovi la connessione a tutti gli endpoint API per api.ng.bluemix.net
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 Disabilita il processo di convalida SSL per api.ng.bluemix.network
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 
@@ -150,7 +150,7 @@ cf bind-service nome_applicazione istanza_servizio
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_applicazione (obbligatorio)</dt>
@@ -179,7 +179,7 @@ cf create-service nome_servizio piano_servizio istanza_servizio
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_servizio (obbligatorio)</dt>
@@ -211,7 +211,7 @@ cf create-space nome_spazio [-o] [-q]
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_spazio (obbligatorio)</dt>
@@ -243,7 +243,7 @@ cf delete nome_applicazione [-f] [-r]
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_applicazione (obbligatorio)</dt>
@@ -292,7 +292,7 @@ cf delete-space nome_spazio [-f]
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_spazio (obbligatorio)</dt>
@@ -341,7 +341,7 @@ cf events [nomeapplicazione]
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nomeapplicazione</dt>
@@ -368,7 +368,7 @@ cf help [nome_comando]
 
 <strong>Prerequisiti</strong>: Nessuno.
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>nome_comando (facoltativo)</dt>
@@ -403,7 +403,7 @@ cf login [-a url] [-u user_name] [-p password] [-sso] [-o organization_name] [-s
 
 <strong>Prerequisiti</strong>: Nessuno.
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>*-a* https://api.{DomainName} (facoltativo)</dt>
@@ -470,7 +470,7 @@ cf logs nomeapplicazione [--recent]
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nomeapplicazione</dt>
@@ -505,7 +505,7 @@ cf marketplace
 ```
 <strong>Prerequisiti</strong>: `cf api`
 
-<strong>Opzioni del comando</strong>: Nessuna.
+<strong>Opzioni comando</strong>: Nessuna.
 
 <strong>Esempi</strong>:
 
@@ -527,7 +527,7 @@ cf push appname [-b buildpack_name] [-c start_command] [-f manifest_path] [-i in
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nome_applicazione (obbligatorio)</dt>
@@ -593,7 +593,7 @@ cf scale appname [-i instance_number] [-k disk_limit] [-m memory_limit] [-f]
 
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nome_applicazione (obbligatorio)</dt>
@@ -634,7 +634,7 @@ cf services
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>: Nessuna.
+<strong>Opzioni comando</strong>: Nessuna.
 
 <strong>Esempi</strong>:
 
@@ -655,7 +655,7 @@ cf set-env nomeapplicazione nome_var valore_var
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nome_applicazione (obbligatorio)</dt>
@@ -687,7 +687,7 @@ cf ssh
 
 Per impostazione predefinita, l'accesso SSH è abilitato per le applicazioni Diego. Puoi utilizzare il comando `cf ssh-enabled` per verificare se l'accesso SSH è abilitato o il comando `cf enable-ssh` per abilitarlo se è disabilitato. 
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nomeapplicazione</dt>
@@ -740,7 +740,7 @@ cf stacks
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`
 
-<strong>Opzioni del comando</strong>: Nessuna.
+<strong>Opzioni comando</strong>: Nessuna.
 
 <strong>Esempi</strong>:
 
@@ -761,7 +761,7 @@ cf stop nome_applicazione
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`, `cf target`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>nome_applicazione (obbligatorio)</dt>
@@ -787,7 +787,7 @@ cf target [-o org_name] [-s space_name]
 ```
 <strong>Prerequisiti</strong>: `cf api`, `cf login`
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
 <dl>
 <dt>-o *nome_organizzazione* (facoltativo)</dt>
@@ -816,7 +816,7 @@ cf -v
 ```
 <strong>Prerequisiti</strong>: Nessuno.
 
-<strong>Opzioni del comando</strong>: Nessuna.
+<strong>Opzioni comando</strong>: Nessuna.
 
 <strong>Esempi</strong>:
 

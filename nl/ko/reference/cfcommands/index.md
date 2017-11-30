@@ -112,13 +112,13 @@ cf api
 
 api.ng.bluemix.net의 모든 API 엔드포인트에 대한 연결을 제거합니다. 
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 api.ng.bluemix.network의 SSL 유효성 검증 프로세스를 사용하지 않습니다. 
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 

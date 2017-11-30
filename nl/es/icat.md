@@ -23,7 +23,6 @@ Para empezar rápidamente, [descargue IBM Cloud Application Tools 2 Beta para ma
 
 [¿Desea proporcionar comentarios? ![Icono de enlace externo](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-Para descargar e instalar las herramientas de línea de mandatos para otros sistemas operativos, consulte [Instalación manual de la CLI](/docs/cli/index.html).
 
 ## Características y valores
 

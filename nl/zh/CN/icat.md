@@ -23,7 +23,6 @@ IBM Cloud Application Tools 2 是一个经过简化的菜单栏应用程序，�
 
 [需要提供反馈？![外部链接图标](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-要下载并安装适用于其他操作系统的命令行工具，请参阅[手动 CLI 安装](/docs/cli/index.html)。
 
 ## 功能和设置
 

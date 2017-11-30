@@ -16,14 +16,13 @@ lastupdated: "2017-06-19"
 # IBM Cloud Application Tools 2(베타)
 {: #icat}
 
-IBM Cloud Application Tools 2는 macOS에서 관리 및 로컬 환경 설정을 위해 간소화된 메뉴 표시줄 애플리케이션입니다. IBM Cloud Application Tools 2를 사용하여 {{site.data.keyword.Bluemix_notm}} 도구 및 CLI를 쉽게 설치 및 업데이트하고, CLI 배치 대상을 변경하며, 공통 {{site.data.keyword.Bluemix_notm}} 링크에 신속하게 액세스할 수 있습니다.
+IBM Cloud Application Tools 2는 macOS에서 로컬 환경 설정 및 관리를 위해 간소화된 메뉴 표시줄 애플리케이션입니다. IBM Cloud Application Tools 2를 사용하면 {{site.data.keyword.Bluemix_notm}} 도구 및 CLI를 쉽게 설치 및 업데이트할 수 있고, CLI 배치 대상을 변경할 수 있으며, 공통 {{site.data.keyword.Bluemix_notm}} 링크에 빠르게 액세스할 수 있습니다.
 {:shortdesc}
 
 시작해서 실행하려면 [macOS용 IBM Cloud Application Tools 2 베타를 다운로드 ![외부 링크 아이콘](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-download){: new_window}하십시오. 
 
 [피드백을 제공하시겠습니까? ![외부 링크 아이콘](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-다른 운영 체제에 대한 명령행 도구를 다운로드해서 설치하려면 [수동 CLI 설치](/docs/cli/index.html)를 참조하십시오.
 
 ## 기능 및 설정
 

@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017
 
-lastupdated: "2017-09-04"
+lastupdated: "2017-09-11"
 
 ---
 
@@ -145,11 +145,11 @@ cf ba search-users -name=<user_name_value> -permission=<permission_value> -organ
 <dt class="pt dlterm">&lt;user_name_value&gt;</dt>
 <dd class="pd">{{site.data.keyword.Bluemix_notm}} 내의 사용자 이름입니다.</dd>
 <dt class="pt dlterm">&lt;permission_value&gt;</dt>
-<dd class="pd">사용자에게 지정된 권한입니다. 예를 들어, 수퍼유저, 카탈로그, 사용자 및 보고서입니다. 지정되는 사용자 권한에 대한 자세한 정보는 [권한](/docs/admin/index.html#permissions)을 참조하십시오. 동일한 조회에 조직 매개변수가 있으면 이 매개변수를 사용할 수 없습니다. </dd>
+<dd class="pd">사용자에게 지정된 권한입니다. 예를 들어, admin(또는 superuser), login(또는 basic), catalog.read, catalog.write, reports.read, reports.write, users.read 또는 users.write입니다. 지정되는 사용자 권한에 대한 자세한 정보는 [권한](/docs/admin/index.html#permissions)을 참조하십시오. 동일한 조회에 조직 매개변수가 있으면 이 매개변수를 사용할 수 없습니다. </dd>
 <dt class="pt dlterm">&lt;organization_value&gt;</dt>
 <dd class="pd">사용자가 속한 조직 이름입니다. 동일한 조회에 권한 매개변수가 있으면 이 매개변수를 사용할 수 없습니다. </dd>
 <dt class="pt dlterm">&lt;role_value&gt;</dt>
-<dd class="pd">사용자에게 지정된 조직 역할입니다. 예를 들어, 조직의 관리자, 청구 관리자 또는 감사자입니다. 이 매개변수와 함께 조직을 지정해야 합니다. 역할에 대한 자세한 정보는 [사용자 역할](/docs/admin/users_roles.html#userrolesinfo)을 참조하십시오. </dd>
+<dd class="pd">사용자에게 지정된 조직 역할입니다. 예를 들어, auditor, manager 또는 billing_manager입니다. 이 매개변수와 함께 조직을 지정해야 합니다. 역할에 대한 자세한 정보는 [사용자 역할](/docs/admin/users_roles.html#userrolesinfo)을 참조하십시오. </dd>
 
 </dl>
 
@@ -251,14 +251,6 @@ cf ba create-org <organization> <manager>
 **팁:** 긴 **ba create-org** 명령어에 대한
 별명으로 **ba co**를 사용할 수도 있습니다.
 
-### 조직 삭제
-{: #admin_delete_org}
-
-조직을 삭제하려면 다음 명령을 사용하십시오. 
-
-```
-cf ba delete-org <organization>
-```
 {: codeblock}
 
 <dl class="parml">
@@ -770,9 +762,13 @@ cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|en
 <dd class="pd">cf bluemix-admin resource-metrics-history --hourly --start="06-01-2017 00:00:00 EDT" --end="06-30-2017 23:59:00 EDT</dd>
 </dl>
 
-다음 명령을 사용하여 위의 명령 매개변수와 예제 목록을 볼 수 있습니다.
-**팁:** 긴 **ba resource-metrics-history**
-명령어의 별명으로 **ba rsmh**를 사용할 수도 있습니다.
+다음 명령을 사용하여 위의 명령 매개변수 및 예제의 목록을 볼 수 있습니다.  
+
+```
+cf ba resource-metrics-history -help
+```
+
+**팁:** 더 긴 **ba resource-metrics-history** 명령어의 별명으로 **ba rsmh**를 사용할 수도 있습니다.
 
 ## 서비스 브로커 관리
 {: #admin_servbro}

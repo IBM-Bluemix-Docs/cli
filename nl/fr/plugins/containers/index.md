@@ -171,7 +171,7 @@ bluemix ic build -t ETIQUETTE|--tag ETIQUETTE [--no-cache] [-p|--pull] [-q|--qui
 
 <strong>Options de commande</strong> :
    <dl>
-   <dt>-t <i>ETIQUETTE</i>|--tag <i>ETIQUETTE</i> (requis)</dt>
+   <dt>-t <i>TAG</i>|--tag <i>TAG</i> (requis)</dt>
    <dd>Nom de référentiel à appliquer à l'image créée.</dd>
    <dt>--no-cache (facultatif)</dt>
    <dd>Indique de ne pas utiliser le cache lorsque l'image est générée. La valeur par défaut est <i>false</i>.</dd>
@@ -248,7 +248,7 @@ bluemix ic exec [-d|--detach] [-it] [-u UTILISATEUR|--user UTILISATEUR] CONTENEU
    <dd>Indique d'exécuter en arrière-plan la commande spécifiée.</dd>
    <dt>-it (facultatif)</dt>
    <dd>Mode interactif. L'entrée standard continue d'être affichée. Entrez <i>exit</i> pour quitter.</dd>
-   <dt>-u <i>UTILISATEUR</i>|--user <i>UTILISATEUR</i> (facultatif)</dt>
+   <dt>-u <i>USER</i>|--user <i>USER</i> (facultatif)</dt>
    <dd>Nom de l'utilisateur.</dd>
    <dt><i>CONTENEUR</i> (requis)</dt>
    <dd>Nom ou ID du conteneur.</dd>
@@ -852,7 +852,7 @@ bluemix ic ps [-a|--all] [--filter env=CRITERES_RECHERCHE] [-s|--size] [-l NOMBR
    <dd>Recherche les conteneurs possédant une valeur de variable d'environnement spécifique. Vous pouvez filtrer vos conteneurs en fonction d'une clé de variable d'environnement ou d'une valeur répertoriée dans la section Env de votre réponse d'interface de ligne de commande lorsque vous inspectez un conteneur. Remplacez CRITERES_RECHERCHE par la clé ou la valeur recherchée. Vos critères de recherche n'ont pas besoin de renvoyer une correspondance exacte. </dd>
    <dt>-s|--size (facultatif)</dt>
    <dd>Répertorie les tailles des conteneurs.</dd>
-   <dt>-l <i>NOMBRE</i>|--limit <i>NOMBRE</i> (facultatif)</dt>
+   <dt>-l <i>NUM</i>|--limit <i>NUM</i> (facultatif)</dt>
    <dd>Répertorie les conteneurs les plus récemment créés, où <i>NOMBRE</i> est le nombre de ces conteneurs que vous désirez renvoyer. <br><br> Par exemple, si vous
 avez créé séquentiellement les conteneurs <i>node1</i> à <i>node5</i>, la commande <i>bluemix ic ps --limit 2</i> renvoie node4 et node5 puisqu'il s'agit des
 deux derniers conteneurs créés. </dd>
@@ -1115,11 +1115,11 @@ d'une connexion à l'aide de `bluemix login` et de `bluemix ic init` génère le
 <strong>Options de commande</strong> :
 
    <dl>
-   <dt>-p <i>PORT</i>|--publish <i>PORT</i> (facultatif)</dt>
+   <dt>-p <i>PORT</i>|--publish <i>PORT</i>  (facultatif</dt>
    <dd>Expose le port pour le trafic HTTP. Incluez tous les ports spécifiés dans le document Dockerfile pour l'image que vous utilisez. Vous pouvez inclure plusieurs ports avec plusieurs options <i>-p</i>. L'exposition d'un port lie automatiquement une adresse IP publique au conteneur si une telle adresse est disponible. <br><br>Si une adresse IP existe dans l'espace à lier au conteneur, vous pouvez la spécifier plutôt que de procéder à la liaison ultérieurement. L'adresse IP doit être spécifiée au format &lt;adresse_ip&gt;:&lt;port_conteneur&gt;:&lt;port_conteneur&gt; <br><br>Pour plus d'informations sur la demande d'adresses IP pour un espace, voir la commande <a href="index.html#ip_request" target="_blank">bluemix ic ip-request</a>. <br><br>Lorsque vous spécifiez un port, vous rendez l'application disponible dans l'équilibreur de charge {{site.data.keyword.Bluemix_notm}} ou dans les conteneurs du même espace {{site.data.keyword.Bluemix_notm}} qui tentent d'accéder à l'hôte. Si un port est spécifié dans le document Dockerfile pour l'image que vous utilisez, incluez ce port. <br><br><strong>Conseils :</strong><ul><li>Pour l'image Liberty Server certifiée IBM, ou une version modifiée de cette image, entrez le port 9080.</li><li>Pour l'image Node.js certifiée IBM, ou une version modifiée de cette image, entrez le port 8000.</li></ul></dd>
    <dt>-P (facultatif)</dt>
    <dd>Expose automatiquement au trafic HTTP les ports spécifiés dans le fichier Dockerfile de l'image.</dd>
-   <dt>-m <i>MEMOIRE</i>|--memory <i>MEMOIRE </i> (facultatif)</dt>
+   <dt>-m <i>MEMOIRE</i>|--memory <i>MEMOIRE</i> (facultatif)</dt>
    <dd>Affecte une limite de mémoire, en Mo, au groupe. Lorsque vous créez un groupe de conteneurs depuis l'interface de ligne de commande, la valeur par défaut pour chaque instance de conteneur est 64 Mo.  Lorsque vous créez un groupe de conteneurs depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}, la valeur par défaut est 256 Mo. Les valeurs admises sont : 64, 256, 512, 1024 et 2048 Mo. Une fois que vous avez affecté une limite de mémoire, vous ne pouvez plus la modifier.</dd>
    <dt>-e <i>ENV</i>|--env <i>ENV</i> (facultatif)</dt>
    <dd>Définit la variable d'environnement, où <i>ENV</i> représente une paire clé=valeur. Répertoriez plusieurs clés séparément. Si vous incluez des guillemets, placez-les autour du nom et de la valeur de la variable d'environnement. Par exemple : -e "clé1=valeur1" -e "clé2=valeur2" -e "clé3=valeur3". Le tableau suivant répertorie certaines variables d'environnement couramment utilisées que vous pouvez spécifier :</dd>

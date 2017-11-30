@@ -69,6 +69,7 @@ Visual Studio Code のコマンド・パレットを使用して extension の�
 * `bx dev build` コマンドを使用して、アプリをビルドして Docker イメージを作成します
 * `bx dev debug` コマンドを使用して、開発用のローカル Docker でアプリを実行します
 > 注: ローカル Docker コンテナー内で実行されている Node.js アプリケーションをデバッグするには、[ローカル・コンテナー用のデバッグ構成を追加](https://github.com/IBM-Bluemix/ibm-developer-extension-vscode#debugging-nodejs-apps-within-the-local-docker-container)する必要があります。
+
 * `bx dev run` コマンドを使用して、アプリをローカル Docker 内でリリース・モードで実行します
 * `bx dev deploy` コマンドを使用して、アプリケーションを Bluemix 上の Cloud Foundry ランタイムにデプロイします *(IBM Container サポートは間もなく利用可能になります)。*
 

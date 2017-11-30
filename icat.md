@@ -23,7 +23,6 @@ To get up and running, [download IBM Cloud Application Tools 2 Beta for macOS ![
 
 [Want to provide feedback? ![External link icon](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-To download and install the command line tools for other operating systems, see [Manual CLI installation](/docs/cli/index.html).
 
 ## Features and settings
 

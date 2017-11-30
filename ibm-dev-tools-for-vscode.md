@@ -16,7 +16,7 @@ lastupdated: "2017-06-29"
 # IBM Developer Tools for Visual Studio Code
 {: #ibm-dev-tools-for-vscode}
 
-The IBM Developer Extension for Visual Studio code is an extension for the editor that provides access to capabilities from the IBM developer CLI directly within the Visual Studio Code editor’s command palette.  It enables you to quickly access a subset of `bx dev` commands for both Docker and CloudFoundry workflows, including app deployment, starting/stopping/restarting apps on Bluemix, viewing remote app logs, and more – all without the need to leave the editor’s context.
+The IBM Developer Extension for Visual Studio code is an extension for the editor that provides access to capabilities from the IBM developer CLI directly within the Visual Studio Code editor’s command palette.  It enables you to quickly access a subset of `bx dev` commands for both Docker and CloudFoundry workflows, including app deployment, starting/stopping/restarting apps on {{site.data.keyword.Bluemix_notm}}, viewing remote app logs, and more – all without the need to leave the editor’s context.
 {:shortdesc}
 
 ![Screen capture of the IBM Developer Tools extension download screen.](ibm-dev-tools-for-vscode.png "Extension download screen within Visual Studio Code")
@@ -24,7 +24,7 @@ The IBM Developer Extension for Visual Studio code is an extension for the edito
 ## Dependencies
 {: #dependencies}
 
-To utilize the IBM Developer Tools extension for Visual Studio Code, you will also need the [Bluemix CLI](https://plugins.ng.bluemix.net/ui/home.html) and the [IBM Developer CLI](/docs/cloudnative/dev_cli.html) plugin installed on your system.
+To utilize the IBM Developer Tools extension for Visual Studio Code, you will also need the [{{site.data.keyword.Bluemix_notm}} CLI](https://plugins.ng.bluemix.net/ui/home.html) and the [IBM Developer CLI](/docs/cloudnative/dev_cli.html) plugin installed on your system.
 
 ## Installation
 {: #installation}
@@ -63,19 +63,19 @@ Next, enter or select the command you want to invoke. You can type ‘bx’ with
 
 You can get started with bx dev workflows in just a few steps:
 * Create a project using one of the two methods below:
-  * Use the [Bluemix web console](https://console.ng.bluemix.net/developer/getting-started/) and download the generated code
-  * Use the [Bluemix Developer CLI](/docs/cloudnative/dev_cli.html) and generate a project using the `bx dev create` command
+  * Use the [{{site.data.keyword.Bluemix_notm}} web console](https://console.ng.bluemix.net/developer/getting-started/) and download the generated code
+  * Use the [{{site.data.keyword.Bluemix_notm}} Developer CLI](/docs/cloudnative/dev_cli.html) and generate a project using the `bx dev create` command
 * Open the project’s folder locally in the Visual Studio Code editor
 * Use the `bx dev build` command to build the app into a Docker image
 * Use the `bx dev debug` command to run the app in local Docker for development
 > Note: To debug a Node.js application running inside the local Docker container, you’ll need to [add a debug configuration for the local container](https://github.com/IBM-Bluemix/ibm-developer-extension-vscode#debugging-nodejs-apps-within-the-local-docker-container).
 * Use the `bx dev run` command to run the app in local Docker in release mode
-* Use the `bx dev deploy` command to deploy the application to a Cloud Foundry runtime on Bluemix *(IBM Container Support coming soon).*
+* Use the `bx dev deploy` command to deploy the application to a Cloud Foundry runtime on {{site.data.keyword.Bluemix_notm}} *(IBM Container Support coming soon).*
 
 ### Using the IBM Developer Extension for Cloud Foundry workflows
 {: #usage-cloud-foundry}
 
-For users that are currently deploying apps to Cloud Foundry runtimes on IBM Bluemix, we are also providing support for the `cf` set of operations.
+For users that are currently deploying apps to Cloud Foundry runtimes on IBM {{site.data.keyword.Bluemix_notm}}, we are also providing support for the `cf` set of operations.
 
 You can get started with CloudFoundry workflows in just a few steps:
 * Create a new CloudFoundry application

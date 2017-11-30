@@ -69,6 +69,7 @@ Visual Studio Code의 명령 팔레트를 사용하여 확장 명령을 호출�
 * `bx dev build` 명령을 사용하여 앱을 Docker 이미지에 빌드
 * `bx dev debug` 명령을 사용하여 개발을 위해 로컬 Docker에서 앱 실행
 > 참고: 로컬 Docker 컨테이너 내부에서 실행 중인 Node.js 애플리케이션을 디버그하려면 [로컬 컨테이너에 대한 디버그 구성 추가](https://github.com/IBM-Bluemix/ibm-developer-extension-vscode#debugging-nodejs-apps-within-the-local-docker-container)를 해야 합니다.
+
 * `bx dev run` 명령을 사용하여 릴리스 모드로 로컬 Docker에서 앱 실행
 * `bx dev deploy` 명령을 사용하여 Bluemix에서 Cloud Foundry 런타임에 애플리케이션을 배치*(IBM 컨테이너 지원 예정).*
 

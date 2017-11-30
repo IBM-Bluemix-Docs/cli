@@ -169,7 +169,7 @@ bluemix ic build -t TAG|--tag TAG [--no-cache] [-p|--pull] [-q|--quiet] DOCKERFI
 
 <strong>Opções de comando</strong>:
    <dl>
-   <dt>-t <i>TAG</i>|--tag <i>TAG</i> (necessário)</dt>
+   <dt>-t <i>TAG</i>|--tag <i>TAG</i> (obrigatório)</dt>
    <dd>O nome de repositório a ser aplicado na imagem que é criada.</dd>
    <dt>--no-cache (opcional)</dt>
    <dd>Não use o cache quando a imagem é construída. O padrão é <i>false</i>.</dd>
@@ -1132,12 +1132,12 @@ login` e `bluemix ic init` gera o token e os certificados necessários.
 <strong>Opções de comando</strong>:
 
    <dl>
-   <dt>-p <i>PORT</i>|--publish <i>PORT</i> (opcional)</dt>
+   <dt>-p <i>PORT</i>|--publish <i>PORT</i>  (opcional)</dt>
    <dd>Exponha a porta para o tráfego HTTP. Inclua quaisquer portas especificadas no Dockerfile para a imagem que você está usando. É possível incluir várias portas com várias
 opções <i>-p</i>. Expor uma porta irá automaticamente ligar um endereço IP público ao contêiner se um endereço IP público estiver disponível. <br><br>Se você tiver um endereço IP existente no espaço que deseja ligar ao contêiner, será possível especificar o endereço IP em vez de ligá-lo posteriormente. O endereço IP deve ser especificado no formato: &lt;ip-address&gt;:&lt;container-port&gt;:&lt;container-port&gt; <br><br>Para obter mais informações sobre como solicitar endereços IP para um espaço, consulte o comando <a href="index.html#ip_request" target="_blank">bluemix ic ip-request</a>. <br><br>Ao especificar uma porta, você está tornando o app disponível para o {{site.data.keyword.Bluemix_notm}} Load Balancer ou para os contêineres no mesmo espaço do {{site.data.keyword.Bluemix_notm}} que estão tentando atingir o host. Se uma porta for especificada no Dockerfile para a imagem que você está usando, inclua essa porta. <br><br><strong>Dicas:</strong><ul><li>Para a imagem do servidor Liberty certificada pela IBM ou uma versão modificada dessa imagem, insira a porta 9080.</li><li>Para a imagem do Node.js certificada pela IBM ou uma versão modificada dessa imagem, insira a porta 8000.</li></ul></dd>
    <dt>-P (opcional)</dt>
    <dd>Exponha automaticamente as portas que estão especificadas no Dockerfile da imagem para o tráfego HTTP.</dd>
-   <dt>-m <i>MEMORY</i>|--memory <i>MEMORY</i> (opcional)</dt>
+   <dt>-m <i>MEMORY</i>|--memory <i>MEMORY</i> (opcional)</dt>
    <dd>Designe um limite de memória ao grupo em MB. Ao criar um grupo de contêiner a partir da CLI, o valor padrão para cada instância de contêiner é 64 MB.  Ao criar um grupo de contêiner a partir do Painel
 do {{site.data.keyword.Bluemix_notm}}, o valor padrão para cada instância é 256 MB. Os valores aceitos são 64, 256, 512, 1024 e 2048. Após um limite de memória ser designado, o valor não poderá ser mudado.</dd>
    <dt>-e <i>ENV</i>|--env <i>ENV</i> (opcional)</dt>
@@ -1162,7 +1162,7 @@ exemplo: -e "key1=value1" -e "key2=value2" -e "key3=value3". A tabela a seguir m
    <li><i>CONTAINER_PATH</i>: O caminho absoluto para o volume no contêiner.</li>
    <li>ro: opcional. Especificar <i>ro</i> torna o volume somente leitura em vez de leitura/gravação padrão.</li></ul>
    </dd>
-   <dt>-n <i>NAME</i>|--name <i>NAME</i> (necessário)</dt>
+   <dt>-n <i>NAME</i>|--name <i>NAME</i> (obrigatório)</dt>
    <dd>Designe um nome ao contêiner. <br> <strong>Dica:</strong> o nome do contêiner deve iniciar com uma letra. O nome pode incluir letras maiúsculas, letras minúsculas, números, pontos., sublinhados _ ou hifens -.</dd>
    <dt>--link <i>NAME</i>:<i>ALIAS</i> (opcional)</dt>
    <dd>Sempre que você quiser que um contêiner se comunique com outro contêiner que estiver em execução, é possível endereçá-lo usando um alias para o nome do host.</dd>

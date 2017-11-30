@@ -115,7 +115,7 @@ Modifica la modalità dell'applicazione.
 ```
 cf mode <appName> <dev|normal>
 ```
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>dev</dt>
@@ -145,7 +145,7 @@ cf update-file <percorsoRemoto> <percorsoLocale> [opzioni_comando]
 ```
 
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
 
    <dl>
    <dt>expand</dt>
@@ -166,7 +166,7 @@ cf delete-file <percorsoRemoto> [opzioni_comando]
 ```
 
 
-<strong>Opzioni del comando</strong>:
+<strong>Opzioni comando</strong>:
  <dl>
    <dt>restart</dt>
    <dd>Riavvia il runtime dell'applicazione dopo che i file sono stati aggiornati.</dd>

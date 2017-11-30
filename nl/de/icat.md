@@ -23,7 +23,6 @@ Um mit der Arbeit beginnen zu können, [laden Sie IBM Cloud Application Tools 2 
 
 [Möchten Sie Feedback geben? ![Symbol für externen Link](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-Unter [Manuelle Installation der Befehlszeilenschnittstelle](/docs/cli/index.html) finden Sie Informationen dazu, wie Sie die Befehlszeilentools für andere Betriebssysteme herunterladen und installieren können.
 
 ## Features und Einstellungen
 

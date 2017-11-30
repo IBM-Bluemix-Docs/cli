@@ -1,7 +1,5 @@
 ---
 
-
-
 copyright:
 
   years: 2015, 2017
@@ -16,83 +14,28 @@ lastupdated: "2017-06-30"
 {:tip: .tip}
 {:new_window: target="_blank"}
 
-# CLI の手動インストール
+# ダウンロード 
+
+## Bluemix CLI
 {: #cli}
 
-{{site.data.keyword.Bluemix}} CLI は、ご使用の {{site.data.keyword.Bluemix_notm}} 環境を管理するためのコマンド・ラインを利用できるようにします。また、Cloud Foundry アプリケーションとサービスを管理するための Cloud Foundry コマンド・ライン・インターフェースである cf が、そのインストール済み環境に組み込まれています。
+{{site.data.keyword.Bluemix}} CLI は、{{site.data.keyword.Bluemix_notm}} 環境内のリソースを管理するためのコマンド・ライン・エクスペリエンスを提供します。また、Cloud Foundry アプリケーションとサービスを管理するための Cloud Foundry コマンド・ライン・インターフェースである cf が、そのインストール済み環境に組み込まれています。
 {:shortdesc}
 
-デフォルトでは、CLI ツールは両方とも 443 ポートを使用します。CLI ツールと {{site.data.keyword.Bluemix_notm}} 環境の間に HTTP プロキシーがある場合、実際の HTTP プロキシーの URL とポート (ある場合) を使用して、`HTTP_PROXY` 環境変数を構成する必要があります。詳しくは、[Using the CLI with an HTTP Proxy Server ![「外部リンク」アイコン](../icons/launch-glyph.svg)](http://docs.cloudfoundry.org/cf-cli/http-proxy.html){: new_window} を参照してください。
-
-[{{site.data.keyword.Bluemix_notm}} CLI のダウンロード](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} 
-
-macOS を使用している場合、IBM Cloud ツールの使用を開始するための最も簡単な方法は、[IBM Cloud Application Tools 2](/docs/cli/icat.html) を使用することです。
-{: tip}
-
-## ![](./images/CLI_Plugin.svg) コマンド・ライン・インターフェースのプラグイン
-{: #cliplugins notoc}
-
-ご使用の {{site.data.keyword.Bluemix_notm}} コマンド・ライン・インターフェースを、多くのコマンドで簡単に拡張します。{{site.data.keyword.Bluemix_notm}} コマンド・ライン・インターフェース・プラグインにアクセスするには、[CLI プラグイン・リポジトリー ![「外部リンク」アイコン](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window} を参照してください。
-
-### {{site.data.keyword.Bluemix_notm}} コマンド・ライン・インターフェースの拡張: bx
-{: #cli_bluemix_ext notoc}
+[ダウンロード](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} <br>
+[開始](/docs/cli/reference/bluemix_cli/get_started.html){: new_window} <br>
+[資料の表示](/docs/cli/reference/bluemix_cli/bx_cli.html){: new_window} <br>
 
 
-{{site.data.keyword.Bluemix_notm}} cli ツールのインストール後、[CLI プラグイン・リポジトリー ![「外部リンク」アイコン](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window} は、デフォルトでリポジトリー別名 `Bluemix` で事前構成されます。使用可能なプラグインを直接インストールできます。
+## IBM Cloud Application Tools 2 (ベータ)
+IBM Cloud Application Tools 2 は、macOS でのローカル環境のセットアップと管理を目的として合理化されたメニュー・バー・アプリケーションです。IBM Cloud Application Tools 2 を使用することにより、Bluemix のツールと CLI のインストールや更新を容易に行ったり、CLI のデプロイメント・ターゲットを変更したり、共通の Bluemix リンクに素早くアクセスしたりすることができます。
 
-```
-bluemix plugin install plugin_name -r Bluemix
-```
-
-| *{{site.data.keyword.autoscaling}} CLI* |  *IBM Bluemix Container Service*  |
-|-----|-----|
-| プラグイン名: auto-scaling <br> [資料の表示](/docs/cli/plugins/auto-scaling/index.html) |  プラグイン名: container-service  <br> [資料の表示](/docs/containers/cs_cli_devtools.html) |
-{: caption="表 2. プラグイン" caption-side="top"}
-
-|  *プライベート・ネットワーク・ピアリング* | *Schematics* | *VPN*  |
-|-----|-----|-----|
-| プラグイン名: private-network-peering  <br> [資料の表示](/docs/cli/plugins/pnp/index.html) | プラグイン名: Schematics  <br> [資料の表示](/docs/services/schematics/schematics_reference.html) | プラグイン名: VPN <br> [資料の表示](/docs/cli/plugins/bx_vpn/index.html) |
-{: caption="表 3. プラグイン" caption-side="top"}
-
-また、{{site.data.keyword.Bluemix_notm}} cli アーキテクチャーに準拠した他のリポジトリーからプラグインを追加することもできます。
-1. 別のリポジトリーから {{site.data.keyword.Bluemix_notm}} CLI プラグインをインストールするには、プラグイン・レジストリーのエンドポイントを次のようにして設定します。
-```
-bluemix plugin repo-add bluemix-other-repo [repo_url]
-```
-ここで、`repo_url` は、プラグイン・リポジトリーの https URL です。
-
-2. プラグインをインストールするには、次のコマンドを実行します。
-```
-bluemix plugin install plugin_name -r bluemix-other-repo
-```
-
-### Cloud Foundry コマンド・ライン・インターフェースの拡張: bx cf
-{: #cli_cf_ext notoc}
-
-{{site.data.keyword.Bluemix_notm}} コマンド・ライン・インターフェースをインストールすると、Cloud Foundry コマンド・ライン・インターフェースも {{site.data.keyword.Bluemix_notm}} CLI ディレクトリー内にインストールされます。`bluemix cf` を使用して Cloud Foundry CLI コマンドを実行します。
-
-* {{site.data.keyword.Bluemix_notm}} レジストリーから cf CLI プラグインをインストールするには、プラグイン・レジストリーのエンドポイントを次のようにして設定します。
-
-```
-bluemix cf add-plugin-repo bluemix-cf-repo https://plugins.ng.bluemix.net
-```
-{: codeblock}
-
-* 次に、以下のコマンドを実行してプラグインをインストールします。
-
-```
-bluemix cf install-plugin plugin_name -r bluemix-cf-repo
-```
-{: codeblock}
-
-| *管理コンソール* | *VPN* |
-|-----------------|-----------------|
-|  プラグイン名: bluemix-admin<br> [資料の表示](/docs/cli/plugins/bluemix_admin/index.html) | プラグイン名: VPN <br> [資料の表示](/docs/cli/plugins/vpn/index.html) |
-{: caption="表 4. プラグイン" caption-side="top"}
+[ダウンロード](http://ibm.biz/icat-2-download){: new_window} <br>
+[資料の表示](/docs/cli/icat.html){: new_window} <br>
 
 
 ## ![](./images/Integrated_Dev_Tools.svg) 統合開発ツール
-{: #ide notoc}
+{: #ide}
 
 お気に入りの {{site.data.keyword.Bluemix_notm}} サービスを統合するためのプラグインをダウンロードしてインストールします。
 

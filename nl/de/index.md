@@ -1,7 +1,5 @@
 ---
 
-
-
 copyright:
 
   years: 2015, 2017
@@ -16,83 +14,28 @@ lastupdated: "2017-06-30"
 {:tip: .tip}
 {:new_window: target="_blank"}
 
-# Manuelle Installation der Befehlszeilenschnittstelle
+# Downloads 
+
+## Bluemix-CLI
 {: #cli}
 
-Die {{site.data.keyword.Bluemix}}-CLI stellt eine Befehlszeilenbedienung zur Verwaltung Ihrer {{site.data.keyword.Bluemix_notm}}-Umgebung bereit. Sie enthält außerdem eine Cloud Foundry-Befehlszeilenschnittstelle (cf) in ihrer Installation, die zur Verwaltung von Cloud Foundry-Anwendungen und -Services verwendet werden kann.
+Die {{site.data.keyword.Bluemix}}-CLI stellt eine Befehlszeilenbedienung zur Verwaltung der Ressourcen in Ihrer {{site.data.keyword.Bluemix_notm}}-Umgebung bereit. Sie enthält außerdem eine Cloud Foundry-Befehlszeilenschnittstelle (cf) in ihrer Installation, die zur Verwaltung von Cloud Foundry-Anwendungen und -Services verwendet werden kann.
 {:shortdesc}
 
-Beide CLI-Tools verwenden standardmäßig den Port 443. Wenn sich ein HTTP-Proxy zwischen den CLI-Tools und der {{site.data.keyword.Bluemix_notm}}-Umgebung befindet, müssen Sie die Umgebungsvariable `HTTP_PROXY` mit der tatsächlichen URL und dem Port (falls vorhanden) des HTTP-Proxys konfigurieren. Details hierzu finden Sie in den Informationen zur [Verwendung der CLI mit einem HTTP-Proxy-Server ![Symbol für externen Link](../icons/launch-glyph.svg)](http://docs.cloudfoundry.org/cf-cli/http-proxy.html){: new_window}.
-
-[Download der {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} 
-
-Wenn Sie unter macOS arbeiten, verwenden Sie am besten [IBM Cloud Application Tools 2](/docs/cli/icat.html) für Ihren Einstieg in die Verwendung der IBM Cloud-Tools.
-{: tip}
-
-## ![](./images/CLI_Plugin.svg) Befehlszeilenschnittstelle-Plug-ins
-{: #cliplugins notoc}
-
-Sie können die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle ohne großen Aufwand durch zusätzliche Befehle erweitern. Zugriff auf die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstellen-Plug-ins erhalten Sie über das [Plug-in-Repository für die Bluemix CLI ![Symbol für externen Link](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window}.
-
-### Erweitern Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle: bx
-{: #cli_bluemix_ext notoc}
+[Download](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} <br>
+[Erste Schritte](/docs/cli/reference/bluemix_cli/get_started.html){: new_window} <br>
+[Dokumentation anzeigen](/docs/cli/reference/bluemix_cli/bx_cli.html){: new_window} <br>
 
 
-Wenn Sie das {{site.data.keyword.Bluemix_notm}}-CLI-Tool installieren, wird das [CLI-Plug-in-Repository ![Symbol für externen Link](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window} standardmäßig mit dem Repository-Aliasnamen `Bluemix` vorkonfiguriert. Sie können verfügbare Plug-ins direkt installieren.
+## IBM Cloud Application Tools 2 (Beta)
+IBM Cloud Application Tools 2 ist eine Menüleistenanwendung, die für das Einrichten und Verwalten einer lokalen Umgebung unter Mac OS optimiert ist. IBM Cloud Application Tools 2 bietet komfortable Verfahren, um Bluemix-Tools und -Befehlszeilenschnittstellen zu installieren und zu aktualisieren, um CLI-Bereitstellungsziele zu ändern und schnell auf allgemeine Bluemix-Links zuzugreifen.
 
-```
-bluemix plugin install Plug-in-Name -r Bluemix
-```
-
-| *{{site.data.keyword.autoscaling}}-CLI* |  *IBM Bluemix Container Service*  |
-|-----|-----|
-| Plug-in-Name: auto-scaling <br> [Dokumentation anzeigen](/docs/cli/plugins/auto-scaling/index.html) |  Plug-in-Name: container-service  <br> [Dokumentation anzeigen](/docs/containers/cs_cli_devtools.html) |
-{: caption="Tabelle 2. Plug-ins" caption-side="top"}
-
-|  *Privates Netzpeering* | *Schematics* | *VPN*  |
-|-----|-----|-----|
-| Plug-in-Name: private-network-peering  <br> [Dokumentation anzeigen](/docs/cli/plugins/pnp/index.html) | Plug-in-Name: Schematics  <br> [Dokumentation anzeigen](/docs/services/schematics/schematics_reference.html) | Plug-in-Name: VPN  <br> [Dokumentation anzeigen](/docs/cli/plugins/bx_vpn/index.html) |
-{: caption="Tabelle 3. Plug-ins" caption-side="top"}
-
-Sie können außerdem Plug-ins aus anderen Repositorys hinzufügen, die mit der {{site.data.keyword.Bluemix_notm}}-CLI-Architektur konform sind.
-1. Zum Installieren von {{site.data.keyword.Bluemix_notm}}-CLI-Plug-ins aus einem anderen Repository legen Sie den Plug-in-Registry-Endpunkt fest:
-```
-bluemix plugin repo-add bluemix-other-repo [repo_url]
-```
-Dabei ist `repo_url` die HTTPS-URL des Plug-in-Repositorys.
-
-2. Führen Sie den folgenden Befehl aus, um ein Plug-in zu installieren:
-```
-bluemix plugin install Plug-in-Name -r bluemix-other-repo
-```
-
-### Erweitern Sie die Cloud Foundry-Befehlszeilenschnittstelle: bx cf
-{: #cli_cf_ext notoc}
-
-Nach der Installation der {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle ist auch eine Cloud Foundry-Befehlszeilenschnittstelle im {{site.data.keyword.Bluemix_notm}}-CLI-Verzeichnis installiert. Führen Sie die Cloud Foundry-CLI-Befehle mit `bluemix cf` aus.
-
-* Zum Installieren von CLI-Plug-ins über die {{site.data.keyword.Bluemix_notm}}-Registry müssen Sie den Plug-in-Registry-Endpunkt festlegen:
-
-```
-bluemix cf add-plugin-repo bluemix-cf-repo https://plugins.ng.bluemix.net
-```
-{: codeblock}
-
-* Anschließend führen Sie den folgenden Befehl aus, um ein Plug-in zu installieren:
-
-```
-bluemix cf install-plugin Plug-in-Name -r bluemix-cf-repo
-```
-{: codeblock}
-
-| *Administrationskonsole* | *VPN* |
-|-----------------|-----------------|
-|  Plug-in-Name: bluemix-admin <br> [Dokumentation anzeigen](/docs/cli/plugins/bluemix_admin/index.html) | Plug-in-Name: VPN <br> [Dokumentation anzeigen](/docs/cli/plugins/vpn/index.html) |
-{: caption="Tabelle 4. Plug-ins" caption-side="top"}
+[Download](http://ibm.biz/icat-2-download){: new_window} <br>
+[Dokumentation anzeigen](/docs/cli/icat.html){: new_window} <br>
 
 
 ## ![](./images/Integrated_Dev_Tools.svg) Integrierte Entwicklungstools
-{: #ide notoc}
+{: #ide}
 
 Sie können Plug-ins herunterladen und installieren, um Ihre bevorzugten {{site.data.keyword.Bluemix_notm}}-Services zu integrieren.
 

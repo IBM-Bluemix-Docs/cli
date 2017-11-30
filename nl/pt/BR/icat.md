@@ -23,7 +23,6 @@ Para que funcione, [faça download do IBM Cloud Application Tools 2 Beta for mac
 
 [Deseja fornecer feedback? ![Ícone de link externo](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-Para fazer download e instalar as ferramentas de linha de comandos de outros sistemas operacionais, veja [Instalação manual da CLI](/docs/cli/index.html).
 
 ## Recursos e configurações
 

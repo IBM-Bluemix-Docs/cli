@@ -6,30 +6,30 @@ copyright:
 
   years: 2017
 
-lastupdated: "2017-08-30"
+lastupdated: "2017-11-10"
 
 
 ---
 
 {:codeblock: .codeblock}
 {:shortdesc: .shortdesc}
+{:tip: .tip}
 {:new_window: target="_blank"}
 
 # {{site.data.keyword.registrylong_notm}} CLI
 {: #containerregcli}
 
-The {{site.data.keyword.registrylong}} CLI is a plug-in to manage your registry and its resources for your account.
+The {{site.data.keyword.registrylong}} CLI is a plug-in to manage your registry and its resources for your {{site.data.keyword.Bluemix_notm}} account.
 {: shortdesc}
 
 **Prerequisites**
-* Before running the registry commands, log in to {{site.data.keyword.Bluemix_short}}
- with the `bx login` command to generate a {{site.data.keyword.Bluemix_short}}
- access token and authenticate your session.
+* Before running the registry commands, log in to {{site.data.keyword.Bluemix_notm}}
+ with the `bx login` command to generate an access token and authenticate your session.
 
-To find out about how to use the {{site.data.keyword.registrylong}} CLI, see [Setting up a private images registry](../../../services/Registry/index.html).
+To find out about how to use the {{site.data.keyword.registrylong_notm}} CLI, see [Setting up a private images registry](../../../services/Registry/index.html).
 
-<table summary="Manage your Containers Registry">
-<caption>Table 1. Commands for managing {{site.data.keyword.registryshort}} on {{site.data.keyword.Bluemix_short}}
+<table summary="Manage {{site.data.keyword.registrylong_notm}}y">
+<caption>Table 1. Commands for managing {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}}
 </caption>
  <thead>
  <th colspan="5">Commands for managing the registry</th>
@@ -37,29 +37,32 @@ To find out about how to use the {{site.data.keyword.registrylong}} CLI, see [Se
  <tbody>
  <tr>
  <td>[bx cr api](#bx_cr_api)</td>
+ <td>[bx cr build](#bx_cr_build)</td>
  <td>[bx cr info](#bx_cr_info)</td>
  <td>[bx cr image-inspect](#bx_cr_image_inspect)</td>
  <td>[bx cr image-list (bx cr images)](#bx_cr_image_list)</td>
- <td>[bx cr image-rm](#bx_cr_image_rm)</td>
  </tr>
  <tr>
+ <td>[bx cr image-rm](#bx_cr_image_rm)</td>
  <td>[bx cr login](#bx_cr_login)</td>
  <td>[bx cr namespace-add](#bx_cr_namespace_add)</td>
  <td>[bx cr namespace-list (bx cr namespaces)](#bx_cr_namespace_list)</td>
  <td>[bx cr namespace-rm](#bx_cr_namespace_rm)</td>
- <td>[bx cr plan](#bx_cr_plan)</td>
  </tr>
  <tr>
+ <td>[bx cr plan](#bx_cr_plan)</td>
  <td>[bx cr plan-upgrade](#bx_cr_plan_upgrade)</td>
- <td>[bx cr pricing](#bx_cr_pricing)</td>
  <td>[bx cr quota](#bx_cr_quota)</td>
  <td>[bx cr quota-set](#bx_cr_quota_set)</td>
- <td>[bx cr token-add](#bx_cr_token_add)</td>
+ <td>[bx cr region](#bx_cr_region)</td>
  </tr>
  <tr>
+ <td>[bx cr region-set](#bx_cr_region_set)</td>
+ <td>[bx cr token-add](#bx_cr_token_add)</td>
  <td>[bx cr token-get](#bx_cr_token_get)</td>
  <td>[bx cr token-list (bx cr tokens)](#bx_cr_token_list)</td>
  <td>[bx cr token-rm](#bx_cr_token_rm)</td>
+ </tr><tr>
  <td>[bx cr vulnerability-assessment (bx cr va)](#bx_cr_va)</td>
  </tr>
  </tbody></table>
@@ -75,6 +78,35 @@ Returns the details about the registry API endpoint that the commands are run ag
 bx cr api
 ```
 {: codeblock}
+
+
+## bx cr build
+{: #bx_cr_build}
+
+Builds a Docker image in {{site.data.keyword.registrylong_notm}}.
+
+```
+bx cr build [--no-cache] [--pull] [--quiet | -q] [--build-arg value ...] [--file value | -f value] --tag value DIRECTORY
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>DIRECTORY</dt>
+<dd>The location of your build context, which contains your Dockerfile and prerequisite files.</dd>
+<dt>--no-cache</dt>
+<dd>(Optional)  If specified, cached image layers from previous builds are not used in this build.</dd>
+<dt>--pull</dt>
+<dd>(Optional) If specified, the base image is pulled even if an image with a matching tag already exists on the build host.</dd>
+<dt>--quiet, -q</dt>
+<dd>(Optional) If specified, build output is suppressed unless an error occurs.</dd>
+<dt> --build-arg value</dt>
+<dd>(Optional) Specify an additional build argument in the format 'KEY=VALUE'. Multiple build arguments can be specified by including this parameter multiple times. The value of build arguments are available as environment variables when you specify an ARG line that matches the key in your Dockerfile.</dd>
+<dt>--file value, -f value</dt>
+<dd>(Optional)  If you use the same files for multiple builds, you can choose a path to a different Dockerfile. Specify the location of the Dockerfile relative to the build context. If not specified, the default is `PATH/Dockerfile`, where PATH is the root of the build context.</dd>
+<dt>--tag value, -t value</dt>
+<dd>The full name for the image that you want to build, which includes the registry URL and namespace.</dd>
+</dl>
 
 
 ## bx cr info
@@ -102,20 +134,20 @@ bx cr image-inspect [--format FORMAT] IMAGE [IMAGE...]
 
 <dl>
 <dt>--format FORMAT</dt>
-<dd>(Optional) Format the output elements by using a Go template. 
+<dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Viewing information about images](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
 
 </dd>
 <dt>IMAGE</dt>
-<dd>The full {{site.data.keyword.Bluemix_short}} registry path to the image that you want to inspect, which is in the format `namespace/image:tag`. If a tag is not specified in the image path, the image tagged `latest` is inspected. You can inspect multiple images by listing each private {{site.data.keyword.Bluemix_short}} registry path in the command with a space between each path.</dd>
+<dd>The full registry path to the image that you want to inspect, which is in the format `namespace/image:tag`. If a tag is not specified in the image path, the image tagged `latest` is inspected. You can inspect multiple images by listing each private registry path in the command with a space between each path.</dd>
 </dl>
 
 
 ## bx cr image-list (bx cr images)
 {: #bx_cr_image_list}
 
-Displays all images in your {{site.data.keyword.Bluemix_short}} account.
+Displays all images in your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
  bx cr image-list [--no-trunc] [-q, --quiet] [--include-ibm] [--format FORMAT]
@@ -129,9 +161,9 @@ Displays all images in your {{site.data.keyword.Bluemix_short}} account.
 <dt>-q, --quiet</dt>
 <dd>(Optional) Each image is listed in the format: `repository:tag`.</dd>
 <dt>--include-ibm</dt>
-<dd>(Optional) Includes IBM-provided public images in the output. Without this option, by default private images only are listed.</dd>
+<dd>(Optional) Includes {{site.data.keyword.IBM_notm}}-provided public images in the output. Without this option, by default private images only are listed.</dd>
 <dt>--format FORMAT</dt>
-<dd>(Optional) Format the output elements by using a Go template. 
+<dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Viewing information about images](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
 
@@ -152,7 +184,7 @@ bx cr image-rm IMAGE [IMAGE...]
 **Parameters**
 <dl>
 <dt>IMAGE</dt>
-<dd>The full {{site.data.keyword.Bluemix_short}} registry path to the image that you want to remove, in the format `namespace/image:tag`. If a tag is not specified in the image path, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private {{site.data.keyword.Bluemix_short}} registry path in the command with a space between each path.</dd>
+<dd>The full registry path to the image that you want to remove, in the format `namespace/image:tag`. If a tag is not specified in the image path, the image tagged `latest` is deleted by default. You can delete multiple images by listing each private registry path in the command with a space between each path.</dd>
 </dl>
 
 
@@ -170,7 +202,7 @@ bx cr login
 ## bx cr namespace-add
 {: #bx_cr_namespace_add}
 
-Adds a namespace to your {{site.data.keyword.Bluemix_short}} account.
+Adds a namespace to your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
 bx cr namespace-add NAMESPACE
@@ -180,14 +212,14 @@ bx cr namespace-add NAMESPACE
 **Parameters**
 <dl>
 <dt>NAMESPACE</dt>
-<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_short}} accounts in the same region.</dd>
+<dd>The namespace you want to add. The namespace must be unique across all {{site.data.keyword.Bluemix_notm}} accounts in the same region.</dd>
 </dl>
 
 
 ## bx cr namespace-list (bx cr namespaces)
 {: #bx_cr_namespace_list}
 
-Displays all namespaces that are owned by your {{site.data.keyword.Bluemix_short}} account.
+Displays all namespaces that are owned by your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
 bx cr namespace-list
@@ -198,7 +230,7 @@ bx cr namespace-list
 ## bx cr namespace-rm
 {: #bx_cr_namespace_rm}
 
-Removes a namespace from your {{site.data.keyword.Bluemix_short}} account. Images in this namespace are deleted when the namespace is removed.
+Removes a namespace from your {{site.data.keyword.Bluemix_notm}} account. Images in this namespace are deleted when the namespace is removed.
 
 ```
 bx cr namespace-rm NAMESPACE
@@ -210,7 +242,6 @@ bx cr namespace-rm NAMESPACE
 <dt>NAMESPACE</dt>
 <dd>The namespace that you want to remove.</dd>
 </dl>
-
 
 
 ## bx cr plan
@@ -227,20 +258,20 @@ bx cr plan
 ## bx cr plan-upgrade
 {: #bx_cr_plan_upgrade}
 
-Upgrades you from the free to the standard plan.
+Upgrades you to the standard plan.
 
 For information about plans, see [Registry plans](../../../services/Registry/registry_overview.html#registry_plans).
 
 ```
-bx cr plan-upgrade standard
+bx cr plan-upgrade [PLAN]
 ```
 {: codeblock}
 
-
-## bx cr pricing
-{: #bx_cr_pricing}
-
-This command has been removed. You can use the pricing calculator to calculate your estimated cost, see [Estimating costs for IBM Bluemix Container Registry](../../../services/Registry/registry_overview.html#registry_plan_billing#task_02).
+**Parameters**
+<dl>
+<dt>PLAN</dt>
+<dd>The name of the pricing plan that you want to upgrade to. If PLAN is not specified, the default is `standard`.</dd>
+</dl>
 
 
 ## bx cr quota
@@ -273,6 +304,34 @@ bx cr quota-set [--traffic VALUE] [--storage VALUE]
 </dl>
 
 
+## bx cr region
+{: #bx_cr_region}
+
+Displays the targeted region and the registry.
+
+```
+bx cr region
+```
+{: codeblock}
+
+
+## bx cr region-set
+{: #bx_cr_region_set}
+
+Set a target region for the {{site.data.keyword.registrylong_notm}} commands. To list the available regions, run the command with no parameters.
+
+```
+bx cr region-set [REGION]
+```
+{: codeblock}
+
+**Parameters**
+<dl>
+<dt>REGION</dt>
+<dd>(Optional) The name of your target region, for example, `us-south`.</dd>
+</dl>
+
+
 ## bx cr token-add
 {: #bx_cr_token_add}
 
@@ -288,7 +347,7 @@ bx cr token-add [--description VALUE] [-q, --quiet] [--non-expiring] [--readwrit
 **Parameters**
 <dl>
 <dt>--description VALUE</dt>
-<dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `bx cr token-list`. If your token is created automatically by IBM Bluemix Container Service, the description is set to your Kubernetes Cluster name. In this case, the token is removed automatically when your cluster is removed.</dd>
+<dd>(Optional) Specifies the value as a description for the token, which is displayed when you run `bx cr token-list`. If your token is created automatically by {{site.data.keyword.containerlong_notm}}, the description is set to your Kubernetes Cluster name. In this case, the token is removed automatically when your cluster is removed.</dd>
 <dt>-q, --quiet</dt>
 <dd>(Optional) Displays the token only, without any surrounding text.</dd>
 <dt>--non-expiring</dt>
@@ -319,7 +378,7 @@ bx cr token-get TOKEN
 ## bx cr token-list (bx cr tokens)
 {: #bx_cr_token_list}
 
-Displays all tokens that exist for your {{site.data.keyword.Bluemix_short}} account.
+Displays all tokens that exist for your {{site.data.keyword.Bluemix_notm}} account.
 
 ```
 bx cr token-list --format FORMAT
@@ -329,7 +388,7 @@ bx cr token-list --format FORMAT
 **Parameters**
 <dl>
 <dt>--format FORMAT</dt>
-<dd>(Optional) Format the output elements by using a Go template. 
+<dd>(Optional) Format the output elements by using a Go template.
 
 For more information, see [Viewing information about images](../../../services/Registry/registry_cli_reference.html#registry_cli_listing).
 
@@ -366,7 +425,7 @@ bx cr vulnerability-assessment IMAGE [IMAGE...]
 **Parameters**
 <dl>
 <dt>IMAGE</dt>
-<dd>The full {{site.data.keyword.Bluemix_short}} registry path, in the format `namespace/image:tag`, to the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. The following operating systems are supported:
+<dd>The full registry path, in the format `namespace/image:tag`, to the image for which you want to get a report. The report tells you whether the image has any known package vulnerabilities. The following operating systems are supported:
 
 <ul>
 
@@ -377,9 +436,8 @@ bx cr vulnerability-assessment IMAGE [IMAGE...]
 <li>Ubuntu</li>
 </ul>
 
-For more information, see [Reviewing image security](../../../services/Registry/registry_images_.html#registry_security_checking).
+For more information, see [Managing image security with Vulnerability Advisor](../../../services/va/va_index.html).
 
 </dd>
 
 </dl>
-

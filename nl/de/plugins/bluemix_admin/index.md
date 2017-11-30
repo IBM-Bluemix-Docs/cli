@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017
 
-lastupdated: "2017-09-04"
+lastupdated: "2017-09-11"
 
 ---
 
@@ -142,11 +142,11 @@ cf ba search-users -name=<user_name_value> -permission=<permission_value> -organ
 <dt class="pt dlterm">&lt;user_name_value&gt;</dt>
 <dd class="pd">Der Name des Benutzers in {{site.data.keyword.Bluemix_notm}}. </dd>
 <dt class="pt dlterm">&lt;permission_value&gt;</dt>
-<dd class="pd">Die Berechtigung, die dem Benutzer zugewiesen wurde. Beispiel: Superuser, Basic, Katalog, Benutzer und Berichte. Weitere Informationen zu den zugewiesenen Benutzerberechtigungen finden Sie im Abschnitt [Berechtigungen](/docs/admin/index.html#permissions). Dieser Parameter kann nicht in derselben Abfrage wie der Parameter 'organization' verwendet werden. </dd>
+<dd class="pd">Die Berechtigung, die dem Benutzer zugewiesen wurde. Beispiel: admin (oder superuser), login (oder basic), catalog.read, catalog.write, reports.read, reports.write, users.read oder users.write. Weitere Informationen zu den zugewiesenen Benutzerberechtigungen finden Sie im Abschnitt [Berechtigungen](/docs/admin/index.html#permissions). Dieser Parameter kann nicht in derselben Abfrage wie der Parameter 'organization' verwendet werden. </dd>
 <dt class="pt dlterm">&lt;organization_value&gt;</dt>
 <dd class="pd">Der Name der Organisation, zu der der Benutzer gehört. Dieser Parameter kann nicht in derselben Abfrage wie der Parameter 'permission' verwendet werden.</dd>
 <dt class="pt dlterm">&lt;role_value&gt;</dt>
-<dd class="pd">Die Organisationsrolle, die dem Benutzer zugewiesen wurde. Beispiel: Manager, Abrechnungsmanager oder Auditor für die Organisation. Sie müssen mit diesem Parameter die Organisation angeben. Weitere Informationen zu Rollen finden Sie im Abschnitt [Benutzerrollen](/docs/admin/users_roles.html#userrolesinfo).</dd>
+<dd class="pd">Die Organisationsrolle, die dem Benutzer zugewiesen wurde. Beispiel: auditor, manager oder billing_manager. Sie müssen mit diesem Parameter die Organisation angeben. Weitere Informationen zu Rollen finden Sie im Abschnitt [Benutzerrollen](/docs/admin/users_roles.html#userrolesinfo).</dd>
 
 </dl>
 
@@ -243,14 +243,6 @@ cf ba create-org <organization> <manager>
 **Tipp:** Sie können auch **ba co** als Alias für den längeren
 Befehlsnamen **ba create-org** verwenden.
 
-### Organisation löschen
-{: #admin_delete_org}
-
-Verwenden Sie den folgenden Befehl, um eine Organisation zu löschen:
-
-```
-cf ba delete-org <organization>
-```
 {: codeblock}
 
 <dl class="parml">
@@ -705,7 +697,7 @@ cf ba resource-metrics
 ## Verlaufsprotokoll für Ressourcenmetriken anzeigen 
 {: #cliresourceusagehistory}
 
-Sie können das Verlaufsprotokoll für Ressourcenmetriken für die Hauptspeicher- und Plattenspeichernutzung abrufen. Die zurückgegebenen Metriken umfassen die Menge der genutzten Ressourcen gegenüber der Gesamtmenge der verfügbaren Ressourcen sowohl für die physischen als auch für die reservierten Ressourcen. Protokolldaten für die Hauptspeicher- und Plattenspeichernutzung können in stündlichen, täglichen oder monatlichen Intervallen angezeigt werden. Zum Abrufen von Daten innerhalb eines bestimmten Datumsbereichs können Sie Anfangs- und Enddatumsangaben machen. Die Standardeinstellung für die Protokolldaten, wenn kein Datum angegeben wird, lautet: Hauptspeicherdaten in stündlichen Intervallen für die letzten 48 Stunden. Die Daten werden in absteigender Reihenfolge angezeigt, wobei die neuesten Datumsangaben am Anfang stehen. Verwenden Sie den folgenden Befehl, um die Verlaufsprotokolldaten zu Ressourcenmetriken anzuzeigen:
+Sie können das Verlaufsprotokoll für Ressourcenmetriken für die Hauptspeicher- und Plattenspeichernutzung abrufen. Die zurückgegebenen Metriken umfassen die Menge der genutzten Ressourcen gegenüber der Gesamtmenge der verfügbaren Ressourcen sowohl für die physischen als auch für die reservierten Ressourcen. Protokolldaten für die Hauptspeicher- und Plattenspeichernutzung können in stündlichen, täglichen oder monatlichen Intervallen angezeigt werden.  Zum Abrufen von Daten innerhalb eines bestimmten Datumsbereichs können Sie Anfangs- und Enddatumsangaben machen. Die Standardeinstellung für die Protokolldaten, wenn kein Datum angegeben wird, lautet: Hauptspeicherdaten in stündlichen Intervallen für die letzten 48 Stunden. Die Daten werden in absteigender Reihenfolge angezeigt, wobei die neuesten Datumsangaben am Anfang stehen.   Verwenden Sie den folgenden Befehl, um die Verlaufsprotokolldaten zu Ressourcenmetriken anzuzeigen:
 
 ```
 cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|end>
@@ -718,15 +710,15 @@ cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|en
 <dt class="pt dlterm">&lt;--daily&gt;</dt>
 <dd class="pd">Tagesdurchschnitt der Protokolldaten für die letzten 30 Tage anzeigen.</dd>
 <dt class="pt dlterm">&lt;--monthly&gt;</dt>
-<dd class="pd">Monatsdurchschnitt der Protokolldaten für die letzten 6 Monate anzeigen.</dd>
+<dd class="pd">Monatsdurchschnitt der Protokolldaten für die letzten 6 Monate anzeigen. </dd>
 <dt class="pt dlterm">&lt;--memory&gt;</dt>
-<dd class="pd">Genutzten und gesamten reservierten und physischen Hauptspeicher anzeigen.</dd>
+<dd class="pd">Genutzten und gesamten reservierten und physischen Hauptspeicher anzeigen. </dd>
 <dt class="pt dlterm">&lt;--disk&gt;</dt>
 <dd class="pd">Genutzten und gesamten reservierten und physischen Plattenspeicher anzeigen.</dd>
 <dt class="pt dlterm">&lt;--start&gt;</dt>
-<dd class="pd">Anfangsdatum für tägliche oder monatliche Daten (Format mm-tt-jjjj) oder Anfangsdatum und -uhrzeit für stündliche Daten (Format mm-tt-jjjj hh:mm:ss timezone)</dd>
+<dd class="pd">Anfangsdatum für tägliche oder monatliche Daten (Format mm-tt-jjjj) oder Anfangsdatum und -uhrzeit für stündliche Daten (Format mm-tt-jjjj hh:mm:ss timezone) </dd>
 <dt class="pt dlterm">&lt;--end&gt;</dt>
-<dd class="pd">Enddatum für tägliche oder monatliche Daten (Format mm-tt-jjjj) oder Enddatum und -uhrzeit für stündliche Daten (Format mm-tt-jjjj hh:mm:ss timezone)</dd>
+<dd class="pd">Enddatum für tägliche oder monatliche Daten (Format mm-tt-jjjj) oder Enddatum und -uhrzeit für stündliche Daten (Format mm-tt-jjjj hh:mm:ss timezone) </dd>
 </dl>
 
 {: codeblock}
@@ -739,10 +731,14 @@ cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|en
 <dd class="pd">cf bluemix-admin resource-metrics-history --hourly --start="06-01-2017 00:00:00 EDT" --end="06-30-2017 23:59:00 EDT</dd>
 </dl>
 
-Sie können die oben angeführte Liste mit Befehlsparametern und Beispielen mit dem folgenden Befehl anzeigen.
+Sie können die oben angeführte Liste mit Befehlsparametern und Beispielen mit dem folgenden Befehl anzeigen: 
+
+```
+cf ba resource-metrics-history -help
+```
+
 **Tipp:** Sie können auch **ba rsmh** als Alias für den längeren
 Befehlsnamen **ba resource-metrics-history** verwenden.
-
 
 ## Service-Broker verwalten
 {: #admin_servbro}
@@ -1002,7 +998,7 @@ cf ba unbind-staging-security-group <security-group>
 <dd class="pd">Der Name der Sicherheitsgruppe.</dd>
 </dl>
 
-**Warnung**: Durch das Aufheben der Bindung des Gruppensatzes **Default Staging** zu den beiden von IBM erstellen Sicherheitsgruppen `public_networks` und `dns` wird der globale Zugriff auf das externe Netz inaktiviert. Verwenden Sie das Aufheben der Bindung mit Vorsicht und ziehen Sie die Auswirkungen auf alle Anwendungen in Ihrer Umgebung in Betracht, für die Staging ausgeführt wird. 
+**Warnung**: Durch das Aufheben der Bindung des Gruppensatzes **Default Staging** zu den beiden von IBM erstellen Sicherheitsgruppen `public_networks` und `dns` wird der globale Zugriff auf das externe Netz inaktiviert. Verwenden Sie das Aufheben der Bindung mit Vorsicht und ziehen Sie die Auswirkungen auf alle Anwendungen in Ihrer Umgebung in Betracht, für die Staging ausgeführt wird.
 
 **Tipp:** Sie können auch **ba ussg** als Alias für den längeren Befehlsnamen **ba unbind-staging-security-group** verwenden.
 

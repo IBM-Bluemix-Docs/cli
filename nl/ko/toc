@@ -5,17 +5,9 @@
 CLI 및 개발 도구
 
 	{: .navgroup id="learn"}
-	{: .topicgroup}
-	다운로드
-	    index.md
-	    icat.md
-	    
+	index.md
+	reference/bluemix_cli/get_started.md
 	[CF CLI 시작하기](https://github.com/cloudfoundry/cli#getting-started)
-	reference/bluemix_cli/index.md
-	
-	{: .topicgroup}
-	관련 링크
-	    [bx 도구](http://clis.ng.bluemix.net/ui/home.html)
 	{: .navgroup-end}
 	
 	{: .navgroup id="reference"}
@@ -23,8 +15,7 @@ CLI 및 개발 도구
 	reference/bluemix_cli/all_versions.md
 	reference/softlayer/index.md
 	reference/cfcommands/index.md
-	reference/cloudcli/index.md
-	
+
 	{: .topicgroup}
 	Bluemix CLI 플러그인
 	        plugins/auto-scaling/index.md
@@ -46,14 +37,17 @@ CLI 및 개발 도구
 	{: .topicgroup}
 	통합 개발 도구
 		ibm-dev-tools-for-vscode.md
-		[API Connect 개발자 툴킷](../services/apiconnect/apic_tutorial.html?pos=2#creating_api)
+		[API Connect 개발자 툴킷](../services/apiconnect/creating_apis.html?pos=2#install_dev_tk)
 		[Bluemix Live Sync](../develop/bluemixlive.html)
 		[Bluemix용 IBM Eclipse 도구로 앱 배치](../manageapps/eclipsetools/eclipsetools.html)
 		[Liberty 및 Node.js 앱 관리](../manageapps/app_mng.html#app_management)
 	{: .navgroup-end}
 	
 	{: .navgroup id="howto"}
+	reference/bluemix_cli/download_cli.md
 	login_federated_id.md
+	reference/bluemix_cli/extend_cli.md
+	[도구 체인으로 개발](../services/ContinuousDelivery/dev_use_toolchains.html)
 	[Eclipse 도구로 개발](../starters/deploy_eclipsetools.html)
 	[CLI로 앱 배치](../starters/install_cli.html)
 	[앱 업로드](../starters/upload_app.html)

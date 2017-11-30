@@ -111,13 +111,13 @@ cf api
 
 除去与 api.ng.bluemix.net 的所有 API 端点的连接
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 禁用 api.ng.bluemix.network 的 SSL 验证过程
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 

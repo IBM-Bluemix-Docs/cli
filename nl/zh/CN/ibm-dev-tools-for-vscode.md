@@ -69,6 +69,7 @@ IBM Developer Extension for Visual Studio Code 是一个编辑器扩展，可用
 * 使用 `bx dev build` 命令将应用程序构建到 Docker 映像中
 * 使用 `bx dev debug` 命令在本地 Docker 中运行应用程序以进行开发
 > 注：要调试在本地 Docker 容器内运行的 Node.js 应用程序，需要[为本地容器添加调试配置](https://github.com/IBM-Bluemix/ibm-developer-extension-vscode#debugging-nodejs-apps-within-the-local-docker-container)。
+
 * 使用 `bx dev run` 命令在本地 Docker 中以发布方式运行应用程序
 * 使用 `bx dev deploy` 命令将应用程序部署到 Bluemix 上的 Cloud Foundry 运行时*（IBM Container 支持即将推出）*。
 

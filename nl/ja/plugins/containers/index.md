@@ -246,8 +246,7 @@ bluemix ic exec [-d|--detach] [-it] [-u USER|--user USER] CONTAINER [CMD]
    <dd>バックグラウンドで指定されたコマンドを実行します。</dd>
    <dt>-it (オプション)</dt>
    <dd>対話モード。標準入力が表示されている状態を維持します。終了するには <i>exit</i> と入力します。</dd>
-   <dt>-u <i>USER</i>|--user <i>USER</i> (オプシ
-ョン)</dt>
+   <dt>-u <i>USER</i>|--user <i>USER</i> (オプション)</dt>
    <dd>ユーザー名。</dd>
    <dt><i>CONTAINER</i> (必須)</dt>
    <dd>コンテナーの名前または ID。</dd>
@@ -1119,12 +1118,12 @@ bluemix ic run [-p PORT|--publish PORT] [-P] [-m MEMORY|--memory MEMORY] [-e ENV
 <strong>コマンド・オプション</strong>:
 
    <dl>
-   <dt>-p <i>PORT</i>|--publish <i>PORT</i> (オプション)</dt>
+   <dt>-p <i>PORT</i>|--publish <i>PORT</i>  (オプション)</dt>
    <dd>HTTP トラフィックのポートを公開します。使用するイメージの Dockerfile 内に指定されているポートがあれば、それらのポートを含めます。複数の <i>-p</i> オプションを使用して、複数のポートを含めることができます。ポートを公開すると、パブリック IP アドレスが使用可能な場合、パブリック IP アドレスがコンテナーに自動的にバインドされます。<br><br>コンテナーにバインドしたい IP アドレスがスペース内に既に存在する場合、後でバインドするのでなく、その IP アドレスを指定できます。IP アドレスは、&lt;ip-address&gt;:&lt;container-port&gt;:&lt;container-port&gt; <br> 形式で指定する必要があります。<br>スペース用の IP アドレスの要求について詳しくは、<a href="index.html#ip_request" target="_blank">bluemix ic ip-request</a> コマンドを参照してください。<br><br>ポートを指定したら、同じ {{site.data.keyword.Bluemix_notm}} スペース内でホストにアクセスしようとする {{site.data.keyword.Bluemix_notm}} Load Balancer またはコンテナーがアプリを使用できるように設定します。使用するイメージの Dockerfile 内にポートが指定されている場合、そのポートを含めてください。<br><br>
 <strong>ヒント:</strong><ul><li>IBM 認定 Liberty Server イメージ、またはこのイメージの変更版の場合、ポート 9080 を入力します。</li><li>IBM 認定 Node.js イメージ、またはこのイメージの変更版の場合、ポート 8000 を入力します。</li></ul></dd>
    <dt>-P (オプション)</dt>
    <dd>イメージの Dockerfile 内に指定されたポートを HTTP トラフィック用に自動的に公開します。</dd>
-   <dt>-m <i>MEMORY</i>|--memory <i>MEMORY</i> (オプション)</dt>
+   <dt>-m <i>MEMORY</i>|--memory <i>MEMORY</i> (オプション)</dt>
    <dd>グループにメモリー制限を MB 単位で割り当てます。CLI からコンテナー・グループを作成する場合、各コンテナー・インスタンスのデフォルト値は 64 MB です。
 {{site.data.keyword.Bluemix_notm}} ダッシュボードからコンテナー・グループを作成する場合、各インスタンスのデフォルト値は 256 MB です。受け入れられる値は 64、256、512、1024、および 2048 です。メモリー限度が割り当てられた後、その値を変更することはできません。</dd>
    <dt>-e <i>ENV</i>|--env <i>ENV</i> (オプション)</dt>

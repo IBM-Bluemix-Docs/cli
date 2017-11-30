@@ -112,13 +112,13 @@ cf api
 
 Verbindung zu allen API-Endpunkten für api.ng.bluemix.net entfernen
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 SSL-Validierungsprozess für api.ng.bluemix.network inaktivieren
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 

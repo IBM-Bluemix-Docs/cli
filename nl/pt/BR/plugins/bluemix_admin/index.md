@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017
 
-lastupdated: "2017-09-04"
+lastupdated: "2017-09-11"
 
 ---
 
@@ -25,8 +25,7 @@ Antes de iniciar, instale a interface de linha de comandos do cf. O plug-in da C
 requer o cf versão 6.11.2 ou posterior. [Fazer download da interface da linha de comandos do Cloud Foundry ![Ícone de link externo](../../../icons/launch-glyph.svg)](https://github.com/cloudfoundry/cli/releases){: new_window}
 
 **Restrição:** A interface de linha de
-comandos do Cloud Foundry não é suportada por
-Cygwin. Use a interface de linha de comandos do Cloud Foundry
+comandos do Cloud Foundry não é suportada por Cygwin. Use a interface de linha de comandos do Cloud Foundry
 em uma janela de linha de comandos diferente da janela de linha de comandos do Cygwin.
 
 **Observação**: a CLI do administrador do {{site.data.keyword.Bluemix_notm}} é usada somente para o ambiente {{site.data.keyword.Bluemix_notm}} Local e {{site.data.keyword.Bluemix_notm}} Dedicated. Ele não é suportado pelo {{site.data.keyword.Bluemix_notm}} Public.
@@ -36,12 +35,9 @@ em uma janela de linha de comandos diferente da janela de linha de comandos do C
 Após a interface de linha de comandos do cf ser instalada, é possível
 incluir o plug-in da CLI Admin do {{site.data.keyword.Bluemix_notm}}.
 
-**Nota**: se você tiver instalado
-anteriormente o plug-in Administrador do
-{{site.data.keyword.Bluemix_notm}}, poderá ser necessário desinstalar o plug-in, excluir o repositório e reinstalar para obter as atualizações mais recentes.
+**Nota**: se você tiver instalado anteriormente o plug-in Administrador do {{site.data.keyword.Bluemix_notm}}, poderá ser necessário desinstalar o plug-in, excluir o repositório e reinstalar para obter as atualizações mais recentes.
 
-Conclua as etapas a seguir para incluir o repositório e instalar
-o plug-in:
+Conclua as etapas a seguir para incluir o repositório e instalar o plug-in:
 
 <ol>
 <li>Para incluir o repositório do plug-in de administrador do {{site.data.keyword.Bluemix_notm}}, execute o comando a seguir:<br/><br/>
@@ -151,11 +147,11 @@ cf ba search-users -name=<user_name_value> -permission=<permission_value> -organ
 <dt class="pt dlterm">&lt;user_name_value&gt;</dt>
 <dd class="pd">O nome do usuário no {{site.data.keyword.Bluemix_notm}}. </dd>
 <dt class="pt dlterm">&lt;permission_value&gt;</dt>
-<dd class="pd">A permissão designada ao usuário. Por exemplo, superusuário, básico, catálogo, usuário e relatórios. Para obter mais informações sobre permissões de usuário designadas, veja [Permissões](/docs/admin/index.html#permissions). Não é possível usar esse parâmetro com o parâmetro de organização na mesma consulta. </dd>
+<dd class="pd">A permissão designada ao usuário. Por exemplo, administrador (ou superusuário), login (ou básico), catalog.read, catalog.write, reports.read, reports.write, users.read ou users.write. Para obter mais informações sobre permissões de usuário designadas, veja [Permissões](/docs/admin/index.html#permissions). Não é possível usar esse parâmetro com o parâmetro de organização na mesma consulta. </dd>
 <dt class="pt dlterm">&lt;organization_value&gt;</dt>
 <dd class="pd">O nome da organização à qual o usuário pertence. Não é possível usar esse parâmetro com o parâmetro de permissão na mesma consulta.</dd>
 <dt class="pt dlterm">&lt;role_value&gt;</dt>
-<dd class="pd">A função de organização designada ao usuário. Por exemplo, gerente, gerente de faturamento ou auditor para a organização. Deve-se especificar a organização com esse parâmetro. Para obter mais informações sobre funções, veja [Funções de usuário](/docs/admin/users_roles.html#userrolesinfo).</dd>
+<dd class="pd">A função de organização designada ao usuário. Por exemplo, auditor, gerenciador ou billing_manager. Deve-se especificar a organização com esse parâmetro. Para obter mais informações sobre funções, veja [Funções de usuário](/docs/admin/users_roles.html#userrolesinfo).</dd>
 
 </dl>
 
@@ -258,14 +254,6 @@ cf ba create-org <organization> <manager>
 **Dica:** também é possível usar **ba co** como um alias para o nome
 do comando mais longo **ba create-org**.
 
-### Excluindo uma Organização
-{: #admin_delete_org}
-
-Para excluir uma organização, use o comando a seguir:
-
-```
-cf ba delete-org <organization>
-```
 {: codeblock}
 
 <dl class="parml">
@@ -754,7 +742,7 @@ do comando **ba resource-metrics**.
 ## Visualizando o histórico de métrica de recurso 
 {: #cliresourceusagehistory}
 
-É possível recuperar o histórico de métrica de recurso para uso de memória e disco. As métricas retornadas incluem a quantia de recursos usados do total disponível para ambos os recursos, físico e reservado. Os dados históricos para uso de memória e disco podem ser exibidos por hora, diariamente ou mensalmente. É possível especificar datas de início e de encerramento para recuperar dados dentro de um intervalo de data específico. Os dados históricos padrão, quando nenhuma data é especificada, são dados de memória por hora para as últimas 48 horas. Os dados são exibidos em ordem decrescente, com datas mais recentes mostradas primeiro. Para visualizar as informações de histórico de métrica de recurso, use o comando a seguir:
+É possível recuperar o histórico de métrica de recurso para uso de memória e disco. As métricas retornadas incluem a quantia de recursos usados do total disponível para ambos os recursos, físico e reservado. Os dados históricos para uso de memória e disco podem ser exibidos por hora, diariamente ou mensalmente.  É possível especificar datas de início e de encerramento para recuperar dados dentro de um intervalo de data específico. Os dados históricos padrão, quando nenhuma data é especificada, são dados de memória por hora para as últimas 48 horas. Os dados são exibidos em ordem decrescente, com datas mais recentes mostradas primeiro.   Para visualizar as informações de histórico de métrica de recurso, use o comando a seguir:
 
 ```
 cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|end>
@@ -772,7 +760,7 @@ padrão.</dd>
 <dt class="pt dlterm">&lt;--memory&gt;</dt>
 <dd class="pd">Visualize a memória Reservada e Física usada e total. </dd>
 <dt class="pt dlterm">&lt;--disk&gt;</dt>
-<dd class="pd">Visualize o disco Reservado e Físico usado e total. </dd>
+<dd class="pd">Visualize o disco Reservado e Físico usado e total.</dd>
 <dt class="pt dlterm">&lt;--start&gt;</dt>
 <dd class="pd">Especifique uma data de início para diário ou mensal (o formato deve ser mm-dd-aaaa) ou uma data e hora de início para por hora (o formato deve ser o fuso horário mm-dd-aaaa hh:mm:ss) </dd>
 <dt class="pt dlterm">&lt;--end&gt;</dt>
@@ -789,9 +777,14 @@ padrão.</dd>
 <dd class="pd">cf bluemix-admin resource-metrics-history --hourly --start="06-01-2017 00:00:00 EDT" --end="06-30-2017 23:59:00 EDT</dd>
 </dl>
 
-É possível visualizar a lista acima de parâmetros de comando e exemplos usando o comando a seguir:
-**Dica:** também é possível usar **ba rsmh** como um alias para o
-nome de comando mais longo **ba resource-metrics-history**.
+É possível visualizar a lista de parâmetros de comando e exemplos acima usando o comando a seguir: 
+
+```
+cf ba resource-metrics-history -help
+```
+
+**Dica:** também é possível usar **ba rsmh** como um alias para
+o nome do comando **ba resource-metrics-history** maior.
 
 ## Administrando brokers de serviço
 {: #admin_servbro}

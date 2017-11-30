@@ -23,7 +23,6 @@ IBM Cloud Application Tools 2 は、macOS でのローカル環境のセット�
 
 [フィードバックをお寄せください![External link icon](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-他のオペレーティング・システム用のコマンド・ライン・ツールをダウンロードしてインストールするには、[CLI の手動インストール](/docs/cli/index.html)を参照してください。
 
 ## フィーチャーおよび設定
 

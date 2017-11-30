@@ -20,7 +20,7 @@ lastupdated: "2017-01-12"
 
 *Version:* 1.0.0
 
-IBM Containers CLI is a {{site.data.keyword.Bluemix_notm}} CLI plug-in to manage containers and container groups on Bluemix.
+IBM Containers CLI is a {{site.data.keyword.Bluemix_notm}}   CLI plug-in to manage containers and container groups on {{site.data.keyword.Bluemix_notm}}  
 {: shortdesc}
 
 **Note:** *Prerequisites* list which actions are required before using the command. Commands that have no prerequisite actions list **None**. Otherwise, prerequisites might include one or more of the following actions:
@@ -333,7 +333,7 @@ NMENT_VARIABLE_FILE] [-P false|true] [--volume] [--min MIN_INSTANCE_COUNT] [--ma
    <dd>When the container group is created and the automatic recovery is enabled, IBM Containers check the health of each instance with an HTTP request to the port that is assigned.<br>
    If no response is received from a container instance in 2 subsequent 90 second intervals, the instance is removed and replaced with a new instance. No action is taken if the container is responsive. This process is repeated continuously. During a 30 minute window, if the total number of different containers that are members of the group equals or exceeds 3 times the maximum observed size of the group, the automatic recovery is disabled permanently for the container group. To enable automatic recovery again, you must re-create the container group.</dd>
   <dt>--anti (optional)</dt>
-  <dd> Use anti-affinity to make your container group more highly available. The --anti option forces every container instance in your group to be placed on a separate physical compute node, which reduces the chances of all containers in a group crashing due to a hardware failure. You might not be able to use this option with larger group sizes because each Bluemix region and organization has a limited set of compute nodes available for deployment. If your deployment does not succeed, either reduce the number of container instances in the group or remove the --anti option. </dd>
+  <dd> Use anti-affinity to make your container group more highly available. The --anti option forces every container instance in your group to be placed on a separate physical compute node, which reduces the chances of all containers in a group crashing due to a hardware failure. You might not be able to use this option with larger group sizes because each {{site.data.keyword.Bluemix_notm}}  region and organization has a limited set of compute nodes available for deployment. If your deployment does not succeed, either reduce the number of container instances in the group or remove the --anti option. </dd>
    <dt><i>CMD</i> (optional)</dt>
    <dd>The command and arguments that are passed to the container group to execute. This command must be a long-running command. Do not use a short-lived command that does not run for very long, for example, <i>/bin/date</i>, because the short-lived command might cause the container to crash.  <br> <strong>Notes:</strong> <ul>
    <li>The command and its arguments must come at the end of the <i>bluemix ic run</i> command line.</li>
@@ -460,7 +460,7 @@ bluemix ic group-update [--anti] [--desired DESIRED_INSTANCE_COUNT] [-e ENV_KEY=
 <strong>Command options</strong>:
  <dl>
    <dt>--anti (optional)</dt>
-   <dd>Use anti-affinity to make your container group more highly available. The --anti option forces every container instance in your group to be placed on a separate physical compute node, which reduces the odds of all containers in a group crashing due to a hardware failure. You might not be able to use this option with larger group sizes because each Bluemix region and organization has a limited set of compute nodes available for deployment. If your deployment does not succeed, either reduce the number of container instances in the group or remove the --anti option.</dd>
+   <dd>Use anti-affinity to make your container group more highly available. The --anti option forces every container instance in your group to be placed on a separate physical compute node, which reduces the odds of all containers in a group crashing due to a hardware failure. You might not be able to use this option with larger group sizes because each {{site.data.keyword.Bluemix_notm}}    region and organization has a limited set of compute nodes available for deployment. If your deployment does not succeed, either reduce the number of container instances in the group or remove the --anti option.</dd>
    <dt>--desired <i>DESIRED_INSTANCE_COUNT</i> (optional)</dt>
    <dd>The number of instances that you require. The default is <i>2</i>.</dd>
    <dt>-e <i>ENV_KEY=ENV_VAL</i>(optional)</dt>
@@ -885,7 +885,7 @@ bluemix ic rename OLD_NAME NEW_NAME
 ## bluemix ic reprovision
 {: #bluemix_ic_reprovision}
 
-Re-create the IBM Containers service in the Bluemix space that you are logged into. The original quota for the space is maintained.
+Re-create the IBM Containers service in the {{site.data.keyword.Bluemix_notm}}space that you are logged into. The original quota for the space is maintained.
 
 <strong>Important</strong>: When you run this command, none of your single containers and groups in this space will be migrated to the re-provisioned space and they will be removed during the migration process.
 
@@ -896,7 +896,7 @@ bluemix ic reprovision [--force|-f] [ENVIRONMENT_NAME]
 
 <dl>
    <dt>--force|-f (optional)</dt>
-   <dd>Forces the re-creation of the IBM Containers service in the Bluemix space.</dd>
+   <dd>Forces the re-creation of the IBM Containers service in the {{site.data.keyword.Bluemix_notm}}  space.</dd>
    <dt><i>AVAILABILITY_ZONE</i> (optional)</dt>
    <dd>The name of IBM Containers availability zone where your containers are deployed. If no availability zone is specified, the default availability zone that is set for the region is used.</dd>
    </dl>
@@ -1376,7 +1376,7 @@ bluemix ic unpause proxy
 ## bluemix ic unprovision
 {: #bluemix_ic_unprovision}
 
-Delete the IBM Containers service from the Bluemix space that you are logged into.
+Delete the IBM Containers service from the {{site.data.keyword.Bluemix_notm}}space that you are logged into.
 
 <strong>Attention</strong>: When you run this command, all your single containers and container groups are lost. Your space is still available in Bluemix. To start using the IBM Containers again, you must run `bluemix ic reprovision` to provision the IBM Containers service again.
 
@@ -1387,7 +1387,7 @@ bluemix ic reprovision [--force|-f]
 
 <dl>
    <dt>--force|-f (optional)</dt>
-   <dd>Forces the deletion of the Bluemix from the Bluemix space.</dd>
+   <dd>Forces the deletion of the {{site.data.keyword.Bluemix_notm}}  from the {{site.data.keyword.Bluemix_notm}}space.</dd>
  </dl>
 
 

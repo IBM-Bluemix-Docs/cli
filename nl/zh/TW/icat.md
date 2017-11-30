@@ -23,7 +23,6 @@ IBM Cloud Application Tools 2 是一個功能表列應用程式，簡化 macOS �
 
 [要提供意見嗎？![外部鏈結圖示](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-若要下載及安裝其他作業系統的指令行工具，請參閱[手動 CLI 安裝](/docs/cli/index.html)。
 
 ## 特性及設定
 

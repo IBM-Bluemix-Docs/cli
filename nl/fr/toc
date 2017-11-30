@@ -5,17 +5,9 @@
 Interface de ligne de commande et outils de développement
 
 	{: .navgroup id="learn"}
-	{: .topicgroup}
-	Downloads
-	    index.md
-	    icat.md
-	    
-	[Initiation à l'interface de ligne de commande CF](https://github.com/cloudfoundry/cli#getting-started)
-	reference/bluemix_cli/index.md
-	
-	{: .topicgroup}
-	Liens connexes
-	    [Interface de ligne de commande Bluemix](http://clis.ng.bluemix.net/ui/home.html)
+	index.md
+	reference/bluemix_cli/get_started.md
+	[Initiation à l'interface CLI CF](https://github.com/cloudfoundry/cli#getting-started)
 	{: .navgroup-end}
 	
 	{: .navgroup id="reference"}
@@ -23,8 +15,7 @@ Interface de ligne de commande et outils de développement
 	reference/bluemix_cli/all_versions.md
 	reference/softlayer/index.md
 	reference/cfcommands/index.md
-	reference/cloudcli/index.md
-	
+
 	{: .topicgroup}
 	Plug-ins d'interface de ligne de commande Bluemix
 	        plugins/auto-scaling/index.md
@@ -46,15 +37,18 @@ Interface de ligne de commande et outils de développement
 	{: .topicgroup}
 	Outils de développement intégrés
 		ibm-dev-tools-for-vscode.md
-		[Kit d'outils de développement API Connect](../services/apiconnect/apic_tutorial.html?pos=2#creating_api)
+		[Kit d'outils de développement API Connect](../services/apiconnect/creating_apis.html?pos=2#install_dev_tk)
 		[Bluemix Live Sync](../develop/bluemixlive.html)
 		[Déploiement d'applications à l'aide d'IBM Eclipse Tools for Bluemix](../manageapps/eclipsetools/eclipsetools.html)
 		[Gestion des applications Liberty et Node.js](../manageapps/app_mng.html#app_management)
 	{: .navgroup-end}
 	
 	{: .navgroup id="howto"}
+	reference/bluemix_cli/download_cli.md
 	login_federated_id.md
-	[Développement à l'aide d'outils Eclipse](../starters/deploy_eclipsetools.html)
-	[Déploiement de votre application à l'aide de l'interface de ligne de commande](../starters/install_cli.html)
+	reference/bluemix_cli/extend_cli.md
+	[Développement à l'aide de chaînes d'outils](../services/ContinuousDelivery/dev_use_toolchains.html)
+	[Développement à l'aide d'Eclipse Tools](../starters/deploy_eclipsetools.html)
+	[Déploiement de votre application à l'aide de l'interface CLI](../starters/install_cli.html)
 	[Téléchargement de votre application](../starters/upload_app.html)
 	{: .navgroup-end}

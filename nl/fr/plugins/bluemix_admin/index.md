@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017
 
-lastupdated: "2017-09-04"
+lastupdated: "2017-09-11"
 
 ---
 
@@ -141,11 +141,11 @@ cf ba search-users -name=<valeur_nom_utilisateur> -permission=<valeur_droit> -or
 <dt class="pt dlterm">&lt;valeur_nom_utilisateur&gt;</dt>
 <dd class="pd">Nom de l'utilisateur dans {{site.data.keyword.Bluemix_notm}}. </dd>
 <dt class="pt dlterm">&lt;valeur_droit&gt;</dt>
-<dd class="pd">Droit accordé à l'utilisateur. Exemple : Superutilisateur, Accès de base, Catalogue, Utilisateur et Rapports. Pour plus d'informations sur les droits pouvant être affectés aux utilisateurs, voir [Droits](/docs/admin/index.html#permissions). Vous ne pouvez pas utiliser ce paramètre avec le paramètre organization dans une même requête. </dd>
+<dd class="pd">Droit accordé à l'utilisateur. Par exemple, admin (ou superuser), login (ou basic), catalog.read, catalog.write, reports.read, reports.write, users.read ou users.write. Pour plus d'informations sur les droits pouvant être affectés aux utilisateurs, voir [Droits](/docs/admin/index.html#permissions). Vous ne pouvez pas utiliser ce paramètre avec le paramètre organization dans une même requête. </dd>
 <dt class="pt dlterm">&lt;valeur_organisation&gt;</dt>
 <dd class="pd">Nom de l'organisation à laquelle appartient l'utilisateur. Vous ne pouvez pas utiliser ce paramètre avec le paramètre permission dans une même requête.</dd>
 <dt class="pt dlterm">&lt;valeur_rôle&gt;</dt>
-<dd class="pd">Rôle de l'organisation affecté à l'utilisateur. Exemple : responsable, responsable de la facturation ou auditeur de l'organisation. Vous devez spécifier l'organisation avec ce paramètre. Pour plus d'informations sur les rôles, voir [Rôles utilisateur](/docs/admin/users_roles.html#userrolesinfo).</dd>
+<dd class="pd">Rôle de l'organisation affecté à l'utilisateur. Par exemple, auditor, manager ou billing_manager. Vous devez spécifier l'organisation avec ce paramètre. Pour plus d'informations sur les rôles, voir [Rôles utilisateur](/docs/admin/users_roles.html#userrolesinfo).</dd>
 
 </dl>
 
@@ -242,14 +242,6 @@ cf ba create-org <organisation> <responsable>
 
 **Astuce :** vous pouvez aussi utiliser **ba co** comme alias pour le nom de commande plus long **ba create-org**.
 
-### Suppression d'une organisation
-{: #admin_delete_org}
-
-Pour supprimer une organisation, utilisez la commande suivante :
-
-```
-cf ba delete-org <organisation>
-```
 {: codeblock}
 
 <dl class="parml">
@@ -719,7 +711,7 @@ cf ba resource-metrics
 ## Affichage de l'historique relatif aux mesures des ressources 
 {: #cliresourceusagehistory}
 
-Vous pouvez obtenir l'historique des mesures de ressources à des fins d'utilisation de la mémoire et du disque. Les valeurs renvoyées incluent la quantité de ressources utilisées par rapport à la quantité totale disponible, à la fois pour les ressources physiques et les ressources réservées. Les données d'historique relatives à l'utilisation de la mémoire et du disque peuvent être affichées sur une base horaire, quotidienne ou mensuelle. Indiquez une date de début et une date de fin pour extraire les données d'une période donnée. Lorsque aucune date n'est psécifiée, les données d'historique par défaut sont les données mémoire horaires des dernières 48 heures. Les données sont affichées par ordre décroissant, les dates les plus récentes en premier. Pour afficher les informations d'historique relatives aux mesures des ressources, entrez la commande suivante :
+Vous pouvez obtenir l'historique des mesures de ressources à des fins d'utilisation de la mémoire et du disque. Les valeurs renvoyées incluent la quantité de ressources utilisées par rapport à la quantité totale disponible, à la fois pour les ressources physiques et les ressources réservées. Les données d'historique relatives à l'utilisation de la mémoire et du disque peuvent être affichées sur une base horaire, quotidienne ou mensuelle.  Indiquez une date de début et une date de fin pour extraire les données d'une période donnée. Lorsque aucune date n'est psécifiée, les données d'historique par défaut sont les données mémoire horaires des dernières 48 heures. Les données sont affichées par ordre décroissant, les dates les plus récentes en premier.   Pour afficher les informations d'historique relatives aux mesures des ressources, entrez la commande suivante :
 
 ```
 cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|end>
@@ -753,7 +745,12 @@ cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|en
 <dd class="pd">cf bluemix-admin resource-metrics-history --hourly --start="06-01-2017 00:00:00 EDT" --end="06-30-2017 23:59:00 EDT</dd>
 </dl>
 
-Vous pouvez afficher la liste des paramètres et exemples ci-dessus à l'aide de la commande suivante :
+Vous pouvez afficher la liste des paramètres et exemples ci-dessus en utilisant la commande suivante : 
+
+```
+cf ba resource-metrics-history -help
+```
+
 **Astuce :** vous pouvez aussi utiliser **ba rsmh** comme alias pour le nom de commande plus long **ba resource-metrics-history**.
 
 ## Administration des courtiers de services

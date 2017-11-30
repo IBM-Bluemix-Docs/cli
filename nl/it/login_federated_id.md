@@ -68,7 +68,7 @@ La chiave API richiesta è la chiave API {{site.data.keyword.Bluemix_notm}} util
 1. Crea una chiave API con il [comando `bluemix iam api-key-create`](/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_iam_api_key_create). Utilizza l'opzione `-f` per generare un file della chiave API invece di mostrare la chiave nella finestra di comando:
 
    ```
-   bluemix iam api-key-create NAME [-d DESCRIZIONE] [-f, --file FILE]
+   bluemix iam api-key-create NOME [-d DESCRIZIONE] [-f, --file FILE]
   
    ```
 

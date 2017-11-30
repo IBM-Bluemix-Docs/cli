@@ -23,7 +23,6 @@ Pour être opérationnel, [téléchargez IBM Cloud Application Tools 2 Beta for 
 
 [Nous faire part de vos commentaires ![External link icon](../icons/launch-glyph.svg)](http://ibm.biz/icat-2-feedback){: new_window}
 
-Pour télécharger et installer les outils de ligne de commande pour d'autres systèmes d'exploitation, voir [Installation manuelle de l'interface de ligne de commande](/docs/cli/index.html).
 
 ## Fonctions et paramètres
 

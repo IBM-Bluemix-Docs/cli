@@ -4,7 +4,7 @@ copyright:
 
   years: 2015, 2017
 
-lastupdated: "2017-09-04"
+lastupdated: "2017-09-11"
 
 ---
 
@@ -139,11 +139,11 @@ cf ba search-users -name=<user_name_value> -permission=<permission_value> -organ
 <dt class="pt dlterm">&lt;user_name_value&gt;</dt>
 <dd class="pd">{{site.data.keyword.Bluemix_notm}} 内のユーザーの名前。</dd>
 <dt class="pt dlterm">&lt;permission_value&gt;</dt>
-<dd class="pd">ユーザーに割り当てられた許可。例えば、superuser、basic、catalog、user、および reports です。割り当てられたユーザー許可について詳しくは、『[許可](/docs/admin/index.html#permissions)』を参照してください。同じ照会内でこのパラメーターを organization パラメーターと一緒に使用することはできません。</dd>
+<dd class="pd">ユーザーに割り当てられた許可。例えば、admin (または superuser)、login (または basic)、catalog.read、catalog.write、reports.read、reports.write、users.read、または users.write など。割り当てられたユーザー許可について詳しくは、『[許可](/docs/admin/index.html#permissions)』を参照してください。同じ照会内でこのパラメーターを organization パラメーターと一緒に使用することはできません。</dd>
 <dt class="pt dlterm">&lt;organization_value&gt;</dt>
 <dd class="pd">ユーザーが所属する組織の名前。同じ照会内でこのパラメーターを permission パラメーターと一緒に使用することはできません。</dd>
 <dt class="pt dlterm">&lt;role_value&gt;</dt>
-<dd class="pd">ユーザーに割り当てられた、組織の役割。例えば、組織の管理者、請求管理者、または監査員です。このパラメーターと一緒に組織を指定する必要があります。役割について詳しくは、『[ユーザー役割](/docs/admin/users_roles.html#userrolesinfo)』を参照してください。</dd>
+<dd class="pd">ユーザーに割り当てられた、組織の役割。例えば、auditor、manager、または billing_manager など。このパラメーターと一緒に組織を指定する必要があります。役割について詳しくは、『[ユーザー役割](/docs/admin/users_roles.html#userrolesinfo)』を参照してください。</dd>
 
 </dl>
 
@@ -239,14 +239,6 @@ cf ba create-org <organization> <manager>
 
 **ヒント:** **ba create-org** という長いコマンド名の別名として **ba co** を使用することもできます。
 
-### 組織の削除
-{: #admin_delete_org}
-
-組織を削除するには、以下のコマンドを使用します。
-
-```
-cf ba delete-org <organization>
-```
 {: codeblock}
 
 <dl class="parml">
@@ -717,7 +709,13 @@ cf ba resource-metrics-history <hourly|daily|monthly>  <memory|disk >  <start|en
 <dd class="pd">cf bluemix-admin resource-metrics-history --hourly --start="06-01-2017 00:00:00 EDT" --end="06-30-2017 23:59:00 EDT</dd>
 </dl>
 
-以下のコマンドを使用して、上記のコマンド・パラメーターおよび例のリストを表示できます。**ヒント:** **ba resource-metrics-history** という長いコマンド名の別名として **ba rsmh** を使用することもできます。
+以下のコマンドを使用して、上記のコマンド・パラメーターおよび例のリストを表示できます。 
+
+```
+cf ba resource-metrics-history -help
+```
+
+**ヒント:** **ba resource-metrics-history** という長いコマンド名の別名として **ba rsmh** を使用することもできます。
 
 ## サービス・ブローカーの管理
 {: #admin_servbro}

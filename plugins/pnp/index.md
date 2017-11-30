@@ -11,18 +11,18 @@ lastupdated: "2017-01-12"
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 
-# Private network peering plug-in for Bluemix CLI
+# Private network peering plug-in for {{site.data.keyword.Bluemix_notm}} CLI
 {: #private_network_cli}
 
-Use the private network peering command line interface (CLI) to configure and manage private network peering between two {{site.data.keyword.Bluemix}} spaces. Private network peering is supported for IBM Containers (docker containers). The Bluemix spaces can be located in different availability zones in the same region or can be located in the different regions. The private network peering CLI plug-in is available for use with the Bluemix CLI plug-in.
+Use the private network peering command line interface (CLI) to configure and manage private network peering between two {{site.data.keyword.Bluemix}} spaces. Private network peering is supported for IBM Containers (docker containers). The {{site.data.keyword.Bluemix_notm}} spaces can be located in different availability zones in the same region or can be located in the different regions. The private network peering CLI plug-in is available for use with the {{site.data.keyword.Bluemix_notm}} CLI plug-in.
 
 The private network peering CLI plug-in is available for Windows, MAC, and Linux operating systems. Ensure that you use the plug-in that is applicable to you.
 
-Before you begin, create Bluemix spaces. Ensure that each container in a space has an IP address from a different network. For details, see [Using your own private IP address](https://www.{DomainName}/docs/containers/container_security.html#container_cli_ips_byoip)
+Before you begin, create {{site.data.keyword.Bluemix_notm}} spaces. Ensure that each container in a space has an IP address from a different network. For details, see [Using your own private IP address ![External link icon](../../../icons/launch-glyph.svg)](https://www.{DomainName}/docs/containers/container_security.html#container_cli_ips_byoip){: new_window}.
 
-**Note:** After you use the private network peering with a Bluemix space, if you need to delete the space, first delete the private network peering connections in that space.
+**Note:** After you use the private network peering with a {{site.data.keyword.Bluemix_notm}} space, if you need to delete the space, first delete the private network peering connections in that space.
 
-To get started, install the IBM Bluemix CLI. See
+To get started, install the {{site.data.keyword.Bluemix_notm}} CLI. See
 [Bluemix CLI](http://clis.ng.bluemix.net/ui/home.html) for details.
 
 ## Install the private network peering CLI plug-in
@@ -33,7 +33,7 @@ To get started, install the IBM Bluemix CLI. See
 bluemix plugin uninstall private-network-peering
 ```
 ### Install locally
-Download the private network peering plug-in for your platform from [IBM Bluemix CLI plug-in repository](http://plugins.ng.bluemix.net/ui/repository.html#bluemix-plugins).
+Download the private network peering plug-in for your platform from [{{site.data.keyword.Bluemix_notm}} CLI plug-in repository ![External link icon](../../../icons/launch-glyph.svg)](http://plugins.ng.bluemix.net/ui/repository.html#bluemix-plugins){: new_window}.
 
 Install the private network peering plug-in by using the following command:
 
@@ -63,11 +63,11 @@ bluemix plugin install private-network-peering-linux-amd64
 chmod a+x ./private-network-peering-linux-amd64
 ```
 
-### Install from Bluemix repository
+### Install from {{site.data.keyword.Bluemix_notm}} repository
 
-Follow these steps to install the plug-in from the Bluemix repository:
+Follow these steps to install the plug-in from the {{site.data.keyword.Bluemix_notm}} repository:
 
-1. Add the Bluemix plug-in registry endpoint:
+1. Add the {{site.data.keyword.Bluemix_notm}} plug-in registry endpoint:
 	```
 	bluemix plugin repo-add bluemix-bx http://plugins.ng.bluemix.net
 	```

@@ -19,9 +19,10 @@ lastupdated: "2017-01-12"
 # (Deprecated) Development mode CLI
 {: #devmodecli}
 
-**This CLI has been deprecated:** Instead of using the Development mode (dev_mode) CLI, use IBM Eclipse Tools for Bluemix or DevOps Web IDE. You can continue to use the dev_mode CLI until 30 June 2016.
 
-With Bluemix development mode command line interface (dev_mode CLI), you can update your apps while your apps are running in the cloud. dev_mode CLI is built as a cf CLI plug-in and supports both Liberty and IBM Node.js apps.
+**This CLI has been deprecated:** Instead of using the Development mode (dev_mode) CLI, use IBM Eclipse Tools for {{site.data.keyword.Bluemix_notm}}  or DevOps Web IDE. You can continue to use the dev_mode CLI until 30 June 2016.
+
+With {{site.data.keyword.Bluemix_notm}} development mode command line interface (dev_mode CLI), you can update your apps while your apps are running in the cloud. dev_mode CLI is built as a cf CLI plug-in and supports both Liberty and IBM Node.js apps.
 {: shortdesc}
 
 
@@ -36,14 +37,14 @@ You can do the following tasks with the dev_mode CLI:
 
 Use one of the following methods to install the dev_mode command line tool:
 - Install locally.
-  1. Download the dev_mode plug-in for your platform from [IBM Bluemix CLI Plugin Repository](http://plugins.ng.bluemix.net).
+  1. Download the dev_mode plug-in for your platform from [{{site.data.keyword.Bluemix_notm}}  CLI Plugin Repository ![External link icon](../../../icons/launch-glyph.svg)](http://plugins.ng.bluemix.net){: new_window}.
   2. Go to the folder that the dev_mode plug-in is saved, and install the dev_mode plug-in by using the cf install-plugin command. For example:
 
         ```
         cf install-plugin dev_mode-linux64
         ```
 
-- Install from the Bluemix CLI repository.
+- Install from the {{site.data.keyword.Bluemix_notm}}  CLI repository.
   1. Add the bluemix-repo repository into the Cloud Foundry CLI repositories by using the following command:
 
         ```
@@ -62,7 +63,7 @@ Use one of the following methods to install the dev_mode command line tool:
         cf install-plugin dev_mode -r bluemix-repo
         ```
 
-## Viewing dev_mode commands
+## Viewing dev_mo {{site.data.keyword.Bluemix_notm}}  
 
 To display all dev_mode CLI commands, use the following command:
 

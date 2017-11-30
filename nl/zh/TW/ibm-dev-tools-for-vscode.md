@@ -69,6 +69,7 @@ IBM Developers Tools 延伸規格的最簡單安裝方式是使用 Visual Studio
 * 使用 `bx dev build` 指令，將應用程式建置至 Docker 映像檔
 * 使用 `bx dev debug` 指令，在本端 Docker 中執行應用程式以進行開發
 > 附註：若要對本端 Docker 容器內執行的 Node.js 應用程式進行除錯，您需要[新增本端容器的除錯配置](https://github.com/IBM-Bluemix/ibm-developer-extension-vscode#debugging-nodejs-apps-within-the-local-docker-container)。
+
 * 使用 `bx dev run` 指令，以發行模式在本端 Docker 中執行應用程式
 * 使用 `bx dev deploy` 指令，以在 Bluemix 上將應用程式部署至 Cloud Foundry 運行環境*（我們即將推出 IBM Container Support）*。
 

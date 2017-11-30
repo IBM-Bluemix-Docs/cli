@@ -5,17 +5,9 @@
 Herramientas CLI y Dev
 
 	{: .navgroup id="learn"}
-	{: .topicgroup}
-	Descargas
-	    index.md
-	    icat.md
-	    
-	[Iniciación a la interfaz de línea de mandatos de CF](https://github.com/cloudfoundry/cli#getting-started)
-	reference/bluemix_cli/index.md
-	
-	{: .topicgroup}
-	Enlaces relacionados
-	    [bx tool](http://clis.ng.bluemix.net/ui/home.html)
+	index.md
+	reference/bluemix_cli/get_started.md
+	[Iniciación a la CLI CF](https://github.com/cloudfoundry/cli#getting-started)
 	{: .navgroup-end}
 	
 	{: .navgroup id="reference"}
@@ -23,8 +15,7 @@ Herramientas CLI y Dev
 	reference/bluemix_cli/all_versions.md
 	reference/softlayer/index.md
 	reference/cfcommands/index.md
-	reference/cloudcli/index.md
-	
+
 	{: .topicgroup}
 	Plugins de CLI de Bluemix CLI
 	        plugins/auto-scaling/index.md
@@ -46,15 +37,18 @@ Herramientas CLI y Dev
 	{: .topicgroup}
 	Herramientas de desarrollo integrado
 		ibm-dev-tools-for-vscode.md
-		[Kit de herramientas del desarrollador de API Connect](../services/apiconnect/apic_tutorial.html?pos=2#creating_api)
+		[Kit de herramientas del desarrollador de API Connect](../services/apiconnect/creating_apis.html?pos=2#install_dev_tk)
 		[Bluemix Live Sync](../develop/bluemixlive.html)
 		[Despliegue de apps con IBM Eclipse Tools for Bluemix](../manageapps/eclipsetools/eclipsetools.html)
 		[Gestión de apps de Liberty y Node.js](../manageapps/app_mng.html#app_management)
 	{: .navgroup-end}
 	
 	{: .navgroup id="howto"}
+	reference/bluemix_cli/download_cli.md
 	login_federated_id.md
-	[Desarrollo con Eclipse Tools](../starters/deploy_eclipsetools.html)
+	reference/bluemix_cli/extend_cli.md
+	[Desarrollo con cadenas de herramientas](../services/ContinuousDelivery/dev_use_toolchains.html)
+	[Desarrollo con herramientas de Eclipse](../starters/deploy_eclipsetools.html)
 	[Despliegue de la app con CLI](../starters/install_cli.html)
 	[Carga de una app](../starters/upload_app.html)
 	{: .navgroup-end}

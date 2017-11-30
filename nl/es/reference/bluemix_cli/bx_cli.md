@@ -5,7 +5,7 @@
 copyright:
 
   years: 2015, 2017
-lastupdated: "2017-06-22"
+lastupdated: "2017-10-06"
 
 ---
 
@@ -16,9 +16,13 @@ lastupdated: "2017-06-22"
 # Mandatos {{site.data.keyword.Bluemix_notm}} (bx)
 {: #bluemix_cli}
 
-Versión: 0.5.5
+Versión: 0.6.1
 
-La interfaz de línea de mandatos (CLI) de {{site.data.keyword.Bluemix_notm}} proporciona un conjunto de mandatos que se agrupan por espacio de nombres para que los usuarios interactúen con {{site.data.keyword.Bluemix_notm}}. Algunos mandatos {{site.data.keyword.Bluemix_notm}} son envoltorios de mandatos cf, mientras que otros proporcionan posibilidades ampliadas para usuarios de {{site.data.keyword.Bluemix_notm}}. En la siguiente información se indican los mandatos admitidos por la CLI de {{site.data.keyword.Bluemix_notm}}, y se indica información sobre nombre, opciones, uso, requisitos previos, descripción y ejemplos.
+La interfaz de línea de mandatos (CLI) de {{site.data.keyword.Bluemix_notm}} proporciona un conjunto de mandatos que se agrupan por espacio de nombres para que los usuarios interactúen con {{site.data.keyword.Bluemix_notm}}. 
+
+A partir de la versión 0.5.0, el cliente de línea de mandatos de {{site.data.keyword.Bluemix_notm}} empaqueta un cliente de línea de mandatos de Cloud Foundry en su instalación. Si tiene su propio cf cli instalado, no utilice los mandatos CLI de {{site.data.keyword.Bluemix_notm}} `bx [mandato]` ni los mandatos Cloud Foundry CLI `cf [mandato]` de su propia instalación en el mismo contexto. En su lugar, utilice `bluemix cf [mandato]` si desea utilizar cf cli para gestionar los recursos de Cloud Foundry en el contexto de CLI de {{site.data.keyword.Bluemix_notm}}.  Es más, no se permite `bluemix cf api/login/logout/target`, en su lugar, utilice `bluemix api/login/logout/target`.
+
+A continuación se enumera el uso de los mandatos detallados que están soportados por la CLI de {{site.data.keyword.Bluemix_notm}}, incluidos sus nombres, argumentos, opciones, requisitos previos, descripciones y ejemplos.
 {:shortdesc}
 
 **Nota:** *Requisitos previos* lista las acciones que son necesarias antes de utilizar el mandato. Los mandatos que no tienen acciones de requisito previo listan **Ninguno**. De lo contrario, los requisitos previos pueden incluir una o varias de las acciones siguientes:
@@ -54,6 +58,7 @@ Utilice los índices de las tablas siguientes para consultar los mandatos de Blu
  <td>[bluemix api](bx_cli.html#bluemix_api)</td>
  <td>[bluemix config](bx_cli.html#bluemix_config)</td>
  <td>[bluemix info](bx_cli.html#bluemix_info)</td>
+ <td>[bluemix cf](bx_cli.html#bluemix_cf)</td>
  </tr>
  <tr>
  <td>[bluemix login](bx_cli.html#bluemix_login) </td>
@@ -71,71 +76,151 @@ Utilice los índices de las tablas siguientes para consultar los mandatos de Blu
 Los mandatos para gestionar {{site.data.keyword.BluSoftlayer_notm}}} se han fusionado en la CLI de Bluemix. Para obtener más información sobre la utilización de la CLI de Bluemix CLI configurar y gestionar servicios {{site.data.keyword.BluSoftlayer_notm}}, consulte: mandatos de bluemix de la [CLI de Bluemix {{site.data.keyword.BluSoftlayer_notm}} (bluemix sl)](/docs/cli/reference/softlayer/index.md#softlayer_cli).
  
  ## Mandatos para gestionar cuentas, organizaciones y roles
- {: #bx_commands_acctorg}
+ {: #bx_commands_account}
 
-<table summary="Mandatos de bluemix que sirven para gestionar cuentas, organizaciones, espacios, roles y claves de API.">
-<caption>Tabla 2. Mandatos para gestionar cuentas, organizaciones, espacios, roles y claves de API</caption>
+<table summary="Mandatos de Bluemix que puede utilizar para gestionar las cuentas, las organizaciones, los espacios y los roles.">
+<caption>Tabla 2. Mandatos para gestionar cuentas, organizaciones, espacios y roles</caption>
  <thead>
- <th colspan="5">Mandatos para gestionar cuentas, organizaciones, espacios, roles y claves de API</th>
+ <th colspan="5">Mandatos para gestionar cuentas, organizaciones, espacios y roles</th>
  </thead>
  <tbody>
  <tr>
- <td>[bluemix iam orgs](bx_cli.html#bluemix_iam_orgs)</td>
- <td>[bluemix iam org](bx_cli.html#bluemix_iam_org)</td>
- <td>[bluemix iam org-create](bx_cli.html#bluemix_iam_org_create)</td>
- <td>[bluemix iam org-replicate](bx_cli.html#bluemix_iam_org_replicate)</td>
- <td>[bluemix iam org-rename](bx_cli.html#bluemix_iam_org_rename)</td>
+ <td>[bluemix account orgs](bx_cli.html#bluemix_account_orgs)</td>
+ <td>[bluemix account org](bx_cli.html#bluemix_account_org)</td>
+ <td>[bluemix account org-create](bx_cli.html#bluemix_account_org_create)</td>
+ <td>[bluemix account org-replicate](bx_cli.html#bluemix_account_org_replicate)</td>
+ <td>[bluemix account org-rename](bx_cli.html#bluemix_account_org_rename)</td>
  </tr>
  <tr>
- <td>[bluemix iam org-delete](bx_cli.html#bluemix_iam_org_delete)</td>
- <td>[bluemix iam spaces](bx_cli.html#bluemix_iam_spaces)</td>
- <td>[bluemix iam space](bx_cli.html#bluemix_iam_space)</td>
- <td>[bluemix iam space-create](bx_cli.html#bluemix_iam_space_create)</td>
- <td>[bluemix iam space-rename](bx_cli.html#bluemix_iam_space_rename)</td>
+ <td>[bluemix account spaces](bx_cli.html#bluemix_account_spaces)</td>
+ <td>[bluemix account space](bx_cli.html#bluemix_account_space)</td>
+ <td>[bluemix account space-create](bx_cli.html#bluemix_account_space_create)</td>
+ <td>[bluemix account space-rename](bx_cli.html#bluemix_account_space_rename)</td>
+ <td>[bluemix account space-delete](bx_cli.html#bluemix_account_space_delete)</td>
  </tr>
  <tr>
- <td>[bluemix iam space-delete](bx_cli.html#bluemix_iam_space_delete)</td>
- <td>[bluemix iam org-users](bx_cli.html#bluemix_iam_org_users)</td>
- <td>[bluemix iam org-user-add](bx_cli.html#bluemix_iam_org_user_add)</td>
- <td>[bluemix iam org-user-remove](bx_cli.html#bluemix_iam_org_user_remove)</td>
- <td>[bluemix iam org-roles](bx_cli.html#bluemix_iam_org_roles)</td>
+ <td>[bluemix account org-users](bx_cli.html#bluemix_account_org_users)</td>
+ <td>[bluemix account org-user-add](bx_cli.html#bluemix_account_org_user_add)</td>
+ <td>[bluemix account org-user-remove](bx_cli.html#bluemix_account_org_user_remove)</td>
+ <td>[bluemix account org-roles](bx_cli.html#bluemix_account_org_roles)</td>
+ <td>[bluemix account org-role-set](bx_cli.html#bluemix_account_org_role_set)</td>
  </tr>
  <tr>
- <td>[bluemix iam org-role-set](bx_cli.html#bluemix_iam_org_role_set)</td>
- <td>[bluemix iam org-role-unset](bx_cli.html#bluemix_iam_org_role_unset)</td>
- <td>[bluemix iam space-users](bx_cli.html#bluemix_iam_space_users)</td>
- <td>[bluemix iam space-roles](bx_cli.html#bluemix_iam_space_roles)</td>
- <td>[bluemix iam space-role-set](bx_cli.html#bluemix_iam_space_role_set)</td>
+ <td>[bluemix account org-role-unset](bx_cli.html#bluemix_account_org_role_unset)</td>
+ <td>[bluemix account space-users](bx_cli.html#bluemix_account_space_users)</td>
+ <td>[bluemix account space-roles](bx_cli.html#bluemix_account_space_roles)</td>
+ <td>[bluemix account space-role-set](bx_cli.html#bluemix_account_space_role_set)</td>
+ <td>[bluemix account space-role-unset](bx_cli.html#bluemix_account_space_role_unset)</td>
 </tr>
- <tr>
- <td>[bluemix iam space-role-unset](bx_cli.html#bluemix_iam_space_role_unset)</td>
- <td>[bluemix iam accounts](bx_cli.html#bluemix_iam_accounts)</td>
- <td>[bluemix iam org-account](bx_cli.html#bluemix_iam_org_account)</td>
- <td>[bluemix iam account-users](bx_cli.html#bluemix_iam_account_users)</td>
- <td>[bluemix iam account-users-delete](bx_cli.html#bluemix_iam_account_users_delete)</td>
+ <td>[bluemix account list](bx_cli.html#bluemix_account_list)</td>
+ <td>[bluemix account org-account](bx_cli.html#bluemix_account_org_account)</td>
+ <td>[bluemix account users](bx_cli.html#bluemix_account_users)</td>
+ <td>[bluemix account users-delete](bx_cli.html#bluemix_account_users_delete)</td>
+ <td>[bluemix account user-invite](bx_cli.html#bluemix_account_user_invite)</td>
  </tr>
  <tr>
-  <td>[bluemix iam account-user-invite](bx_cli.html#bluemix_iam_account_user_invite)</td>
-  <td>[bluemix iam account-user-reinvite](bx_cli.html#bluemix_iam_account_user_reinvite)</td>
-  <td>[bluemix iam api-keys](bx_cli.html#bluemix_iam_api_keys)</td>
-  <td>[bluemix iam api-key-create](bx_cli.html#bluemix_iam_api_key_create)</td>
-  <td>[bluemix iam api-key-delete](bx_cli.html#bluemix_iam_api_key_delete)</td>
- </tr>
- <tr>
-  <td>[bluemix iam api-key-update](bx_cli.html#bluemix_iam_api_key_update)</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td>[bluemix account user-reinvite](bx_cli.html#bluemix_account_user_reinvite)</td>
  </tr>
  </tbody>
  </table>
+
+
+ ## Mandatos para gestionar grupos de recursos y recursos
+{: #bx_commands_resource}
+
+<table summary="Mandato de Bluemix que puede utilizar para gestionar grupos de recursos y recursos.">
+  <caption>Tabla 3. Mandatos para gestionar grupos de recursos y recursos</caption>
+  <thead>
+    <th colspan="5">Mandatos para gestionar grupos de recursos y recursos</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[bluemix resource groups](bx_cli.html#bluemix_resource_groups)</td>
+      <td>[bluemix resource group](bx_cli.html#bluemix_resource_group)</td>
+      <td>[bluemix resource group-update](bx_cli.html#bluemix_resource_group_update)</td>
+      <td>[bluemix resource quotas](bx_cli.html#bluemix_resource_quotas)</td>
+      <td>[bluemix resource quota](bx_cli.html#bluemix_resource_quota)</td>
+    </tr>
+    <tr>
+      <td>[bluemix resource instances](bx_cli.html#bluemix_resource_instances)</td>
+      <td>[bluemix resource instance](bx_cli.html#bluemix_resource_instance)</td>
+      <td>[bluemix resource instance-create](bx_cli.html#bluemix_resource_instance-create)</td>
+      <td>[bluemix resource instance-update](bx_cli.html#bluemix_resource_instance-update)</td>
+      <td>[bluemix resource instance-delete](bx_cli.html#bluemix_resource_instance-delete)</td>
+    </tr>
+    <tr>
+      <td>[bluemix resource bindings](bx_cli.html#bluemix_resource_bindings)</td>
+      <td>[bluemix resource binding](bx_cli.html#bluemix_resource_binding)</td>
+      <td>[bluemix resource binding-create](bx_cli.html#bluemix_resource_binding-create)</td>
+      <td>[bluemix resource binding-delete](bx_cli.html#bluemix_resource_binding-delete)</td>
+    </tr>
+    <tr>
+      <td>[bluemix resource keys](bx_cli.html#bluemix_resource_keys)</td>
+      <td>[bluemix resource key](bx_cli.html#bluemix_resource_key)</td>
+      <td>[bluemix resource key-create](bx_cli.html#bluemix_resource_key-create)</td>
+      <td>[bluemix resource key-delete](bx_cli.html#bluemix_resource_key-delete)</td>
+    </tr>
+    <tr>
+      <td>[bluemix resource aliases](bx_cli.html#bluemix_resource_aliases)</td>
+      <td>[bluemix resource alias](bx_cli.html#bluemix_resource_alias)</td>
+      <td>[bluemix resource alias-create](bx_cli.html#bluemix_resource_alias-create)</td>
+      <td>[bluemix resource alias-update](bx_cli.html#bluemix_resource_alias-update)</td>
+      <td>[bluemix resource alias-delete](bx_cli.html#bluemix_resource_alias-delete)</td>
+    </tr>
+  </tbody>
+</table>
+
+ 
+ ## Mandatos para gestionar claves de API y políticas
+ {: #bx_commands_iam}
+ <table summary="Mandatos de Bluemix que puede utilizar para gestionar claves de API y políticas.">
+ <caption>Tabla 3. Mandatos para gestionar claves de API y políticas</caption>
+  <thead>
+  <th colspan="5">Mandatos para gestionar claves de API y políticas</th>
+  </thead>
+  <tbody>
+  <tr>
+   <td>[bluemix iam service-id](bx_cli.html#bluemix_iam_service_id)</td>
+   <td>[bluemix iam service-id-create](bx_cli.html#bluemix_iam_service_id_create)</td>
+   <td>[bluemix iam service-id-update](bx_cli.html#bluemix_iam_service_id_update)</td>
+   <td>[bluemix iam service-id-delete](bx_cli.html#bluemix_iam_service_id_delete)</td>
+   <td>[bluemix iam service-ids](bx_cli.html#bluemix_iam_service_ids)</td>
+  </tr>
+  <tr>
+   <td>[bluemix iam api-keys](bx_cli.html#bluemix_iam_api_keys)</td>
+   <td>[bluemix iam api-key-create](bx_cli.html#bluemix_iam_api_key_create)</td>
+   <td>[bluemix iam api-key-delete](bx_cli.html#bluemix_iam_api_key_delete)</td>
+   <td>[bluemix iam api-key-update](bx_cli.html#bluemix_iam_api_key_update)</td>
+   <td>[bluemix iam service-api-keys](bx_cli.html#bluemix_iam_service_api_keys)</td>
+  </tr>
+  <tr>
+   <td>[bluemix iam service-api-key](bx_cli.html#bluemix_iam_service_api_key)</td>
+   <td>[bluemix iam service-api-key-create](bx_cli.html#bluemix_iam_service_api_key_create)</td>
+   <td>[bluemix iam service-api-key-update](bx_cli.html#bluemix_iam_service_api_key_update)</td>
+   <td>[bluemix iam service-api-key-delete](bx_cli.html#bluemix_iam_service_api_key_delete)</td>
+   <td>[bluemix iam service-policies](bx_cli.html#bluemix_iam_service_policies)</td>
+  </tr>
+  <tr>
+    <td>[bluemix iam service-policy](bx_cli.html#bluemix_iam_service_policy)</td>
+    <td>[bluemix iam service-policy-create](bx_cli.html#bluemix_iam_service_policy_create)</td>
+    <td>[bluemix iam service-policy-update](bx_cli.html#bluemix_iam_service_policy_update)</td>
+    <td>[bluemix iam service-policy-delete](bx_cli.html#bluemix_iam_service_policy_delete)</td>
+    <td>[bluemix iam user-policies](bx_cli.html#bluemix_iam_user_policies)</td>
+  </tr>
+  <tr>
+   <td>[bluemix iam user-policy](bx_cli.html#bluemix_iam_user_policy)</td>
+   <td>[bluemix iam user-policy-create](bx_cli.html#bluemix_iam_user_policy_create)</td>
+   <td>[bluemix iam user-policy-update](bx_cli.html#bluemix_iam_user_policy_update)</td>
+   <td>[bluemix iam user-policy-delete](bx_cli.html#bluemix_iam_user_policy_delete)</td>
+  </tr>
+  </tbody>
+  </table>
  
  ## Mandatos para gestionar apps cf y dominios, rutas y certificados relacionados con las apps
  {: #bx_commands_apps}
 
 <table summary="mandatos de bluemix que sirven para gestionar apps cf y dominios, rutas y certificados relacionados con las apps.">
-<caption>Tabla 3. Mandatos para gestionar apps cf y dominios, rutas y certificados relacionados con las apps</caption>
+<caption>Tabla 4. Mandatos para gestionar apps cf y dominios, rutas y certificados relacionados con las apps</caption>
  <thead>
  <th colspan="5">Mandatos para gestionar apps cf y dominios, rutas y certificados relacionados con las apps</th>
  </thead>
@@ -196,7 +281,7 @@ Los mandatos para gestionar {{site.data.keyword.BluSoftlayer_notm}}} se han fusi
  {: #bx_commands_services}
 
 <table summary="Mandatos bluemix que se pueden utilizar para gestionar servicios Bluemix.">
-<caption>Tabla 4. Mandatos para gestionar servicios Bluemix</caption>
+<caption>Tabla 5. Mandatos para gestionar servicios Bluemix</caption>
  <thead>
  <th colspan="5">Mandatos para gestionar servicios Bluemix</th>
  </thead>
@@ -224,36 +309,48 @@ Los mandatos para gestionar {{site.data.keyword.BluSoftlayer_notm}}} se han fusi
  </tr>
   </tbody>
  </table>
+
  
  ## Mandatos para gestionar los valores de catálogo, plug-ins y facturación
  {: #bx_commands_settings}
 
 <table summary="Mandatos bluemix que puede utilizar para gestionar los valores de catálogo, plug-ins, facturación y seguridad de Bluemix.">
-<caption>Tabla 5. Mandatos para gestionar los valores de catálogo, plug-ins, facturación y seguridad de Bluemix</caption>
+<caption>Tabla 6. Mandatos para gestionar los valores de catálogo, plug-ins, facturación y seguridad de Bluemix</caption>
  <thead>
  <th colspan="5">Mandatos para gestionar los valores de catálogo, plug-ins, facturación y seguridad de Bluemix</th>
  </thead>
  <tbody>
  <tr>
- <td>[bluemix catalog templates](bx_cli.html#bluemix_catalog_templates)</td>
- <td>[bluemix catalog template](bx_cli.html#bluemix_catalog_template)</td>
- <td>[bluemix catalog template-run](bx_cli.html#bluemix_catalog_template_run)</td>
- <td>[bluemix plugin repos](bx_cli.html#bluemix_plugin_repos)</td>
- <td>[bluemix plugin repo-add](bx_cli.html#bluemix_plugin_repo_add)</td>
+  <td>[bluemix catalog search](bx_cli.html#bluemix_catalog_search)</td>
+  <td>[bluemix catalog entry](bx_cli.html#bluemix_catalog_entry)</td>
+  <td>[bluemix catalog entry-create](bx_cli.html#bluemix_catalog_entry-create)</td>
+  <td>[bluemix catalog entry-update](bx_cli.html#bluemix_catalog_entry-update)</td>
+  <td>[bluemix catalog entry-visibility](bx_cli.html#bluemix_catalog_entry-visibility)</td>
  </tr>
  <tr>
- <td>[bluemix plugin repo-remove](bx_cli.html#bluemix_plugin_repo_remove)</td>
- <td>[bluemix plugin repo-plugins](bx_cli.html#bluemix_plugin_repo_plugins)</td>
- <td>[bluemix plugin list](bx_cli.html#bluemix_plugin_list)</td>
- <td>[bluemix plugin install](bx_cli.html#bluemix_plugin_install)</td>
- <td>[bluemix plugin uninstall](bx_cli.html#bluemix_plugin_uninstall)</td>
+  <td>[bluemix catalog service-marketplace](bx_cli.html#bluemix_catalog_service-marketplace)</td>
+  <td>[bluemix catalog entry-visibility-set](bx_cli.html#bluemix_catalog_entry-visibility-set)</td>
+  <td>[bluemix catalog templates](bx_cli.html#bluemix_catalog_templates)</td>
+  <td>[bluemix catalog template](bx_cli.html#bluemix_catalog_template)</td>
+  <td>[bluemix catalog template-run](bx_cli.html#bluemix_catalog_template_run)</td>
  </tr>
  <tr>
- <td>[bluemix plugin update](bx_cli.html#bluemix_plugin_update)</td>
- <td>[bluemix billing account-usage](bx_cli.html#bluemix_billing_account_usage)</td>
- <td>[bluemix billing org-usage](bx_cli.html#bluemix_billing_org_usage)</td>
- <td>[bluemix billing orgs-usage-summary](bx_cli.html#bluemix_billing_orgs_usage_summary)</td>
- <td></td>
+  <td>[bluemix plugin repos](bx_cli.html#bluemix_plugin_repos)</td>
+  <td>[bluemix plugin repo-add](bx_cli.html#bluemix_plugin_repo_add)</td>
+  <td>[bluemix plugin repo-remove](bx_cli.html#bluemix_plugin_repo_remove)</td>
+  <td>[bluemix plugin repo-plugins](bx_cli.html#bluemix_plugin_repo_plugins)</td>
+  <td>[bluemix plugin repo-plugin](bx_cli.html#bluemix_plugin_repo_plugin)</td>
+ </tr>
+ <tr>
+  <td>[bluemix plugin list](bx_cli.html#bluemix_plugin_list)</td>
+  <td>[bluemix plugin install](bx_cli.html#bluemix_plugin_install)</td>
+  <td>[bluemix plugin uninstall](bx_cli.html#bluemix_plugin_uninstall)</td>
+  <td>[bluemix plugin update](bx_cli.html#bluemix_plugin_update)</td>
+  <td>[bluemix billing account-usage](bx_cli.html#bluemix_billing_account_usage)</td>
+ </tr>
+ <tr>
+  <td>[bluemix billing org-usage](bx_cli.html#bluemix_billing_org_usage)</td>
+  <td>[bluemix billing orgs-usage-summary](bx_cli.html#bluemix_billing_orgs_usage_summary)</td>
  </tr>
  </tbody>
  </table>
@@ -352,11 +449,11 @@ bluemix config --http-timeout TIEMPO_ESPERA_EN_SEGUNDOS | --trace (true|false|v�
    <dl>
    <dt>--http-timeout <i>TIEMPO_ESPERA_EN_SEGUNDOS</i></dt>
    <dd>Valor de tiempo de espera para solicitudes HTTP. El valor predeterminado es de 60 segundos.</dd>
-   <dt>--trace true|false|<i>path-to-file</i></dt>
+   <dt>--trace true|false|<i>path-to-file</i></dt>
    <dd>Rastrear solicitudes HTTP al terminal o archivo especificado.</dd>
    <dt>--color true|false</dt>
    <dd>Habilitar o inhabilitar la salida de color. La salida de color está habilitada de forma predeterminada.</dd>
-   <dt>--locale <i>LOCALE|CLEAR</i></dt>
+   <dt>--locale <i>LOCALE|CLEAR</i></dt>
    <dd>Establecer un entorno local predeterminado. Si LOCALE es <i>CLEAR</i>, el entorno local anterior se elimina.</dd>
    <dt>--check-version true|false</dt>
    <dd>Habilitar o inhabilitar la comprobación de la versión de la CLI.</dd>
@@ -414,6 +511,39 @@ bluemix info
 ```
 
 <strong>Requisitos previos</strong>:  Punto final
+
+
+## bluemix cf
+{: #bluemix_cf}
+
+Invocar CLI CF incluido
+
+```
+bluemix [-q, --quiet] cf COMMAND...
+```
+
+<strong>Requisitos previos</strong>:  Ninguno
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-q, --quiet</dt>
+  <dd>Desactivar el mensaje "Invocando el mandato cf..."</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Listar apps cf:
+
+```
+bluemix cf apps
+```
+
+Listar servicios cf sin el mensaje "Invocando el mandato cf...":
+
+```
+bluemix -q cf services
+```
+
 
 ## bluemix login
 {: #bluemix_login}
@@ -537,17 +667,19 @@ bluemix regions
 Establece o visualiza la cuenta, región, organización o espacio de destino.
 
 ```
-bluemix target [-c ACCOUNT_ID] [-r REGION] [-o ORG_NAME] [-s SPACE_NAME]
+bluemix target [-r REGION_NAME] [-c ACCOUNT_ID] [--cf] [-o ORG] [-s SPACE]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
 
 <strong>Opciones de mandato</strong>:
    <dl>
+   <dt>-r <i>REGION_NAME</i> (opcional)</dt>
+   <dd>Nombre de la región a la que se conmutará, como por ejemplo 'us-south' o 'eu-gb'.</dd>
    <dt>-c <i>ACCOUNT_ID</i> (opcional)</dt>
    <dd>ID de la cuenta de destino.</dd>
-   <dt>-r <i>REGION</i> (opcional)</dt>
-   <dd>Región a la que conmutar.</dd>
+   <dt>--cf</dt>
+   <dd>Seleccionar interactivamente la organización y el espacio de destino</dd>
    <dt>-o <i>ORG_NAME</i> (opcional)</dt>
    <dd>Nombre de la organización de destino.</dd>
    <dt>-s <i>SPACE_NAME</i> (opcional)</dt>
@@ -586,13 +718,13 @@ bluemix update
 
 <strong>Requisitos previos</strong>:  Ninguno
 
-### bluemix iam orgs
-{: #bluemix_iam_orgs}
+### bluemix account orgs
+{: #bluemix_account_orgs}
 
 Listar todas las organizaciones
 
 ```
-bluemix iam orgs [-r REGION] [--guid]
+bluemix account orgs [-r REGION] [--guid]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -607,19 +739,19 @@ bluemix iam orgs [-r REGION] [--guid]
 
 <strong>Ejemplos</strong>:
 
-Muestra una lista de todas las organizaciones de la región: `us-south` con el GUID.
+Listar todas las organizaciones de la región: `us-south` con GUID visualizado
 
 ```
-bluemix iam orgs -r us-south --guid
+bluemix account orgs -r us-south --guid
 ```
 
-## bluemix iam org
-{: #bluemix_iam_org}
+## bluemix account org
+{: #bluemix_account_org}
 
 Mostrar la información para la organización especificada.
 
 ```
-bluemix iam org ORG_NAME [--guid]
+bluemix account org ORG_NAME [--guid]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -634,20 +766,20 @@ bluemix iam org ORG_NAME [--guid]
 
 <strong>Ejemplos</strong>:
 
-Muestra la información de la organización `IBM` con el GUID visualizado
+Mostrar la información de la organización `IBM` con GUID visualizado
 
 ```
-bluemix iam org IBM --guid
+bluemix account org IBM --guid
 ```
 
 
-## bluemix iam org-create
-{: #bluemix_iam_org_create}
+## bluemix account org-create
+{: #bluemix_account_org_create}
 
-Crear una nueva organización. Esta operación solamente puede realizarla el propietario de cuenta.
+Crear una nueva organización. Esta operación solamente la puede realizar el propietario de cuenta.
 
 ```
-bluemix iam org-create ORG_NAME
+bluemix account org-create ORG_NAME
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -663,16 +795,16 @@ bluemix iam org-create ORG_NAME
 Cree una organización denominada `IBM`.
 
 ```
-bluemix iam org-create IBM
+bluemix account org-create IBM
 ```
 
-## bluemix iam org-replicate
-{: #bluemix_iam_org_replicate}
+## bluemix account org-replicate
+{: #bluemix_account_org_replicate}
 
 Replicar una organización desde la región actual a otra región.
 
 ```
-bluemix iam org-replicate ORG_NAME REGION_NAME
+bluemix account org-replicate ORG_NAME REGION_NAME
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -690,17 +822,17 @@ bluemix iam org-replicate ORG_NAME REGION_NAME
 Replicar la organización `myorg` en la región `eu-gb`:
 
 ```
-bluemix iam org-replicate myorg eu-gb
+bluemix account org-replicate myorg eu-gb
 ```
 
 
-## bluemix iam org-rename
-{: #bluemix_iam_org_rename}
+## bluemix account org-rename
+{: #bluemix_account_org_rename}
 
-Cambiar el nombre de una organización. Esta operación solamente la puede llevar a cabo un gestor de organización.
+Cambiar el nombre de una organización. Esta operación solamente la puede llevar a cabo un gestor de la organización.
 
 ```
-bluemix iam org-rename OLD_ORG_NAME NEW_ORG_NAME
+bluemix account org-rename OLD_ORG_NAME NEW_ORG_NAME
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -713,66 +845,45 @@ bluemix iam org-rename OLD_ORG_NAME NEW_ORG_NAME
    <dd>Nombre de la nueva organización.</dd>
    </dl>
 
-## bluemix iam org-delete
-{: #bluemix_iam_org_delete}
 
-Suprimir la organización especificada en la región actual.
-
-```
-bluemix iam org-delete ORG_NAME [-f --all]
-```
-
-<strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
-
-<strong>Opciones de mandato</strong>:
-   <dl>
-   <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización existente que se debe eliminar.</dd>
-   <dt>-f (opcional)</dt>
-   <dd>Forzar la eliminación sin confirmación.</dd>
-   <dt>--all (opcional)</dt>
-   <dd>Eliminar la organización de todas las regiones.</dd>
-   </dl>
-
-
-## bluemix iam spaces
-{: #bluemix_iam_spaces}
+## bluemix account spaces
+{: #bluemix_account_spaces}
 
 Este mandato tiene la misma función y las mismas opciones que el mandato `cf spaces`.
 
 
-## bluemix iam space
-{: #bluemix_iam_space}
+## bluemix account space
+{: #bluemix_account_space}
 
 Este mandato tiene la misma función y las mismas opciones que el mandato `cf space`.
 
 
-## bluemix iam space-create
-{: #bluemix_iam_space_create}
+## bluemix account space-create
+{: #bluemix_account_space_create}
 
 Este mandato tiene la misma función y las mismas opciones que el mandato que el mandato `cf create-space`.
 
 
-## bluemix iam space-rename
-{: #bluemix_iam_space_rename}
+## bluemix account space-rename
+{: #bluemix_account_space_rename}
 
 
 Este mandato tiene la misma función y las mismas opciones que el mandato que el mandato `cf rename-space`.
 
 
-## bluemix iam space-delete
-{: #bluemix_iam_space_delete}
+## bluemix account space-delete
+{: #bluemix_account_space_delete}
 
 
 Este mandato tiene la misma función y las mismas opciones que el mandato `cf delete-space`.
 
-## bluemix iam org-users
-{: #bluemix_iam_org_users}
+## bluemix account org-users
+{: #bluemix_account_org_users}
 
 Visualice usuarios en el archivo de organización según el rol.
 
 ```
-bluemix iam org-users ORG_NAME [-a]
+bluemix account org-users ORG_NAME [-a]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -785,22 +896,22 @@ bluemix iam org-users ORG_NAME [-a]
 <dd>Lista todos los usuarios de la organización especificada, no agrupada por rol.</dd>
 </dl>
 
-## bluemix iam org-user-add
-{: #bluemix_iam_org_user_add}
+## bluemix account org-user-add
+{: #bluemix_account_org_user_add}
 
 Añadir un usuario a la organización (es necesario ser gestor de organización).
 
 ```
- bluemix iam org-user-add USER_NAME ORG
+ bluemix account org-user-add USER_NAME ORG
 ```
 
-## bluemix iam org-user-remove
-{: #bluemix_iam_org_user_remove}
+## bluemix account org-user-remove
+{: #bluemix_account_org_user_remove}
 
 Eliminar un usuario de la organización (gestor de organización o usuario mismo solamente)
 
 ```
-   bluemix iam org-user-remove USER_NAME ORG [-f, --force]
+   bluemix account org-user-remove USER_NAME ORG [-f, --force]
 ```
 
 <strong>Opciones de mandato</strong>:
@@ -809,24 +920,24 @@ Eliminar un usuario de la organización (gestor de organización o usuario mismo
 <dd>Forzar la eliminación sin confirmación.</dd>
 </dl>
 
-## bluemix iam org-roles
-{: #bluemix_iam_org_roles}
+## bluemix account org-roles
+{: #bluemix_account_org_roles}
 
 Obtiene todos los roles de la organización del usuario actual
 
 ```
-bluemix iam org-roles
+bluemix account org-roles
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
 
-## bluemix iam org-role-set
-{: #bluemix_iam_org_role_set}
+## bluemix account org-role-set
+{: #bluemix_account_org_role_set}
 
-Asignar un rol de organización a un usuario. Esta operación solamente la puede llevar a cabo un gestor de organización.
+Asignar un rol de organización a un usuario. Esta operación solamente la puede llevar a cabo un gestor de la organización.
 
 ```
-bluemix iam org-role-set USER_NAME ORG_NAME ORG_ROLE
+bluemix account org-role-set USER_NAME ORG_NAME ORG_ROLE
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -836,7 +947,7 @@ bluemix iam org-role-set USER_NAME ORG_NAME ORG_ROLE
    <dt>USER_NAME (necesario)</dt>
    <dd>Nombre del usuario al que se asigna.</dd>
    <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización en la que se asigna al usuario.</dd>
+   <dd>Nombre de la organización a la que se asigna a este usuario.</dd>
    <dt>ORG_ROLE (necesario)</dt>
    <dd>Nombre del rol de la organización al que se asigna a este usuario. Por ejemplo:
    <ul>
@@ -849,22 +960,22 @@ bluemix iam org-role-set USER_NAME ORG_NAME ORG_ROLE
 
 <strong>Ejemplos</strong>:
 
-Asigne el usuario `Mary` a la organización `IBM` como rol `OrgManager`:
+Asigne el usuario `Mary` a la organización `IBM` como el rol de `OrgManager`:
 
 ```
-bluemix iam org-role-set Mary IBM OrgManager
+bluemix account org-role-set Mary IBM OrgManager
 ```
+<!-- Begin Staging URL vs Prod URL -->
+**Nota**: Establezca roles de espacios/organizaciones utilizando la interfaz de línea de mandatos, sin embargo, si desea establecer otros permisos, utilice la interfaz de usuario. Para obtener más información, consulte [Asignación de acceso de usuarios](https://console.stage1.bluemix.net/docs/iam/assignaccess.html#assignaccess).
+<!-- Begin Staging URL vs Prod URL -->
 
-**Nota**: Establezca roles de espacios/organizaciones utilizando la interfaz de línea de mandatos, sin embargo, si desea establecer otros permisos, utilice la interfaz de usuario. Para obtener más información, consulte [Asignación de acceso de usuarios](https://console.ng.bluemix.net/docs/iam/assignaccess.html#assignaccess).
+## bluemix account org-role-unset
+{: #bluemix_account_org_role_unset}
 
-
-## bluemix iam org-role-unset
-{: #bluemix_iam_org_role_unset}
-
-Elimine un rol de organización de un usuario. Esta operación solamente la puede llevar a cabo un gestor de organización.
+Elimine un rol de organización de un usuario. Esta operación solamente la puede llevar a cabo un gestor de la organización.
 
 ```
-bluemix iam org-role-unset USER_NAME ORG_NAME ORG_ROLE
+bluemix account org-role-unset USER_NAME ORG_NAME ORG_ROLE
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -874,9 +985,9 @@ bluemix iam org-role-unset USER_NAME ORG_NAME ORG_ROLE
    <dt>USER_NAME (necesario)</dt>
    <dd>Nombre del usuario al que se elimina.</dd>
    <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización de la que se elimina al usuario.</dd>
+   <dd>Nombre de la organización de la que se elimina a este usuario.</dd>
    <dt>ORG_ROLE (necesario)</dt>
-   <dd>Nombre del rol de la organización de la que se elimina al usuario. Por ejemplo:
+   <dd>Nombre del rol de la organización de la que se elimina a este usuario. Por ejemplo:
    <ul>
    <li>OrgManager: este rol puede invitar y gestionar usuarios, seleccionar y cambiar planes y establecer límites de gasto.</li>
    <li>BillingManager: este rol puede crear y gestionar la cuenta de facturación y la información de pago.</li>
@@ -887,19 +998,19 @@ bluemix iam org-role-unset USER_NAME ORG_NAME ORG_ROLE
 
 <strong>Ejemplos</strong>:
 
-Elimine el usuario `Mary` de la organización `IBM` como rol `OrgManager`:
+Elimine el usuario `Mary` de la organización `IBM` como el rol de `OrgManager`:
 
 ```
-bluemix iam org-role-unset Mary IBM OrgManager
+bluemix account org-role-unset Mary IBM OrgManager
 ```
 
-## bluemix iam space-users
-{: #bluemix_iam_space_users}
+## bluemix account space-users
+{: #bluemix_account_space_users}
 
 Visualice usuarios en el espacio especificado según el rol.
 
 ```
-bluemix iam space-users ORG_NAME SPACE_NAME
+bluemix account space-users ORG_NAME SPACE_NAME
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -913,13 +1024,13 @@ bluemix iam space-users ORG_NAME SPACE_NAME
    </dl>
 
 
-## bluemix iam space-role-set
-{: #bluemix_iam_space_role_set}
+## bluemix account space-role-set
+{: #bluemix_account_space_role_set}
 
 Asignar un rol de espacio a un usuario. Esta operación solamente la puede llevar a cabo un gestor de espacios.
 
 ```
-bluemix iam space-role-set USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
+bluemix account space-role-set USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -930,11 +1041,11 @@ bluemix iam space-role-set USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
    <dt>USER_NAME (necesario)</dt>
    <dd>Nombre del usuario al que se asigna.</dd>
    <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización en la que se asigna al usuario.</dd>
+   <dd>Nombre de la organización a la que se asigna a este usuario.</dd>
    <dt>SPACE_NAME (necesario)</dt>
-   <dd>Nombre del espacio en el que se asigna al usuario.</dd>
+   <dd>Nombre del espacio al que se asigna a este usuario.</dd>
    <dt>SPACE_ROLE (necesario)</dt>
-   <dd>Nombre del rol del espacio al que se asigna a este usuario. Por ejemplo:
+   <dd>Nombre del rol de espacio al que se asigna a este usuario. Por ejemplo:
    <ul>
    <li>SpaceManager: este rol puede invitar y gestionar usuarios, y habilitar características para un espacio dado.</li>
    <li>SpaceDeveloper: este rol puede crear y gestionar apps y servicios, y ver registros e informes.</li>
@@ -944,19 +1055,19 @@ bluemix iam space-role-set USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
 
 <strong>Ejemplos</strong>:
 
-Asigne el usuario `Mary` a la organización `IBM` y el espacio `Cloud` como rol `SpaceManager`:
+Asigne el usuario `Mary` a la organización `IBM` y al espacio `Cloud` como rol `SpaceManager`:
 
 ```
-bluemix iam space-role-set Mary IBM Cloud SpaceManager
+bluemix account space-role-set Mary IBM Cloud SpaceManager
 ```
 
-## bluemix iam space-role-unset
-{: #bluemix_iam_space_role_unset}
+## bluemix account space-role-unset
+{: #bluemix_account_space_role_unset}
 
 Elimine un rol de espacio de un usuario. Esta operación solamente la puede llevar a cabo un gestor de espacios.
 
 ```
-bluemix iam space-role-unset USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
+bluemix account space-role-unset USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -967,11 +1078,11 @@ bluemix iam space-role-unset USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
    <dt>USER_NAME (necesario)</dt>
    <dd>Nombre del usuario al que se elimina.</dd>
    <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización de la que se elimina al usuario.</dd>
+   <dd>Nombre de la organización de la que se elimina a este usuario.</dd>
    <dt>SPACE_NAME (necesario)</dt>
-   <dd>Nombre del espacio del que se elimina al usuario.</dd>
+   <dd>Nombre del espacio del que se elimina a este usuario.</dd>
    <dt>SPACE_ROLE (necesario)</dt>
-   <dd>Nombre del rol del espacio del que se elimina al usuario. Por ejemplo:
+   <dd>Nombre del rol del espacio del que se elimina a este usuario. Por ejemplo:
    <ul>
    <li>SpaceManager: este rol puede invitar y gestionar usuarios, y habilitar características para un espacio dado.</li>
    <li>SpaceDeveloper: este rol puede crear y gestionar apps y servicios, y ver registros e informes.</li>
@@ -982,31 +1093,31 @@ bluemix iam space-role-unset USER_NAME ORG_NAME SPACE_NAME SPACE_ROLE
 
 <strong>Ejemplos</strong>:
 
-Elimine el usuario `Mary` de la organización `IBM` y el espacio `Cloud` como rol `SpaceManager`:
+Elimine el usuario `Mary` de la organización `IBM` y del espacio `Cloud` como rol `SpaceManager`:
 
 ```
-bluemix iam space-role-unset Mary IBM Cloud SpaceManager
+bluemix account space-role-unset Mary IBM Cloud SpaceManager
 ```
 
-## bluemix iam accounts
-{: #bluemix_iam_accounts}
+## bluemix account list
+{: #bluemix_account_list}
 
 Lista todas las cuentas del usuario actual
 
 ```
-bluemix iam accounts
+bluemix account list
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
 
 
-## bluemix iam org-account
-{: #bluemix_iam_org_account}
+## bluemix account org-account
+{: #bluemix_account_org_account}
 
 Visualiza la cuenta de la organización especificada (se necesita un usuario de la organización)
 
 ```
-bluemix iam org-account ORG_NAME [--guid]
+bluemix account org-account ORG_NAME [--guid]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -1018,22 +1129,22 @@ bluemix iam org-account ORG_NAME [--guid]
 </dl>
 
 
-## bluemix iam account-users
-{: #bluemix_iam_account_users}
+## bluemix account users
+{: #bluemix_account_users}
 
-Muestra usuarios asociados con la cuenta. Esta operación solamente puede llevarla a cabo el propietario de cuenta.
+Muestra usuarios asociados con la cuenta. Esta operación solamente puede realizarla el propietario de cuenta.
 
 ```
-bluemix iam account-users
+bluemix account users
 ```
 
-## bluemix iam account-user-delete
-{: #bluemix_iam_account_user_delete}
+## bluemix account user-delete
+{: #bluemix_account_user_delete}
 
 Suprime un usuario de la cuenta actual (sólo el propietario de la cuenta)
 
 ```
-bluemix iam account-user-delete USERNAME [-c ACCOUNT_ID] [-f]
+bluemix account user-delete USERNAME [-c ACCOUNT_ID] [-f]
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -1048,13 +1159,13 @@ bluemix iam account-user-delete USERNAME [-c ACCOUNT_ID] [-f]
 <dd>Forzar la eliminación sin confirmación.</dd>
 </dl>
 
-## bluemix iam account-user-invite
-{: #bluemix_iam_account_user_invite}
+## bluemix account user-invite
+{: #bluemix_account_user_invite}
 
-Invita a un usuario a la cuenta con una organización y un rol de espacio ya establecido. Esta operación solamente puede llevarla a cabo el propietario de cuenta.
+Invita a un usuario a la cuenta con una organización y un rol de espacio ya establecido. Esta operación solamente puede realizarla el propietario de cuenta.
 
 ```
-bluemix iam account-user-invite USER_NAME ORG_NAME ORG_ROLE SPACE_NAME SPACE_ROLE
+bluemix account user-invite USER_NAME ORG_NAME ORG_ROLE SPACE_NAME SPACE_ROLE
 ```
 
 <strong>Requisitos previos</strong>:  Punto final, Inicio de sesión
@@ -1064,7 +1175,7 @@ bluemix iam account-user-invite USER_NAME ORG_NAME ORG_ROLE SPACE_NAME SPACE_ROL
    <dt>USER_NAME (necesario)</dt>
    <dd>Nombre del usuario al que se invita.</dd>
    <dt>ORG_NAME (necesario)</dt>
-   <dd>Nombre de la organización en la que se invita al usuario.</dd>
+   <dd>Nombre de la organización a la que se invita a este usuario.</dd>
    <dt>ORG_ROLE (necesario)</dt>
    <dd>Nombre del rol de la organización al que se invita a este usuario. Por ejemplo:
    <ul>
@@ -1073,9 +1184,9 @@ bluemix iam account-user-invite USER_NAME ORG_NAME ORG_ROLE SPACE_NAME SPACE_ROL
   <li>OrgAuditor: este rol tiene acceso de sólo lectura a informes e información de organización.</li>
   </ul> </dd>
    <dt>SPACE_NAME (necesario)</dt>
-   <dd>Nombre del espacio en el que se invita al usuario.</dd>
+   <dd>Nombre del espacio al que se invita a este usuario.</dd>
    <dt>SPACE_ROLE (necesario)</dt>
-   <dd>Nombre del espacio en el que se invita al usuario. Nombre del rol del espacio al que se invita a este usuario. Por ejemplo:
+   <dd>Nombre del espacio al que se invita a este usuario. Nombre del rol del espacio al que se invita a este usuario. Por ejemplo:
    <ul>
 <li>SpaceManager: este rol puede invitar y gestionar usuarios, y habilitar características para un espacio dado.</li>
 <li>SpaceDeveloper: este rol puede crear y gestionar apps y servicios, y ver registros e informes.</li>
@@ -1089,22 +1200,174 @@ bluemix iam account-user-invite USER_NAME ORG_NAME ORG_ROLE SPACE_NAME SPACE_ROL
 Invite al usuario `Mary` a la organización `IBM` como rol `OrgManager` y el espacio `Cloud` como rol `SpaceAuditor`:
 
 ```
-bluemix iam account-user-invite Mary IBM OrgManager Cloud SpaceAuditor
+bluemix account user-invite Mary IBM OrgManager Cloud SpaceAuditor
+```
+<!-- Begin Staging URL vs Prod URL -->
+**Nota**: Establezca roles de espacios/organizaciones durante la invitación utilizando la interfaz de línea de mandatos, sin embargo, si desea establecer otros permisos, utilice la interfaz de usuario. Para obtener más información, consulte [Asignación de acceso de usuarios](https://console.stage1.bluemix.net/docs/iam/assignaccess.html#assignaccess).
+<!-- End Staging URL vs Prod URL -->
+
+## bluemix account user-reinvite
+{: #bluemix_account_user_reinvite}
+
+Reenviar invitación a un usuario (es necesario ser gestor de organización o propietario de cuenta)
+
+```
+bluemix account user-reinvite USER_EMAIL ORG_NAME
 ```
 
-**Nota**: Establezca roles de espacios/organizaciones durante la invitación utilizando la interfaz de línea de mandatos, sin embargo, si desea establecer otros permisos, utilice la interfaz de usuario. Para obtener más información, consulte [Asignación de acceso de usuarios](https://console.ng.bluemix.net/docs/iam/assignaccess.html#assignaccess).
 
-## bluemix iam account-user-reinvite
-{: #bluemix_iam_account_user_reinvite}
 
-Reenviar la invitación a un usuario (es necesario ser gestor de organización o propietario de cuenta)
+## bluemix iam service-ids
+{: #bluemix_iam_service_ids}
+
+Lista todos los ID de servicio
 
 ```
- bluemix iam account-user-reinvite USER_EMAIL ORG_NAME
+bluemix iam service-ids --uuid
 ```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-uuid</dt>
+  <dd>Mostrar UUID solo de los ID de servicio</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Lista de UUID de todos los ID de servicio bajo la cuenta actual
+
+```
+bluemix iam service-ids --uuid
+```
+
+
+## bluemix iam service-id
+{: #bluemix_iam_service_id}
+
+Mostrar detalles de un ID de servicio
+
+```
+bluemix iam service-id NAME [--uuid]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del servicio</dd>
+  <dt>-uuid</dt>
+  <dd>Mostrar el UUID del ID de servicio</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Mostrar detalles de ID de servicio `sample-test`
+
+```
+bluemix iam service-id sample-test
+```
+
+
+## bluemix iam service-id-create
+{: #bluemix_iam_service_id_create}
+
+Crear un ID de servicio
+
+```
+bluemix iam service-id-create NAME [-d, --description DESCRIPTION]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del servicio</dd>
+  <dt>-d, --description</dt>
+  <dd>Descripción del ID de servicio</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Crear un ID de servicio con nombre de servicio `sample-test` y descripción `hello, world!`
+
+```
+bluemix iam service-id-create sample-test -d 'hello, world!'
+```
+
+
+## bluemix iam service-id-update
+
+{: #bluemix_iam_service_id_update}
+Actualizar un ID de servicio
+
+```
+bluemix iam service-id-update NAME [-n, --name NEW_NAME] [-d, --description DESCRIPTION] [-v, --version VERSION] [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del servicio</dd>
+  <dt>-n, --name</dt>
+  <dd>Nuevo nombre de servicio</dd>
+  <dt>-d, --description</dt>
+  <dd>Nueva descripción del servicio</dd>
+  <dt>-v, --version</dt>
+  <dd>Versión del ID de servicio</dd>
+  <dt>-f, --force</dt>
+  <dd>Actualizar sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Renombrar el ID de servicio `sample-test` a `sample-test-2` sin confirmación
+
+```
+bluemix iam service-id-update sample-test -n sample-test-2 -f
+```
+
+Actualizar descripción de servicio `sample-test` versión `1-0jn39fbefew`
+
+```
+bluemix iam service-id-update sample-test -d 'hello, friend!' -v 1-0jn39fbefew
+```
+
+
+## bluemix iam service-id-delete
+{: #bluemix_iam_service_id_delete}
+
+Suprimir un ID de servicio
+
+```
+bluemix iam service-id-delete NAME [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del servicio</dd>
+  <dt>-f, --force</dt>
+  <dd>Suprimir sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Suprimir ID de servicio `sample-teset` sin confirmación
+
+```
+bluemix iam service-id-delete sample-teset -f
+```
+
 
 ## bluemix iam api-keys
-{: #bluemix_iam api_keys}
+{: #bluemix_iam_api_keys}
 
 Lista todas las claves de API de la plataforma Bluemix
 
@@ -1132,7 +1395,7 @@ bluemix iam api-key-create NAME [-d DESCRIPTION] [-f, --file FILE]
 <dt>-d <i>DESCRIPTION</i> (opcional)</dt>
 <dd>Descripción de la clave de API</dd>
 <dt>-f, -- file <i>FILE</i></dt>
-<dd>Guarda la información de la clave de API en el archivo especificado. Si no se establece, se visualiza el contenido JSON.</dd>
+<dd>Guarda la información de la clave de API en un archivo especificado. Si no se establece, se visualiza el contenido JSON.</dd>
 </dl>
 
 <strong>Ejemplos</strong>:
@@ -1161,7 +1424,7 @@ bluemix iam api-key-update NAME [-n NAME] [-d DESCRIPTION]
 <dt>-n <i>NAME</i> (opcional)</dt>
 <dd>Nuevo nombre de la clave de API</dd>
 <dt>-d <i>DESCRIPTION</i> (opcional)</dt>
-<dd>Nueva descripción de la clave de la API</dd>
+<dd>Nueva descripción de la clave de API</dd>
 </dl>
 
 <strong>Ejemplos</strong>:
@@ -1190,6 +1453,681 @@ bluemix iam api-key-delete NAME [-f]
 <dt>-f  (opcional)</dt>
 <dd>Forzar la eliminación sin confirmación.</dd>
 </dl>
+
+## bluemix iam service-api-keys
+{: #bluemix_iam_service_api_keys}
+
+Lista todas las claves de API de servicio
+
+```
+bluemix iam service-api-keys BOUND_TO 
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de claves de API de servicio vinculadas al CRN de servicio `crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da`:
+
+```
+bluemix iam service-api-keys "crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da"
+```
+
+## bluemix iam service-api-key
+{: #bluemix_iam_service_api_key}
+
+Listar detalles de una clave de API de servicio
+
+```
+bluemix iam service-api-key NAME BOUND_TO [--uuid]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-uuid</dt>
+  <dd>Visualice el UUID de la clave de API de servicio</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Mostrar detalles de la clave de API de servicio `sample-key` vinculada al CRN de servicio `crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da`:
+
+```
+bluemix iam service-api-key sample-key "crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da"
+```
+
+## bluemix iam service-api-key-create
+{: #bluemix_iam_service_api_key_create}
+
+Crear una clave de API de servicio
+
+```
+bluemix iam service-api-key-create NAME BOUND_TO [-d, --description DESCRIPTION] [-f, --file FILE]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-d, --description</dt>
+  <dd>Descripción de la clave de API</dd>
+  <dt>-f, --file</dt>
+  <dd>Guarda la información de la clave de API en un archivo especificado. Si no se establece, se visualiza el contenido JSON.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Crear una clave de API de servicio `sample-key` vinculada al CRN de servicio `crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da`:
+
+```
+bluemix iam service-api-key-create sample-key "crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da"
+```
+
+## bluemix iam service-api-key-update
+{: #bluemix_iam_service_api_key_update}
+
+Actualizar una clave de API de servicio
+
+```
+bluemix iam service-api-key-update NAME BOUND_TO  [-n, --name NEW_sNAME] [-d, --description DESCRIPTION] [-v, --version VERSION] [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-n, --name</dt>
+  <dd>Nuevo nombre de la clave de API de servicio</dd>
+  <dt>-d, --description</dt>
+  <dd>Nueva descripción de la clave de API de servicio</dd>
+  <dt>-v, --version</dt>
+  <dd>Versión de la clave de API de servicio</dd>
+  <dt>-f, --force</dt>
+  <dd>Actualizar sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Renombrar la clave de API de servicio `sample-key` a `new-sample-key`:
+
+```
+bluemix iam service-api-key-update sample-key "crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da" -n new-sample-key
+```
+
+## bluemix iam service-api-key-delete
+{: #bluemix_iam_service_api_key_delete}
+
+Suprimir una clave de API de servicio
+
+```
+bluemix iam service-api-key-delete NAME BOUND_TO [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-f, --force</dt>
+  <dd>Suprimir sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Suprimir clave de API de servicio `sample-key`:
+
+```
+bluemix iam service-api-key-delete sample-key "crn:v1:bluemix:public:iam:us-south:o/0ab7e8fe-0f04-4af8-b7d5-30af12125de6::serviceid:ServiceId-ec238b6a-8e18-45da-9a0f-d41c35ce04da"
+```
+
+## bluemix iam user-policies
+{: #bluemix_iam_user_policies}
+
+Lista de políticas de usuario `name@example.com`:
+
+```
+bluemix iam user-policies name@example.com
+```
+
+<strong>Requisitos previos</strong>: Punto final, inicio de sesión, cuenta de destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+<dt>USER_NAME (necesario)</dt>
+<dd>Nombre de usuario al que pertenecen las políticas</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de políticas de usuario `name@example.com`:
+
+```
+bluemix iam user-policies name@example.com
+```
+
+## bluemix iam user-policy
+{: #bluemix_iam_user_policy}
+
+Mostrar detalles de una política de usuario
+
+```
+bluemix iam user-policy USER_NAME POLICY_ID
+```
+
+<strong>Requisitos previos</strong>: Punto final, inicio de sesión, cuenta de destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+<dt>USER_NAME (necesario)</dt>
+<dd>Nombre de usuario al que pertenece la política</dd>
+<dt>POLICY_ID (necesario)</dt>
+<dd>ID de la política</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de política `0bb730daa` de usuario `name@example.com`:
+
+```
+bluemix iam user-policy name@example.com 0bb730daa
+```
+
+## bluemix iam user-policy-create
+{: #bluemix_iam_user_policy_create}
+
+Crear una política de usuario
+
+```
+bluemix iam user-policy-create USER_NAME {-f, --file JSON_FILE | --roles ROLE_NAME1,ROLE_NAME2... [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE] [--resource-group-name RESOURCE_GROUP_NAME] [--resouce-group-id RESOURCE_GROUP_ID]}
+```
+
+<strong>Requisitos previos</strong>: Punto final, inicio de sesión, cuenta de destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+<dt>USER_NAME (necesario)</dt>
+<dd>Nombre de usuario al que pertenece la política</dd>
+<dt>-f, --file <i>FILE</i> (opcional)</dt>
+<dd>Archivo JSON de definición de política</dd>
+<dt>--roles <i>ROLE_NAME1,ROLE_NAME2...</i> (opcional)</dt>
+<dt>--service-name <i>SERVICE_NAME</i> (opcional)</dt>
+<dd>Nombre de servicio de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--serivce-instance <i>SERVICE_INSTANCE</i> (opcional)</dt>
+<dd>Instancia de servicio de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--region <i>REGION</i> (opcional)</dt>
+<dd>Región de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource-type <i>RESOURCE_TYPE</i> (opcional)</dt>
+<dd>Tipo de recurso de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource <i>RESOURCE</i> (opcional)</dt>
+<dd>Recurso de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource-group-name <i>RESOURCE_GROUP_NAME</i> (opcional)</dt>
+<dd>Nombre del grupo de recursos. Es exclusivo con los distintivos '-f, --file', '--resource' y '--resource-group-id'.</dd>
+<dt>--resource-group-id <i>RESOURCE_GROUP_ID</i> (opcional)</dt>
+<dd>ID del grupo de recursos. Es exclusivo con los distintivos '-f, --file', '--resource' y '--resource-group-name'.</dd>
+  <dd>Nombres de rol de la definición de política. Para los roles soportados de un servicio específico, ejecute 'bluemix iam roles --service SERVICE_NAME'. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Crear política de usuario para el usuario `name@example.com` desde el archivo JSON de política `policy.json`:
+
+```
+bluemix iam user-policy-create name@example.com -f @policy.json
+```
+
+Proporcione a `name@example.com` el rol de `Administrador` para todos los recursos de `sample-service`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Administrator --service-name sample-service
+```
+
+Proporcione a `name@example.com` el rol de `Editor` para el recurso `key123` de la instancia de servicio de ejemplo `ServiceId-ade78e9f` en la región `us-south`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Editor --service-name sample-service --service-instance ServiceId-ade78e9f --region us-south --resource-type key --resource key123
+```
+
+Proporcione a `name@example.com` el rol de `Operador` para el grupo de recursos con el ID `dda27e49d2a1efca58083a01dfde18f6`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Operator --service-name resource-controller --resource-type resource-group --resource dda27e49d2a1efca58083a01dfde18f6
+```
+
+Proporcione a `name@example.com` el rol de `Visor` para los miembros del grupo de recursos `sample-resource-group`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Viewer --resource-group-name sample-resource-group
+```
+
+Proporcione a `name@example.com` el rol de `Visor` para los miembros del grupo de recursos con el ID `dda27e49d2a1efca58083a01dfde18f6`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Viewer --resource-group-id dda27e49d2a1efca58083a01dfde18f6
+```
+
+## bluemix iam user-policy-update
+{: #bluemix_iam_user_policy_update}
+
+Actualizar una política de usuario
+
+```
+bluemix iam user-policy-update USER_NAME POLICY_ID [-v, --version VERSION] {-f, --file JSON_FILE | [--roles ROLE_NAME1,ROLE_NAME2...] [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE] [--resource-group-name RESOURCE_GROUP_NAME] [--resource-group-id RESOURCE_GROUP_ID]}
+```
+
+<strong>Requisitos previos</strong>: Punto final, inicio de sesión, cuenta de destino
+
+<strong>Opciones de mandato</strong>:
+<dt>USER_NAME (necesario)</dt>
+<dd>Nombre de usuario al que pertenece la política</dd>
+<dt>POLICY_ID (necesario)</dt>
+<dd>ID de la política a actualizar</dd>
+<dt>-v, --version <i>VERSION</i> (opcional)</dt>
+<dd>Versión de la política existente</dd>
+<dt>-f, --file <i>FILE</i> (opcional)</dt>
+<dd>Archivo JSON de definición de política</dd>
+<dt>-f, --file <i>FILE</i> (opcional)</dt>
+<dd>Archivo JSON de definición de política</dd>
+<dt>--roles <i>ROLE_NAME1,ROLE_NAME2...</i> (opcional)</dt>
+<dt>--service-name <i>SERVICE_NAME</i> (opcional)</dt>
+<dd>Nombre de servicio de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--serivce-instance <i>SERVICE_INSTANCE</i> (opcional)</dt>
+<dd>Instancia de servicio de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--region <i>REGION</i> (opcional)</dt>
+<dd>Región de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource-type <i>RESOURCE_TYPE</i> (opcional)</dt>
+<dd>Tipo de recurso de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource <i>RESOURCE</i> (opcional)</dt>
+<dd>Recurso de la definición de política. Es exclusivo con el distintivo '-f, --file'.</dd>
+<dt>--resource-group-name <i>RESOURCE_GROUP_NAME</i> (opcional)</dt>
+<dd>Nombre del grupo de recursos. Es exclusivo con los distintivos '-f, --file', '--resource' y '--resource-group-id'.</dd>
+<dt>--resource-group-id <i>RESOURCE_GROUP_ID</i> (opcional)</dt>
+<dd>ID del grupo de recursos. Es exclusivo con los distintivos '-f, --file', '--resource' y '--resource-group-name'.</dd>
+  <dd>Nombres de rol de la definición de política. Para los roles soportados de un servicio específico, ejecute 'bluemix iam roles --service SERVICE_NAME'. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Actualizar la política de usuario con la del archivo JSON：
+
+```
+bluemix iam user-policy-update name@example.com 0bb730daa -f @policy.json
+```
+
+Actualizar la política de usuario para dar a `name@example.com` el rol de `Administrador` para todos los recursos de `sample-service`：
+
+```
+bluemix iam user-policy-update name@example.com user-policy-id --roles Administrator --service-name sample-service
+```
+
+ Actualizar la política de usuario para dar a `name@example.com` el rol de `Editor` para el recurso `key123` de la instancia de servicio de ejemplo `ServiceId-ade78e9f` en la región `us-south`:
+
+```
+bluemix iam user-policy-create name@example.com --roles Editor --service-name sample-service --service-instance ServiceId-ade78e9f --region us-south --resource-type key --resource key123
+```
+
+Actualizar la política de usuario para dar a `name@example.com` el rol de `Operador` para el grupo de recursos con el ID `dda27e49d2a1efca58083a01dfde18f6`:
+
+```
+bluemix iam user-policy-update name@example.com user-policy-id --roles Operator --service-name resource-controller --resource-type resource-group --resource dda27e49d2a1efca58083a01dfde18f6
+```
+
+Actualizar la política de usuario para dar a `name@example.com` el rol de `Visor` para los miembros del grupo de recursos `sample-resource-group`:
+
+```
+bluemix iam user-policy-update name@example.com user-policy-id --roles Viewer --resource-group-name sample-resource-group
+```
+
+Actualizar la política de usuario para dar a `name@example.com` el rol de `Visor` para los miembros del grupo de recursos con el ID `dda27e49d2a1efca58083a01dfde18f6`:
+
+```
+bluemix iam user-policy-update name@example.com user-policy-id --roles Viewer --resource-group-id dda27e49d2a1efca58083a01dfde18f6
+```
+
+
+
+## bluemix iam service-policies
+{: #bluemix_iam_service_policies}
+
+Listar todas las políticas de servicio del servicio especificado
+
+```
+bluemix iam service-policies SERVICE_ID_NAME [--json] [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>SERVICE_ID_NAME (necesario)</dt>
+  <dd>Nombre del ID de servicio</dd>
+  <dt>-json</dt>
+  <dd>Mostrar política en formato JSON</dd>
+  <dt>-f, --force</dt>
+  <dd>Mostrar las políticas de servicios sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de políticas de servicio `test`:
+
+```
+bluemix iam service-policies test
+```
+
+
+## bluemix iam service-policy
+{: #bluemix_iam_service_policy}
+
+Mostrar detalles de una política de servicio
+
+```
+bluemix iam service-policy SERVICE_ID_NAME POLICY_ID [--json] [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>SERVICE_ID_NAME (necesario)</dt>
+  <dd>Nombre del ID de servicio</dd>
+  <dt>POLICY_ID (necesario)</dt>
+  <dd>ID de la política de servicio<dd>
+  <dt>-json</dt>
+  <dd>Mostrar política en formato JSON</dd>
+  <dt>-f, --force</dt>
+  <dd>Mostrar la política de servicios sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Mostrar la política `140798e2-8ea7db3` de servicio `test`:
+
+```
+bluemix iam service-policies test 140798e2-8ea7db3
+```
+
+
+## bluemix iam service-policy-create
+{: #bluemix_iam_service_policy_create}
+
+Crear una política de servicio
+
+```
+bluemix iam service-policy-create SERVICE_ID_NAME {-f, --file JSON_FILE | -r, --roles ROLE_NAME1,ROLE_NAME2... [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE]} [-F, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>SERVICE_ID_NAME (necesario)</dt>
+  <dd>Nombre del ID de servicio</dd>
+  <dt>-f, --file</dt>
+  <dd>Archivo JSON de definición de política. Con los distintivos '-r, --roles', '--service-name', '--service-instance', '--region', '--resource-type' y '--resource' son excluyentes.</dd>
+  <dt>-r, --roles</dt>
+  <dd>Nombres de rol de la definición de política. Para los roles soportados de un servicio específico, ejecute 'bluemix iam roles --service SERVICE_NAME'. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-service-name</dt>
+  <dd>Nombre de servicio de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-service-instance</dt>
+  <dd>Instancia de servicio de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-region</dt>
+  <dd>Región de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-resource-type</dt>
+  <dd>Tipo de recurso de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-resource</dt>
+  <dd>Recurso de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-F, --force</dt>
+  <dd>Crear la política de servicios sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Crear la política de servicio desde el archivo JSON para el servicio `test`:
+
+```
+bluemix iam service-policy-create test -f @policy.json
+```
+
+
+## bluemix iam service-policy-update
+{: #bluemix_iam_service_policy_update}
+
+Actualizar una política de servicio
+
+```
+bluemix iam service-policy-update SERVICE_ID_NAME POLICY_ID [-v, --version VERSION] {-f, --file JSON_FILE | [-r, --roles ROLE_NAME1,ROLE_NAME2...] [--service-name SERVICE_NAME] [--service-instance SERVICE_INSTANCE] [--region REGION] [--resource-type RESOURCE_TYPE] [--resource RESOURCE]} [-F, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>SERVICE_ID_NAME (necesario)</dt>
+  <dd>Nombre del ID de servicio</dd>
+  <dt>POLICY_ID (necesario)</dt>
+  <dd>ID de la política de servicio<dd>
+  <dt>-v, --version</dt>
+  <dd>Versión de la política de servicio</dd>
+  <dt>-f, --file</dt>
+  <dd>Archivo JSON de definición de política. Con los distintivos '-r, --roles', '--service-name', '--service-instance', '--region', '--resource-type' y '--resource' son excluyentes.</dd>
+  <dt>-r, --roles</dt>
+  <dd>Nombres de rol de la definición de política. Para los roles soportados de un servicio específico, ejecute 'bluemix iam roles --service SERVICE_NAME'. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-service-name</dt>
+  <dd>Nombre de servicio de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-service-instance</dt>
+  <dd>Instancia de servicio de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-region</dt>
+  <dd>Región de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-resource-type</dt>
+  <dd>Tipo de recurso de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-resource</dt>
+  <dd>Recurso de la definición de política. Esta opción y el distintivo '-f, --file' son mutuamente excluyentes.</dd>
+  <dt>-F, --force</dt>
+  <dd>Actualizar la política de servicios sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Actualizar la política de servicio `140798e2-8ea7db3` desde el archivo JSON para el servicio `test`:
+
+```
+bluemix iam service-policy-update test 140798e2-8ea7db3 -f @policy.json
+```
+
+## bluemix iam service-policy-delete
+{: #bluemix_iam_service_policy_delete}
+
+Suprimir una política de servicio
+
+```
+bluemix iam service-policy-delete SERVICE_ID_NAME POLICY_ID [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>SERVICE_ID_NAME (necesario)</dt>
+  <dd>Nombre del ID de servicio</dd>
+  <dt>POLICY_ID (necesario)</dt>
+  <dd>ID de la política de servicio<dd>
+  <dt>-f, --force</dt>
+  <dd>Suprimir sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Suprimir la política `140798e2-8ea7db3` del servicio `test`
+
+```
+bluemix iam service-policy-delete test 140798e2-8ea7db3
+```
+
+
+## bluemix resource groups
+{: #bluemix_resource_groups}
+
+Listar grupos de recursos
+
+```
+bluemix resource groups [--default | (-r, --resource RESOURCE_ID -o, --resource-origin RESOURCE_ORIGIN)]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>--default</dt>
+  <dd>Obtener grupo predeterminado de la cuenta actual</dd>
+  <dt>-r, --resource</dt>
+  <dd>ID del recurso de pertenencia</dd>
+  <dt>-o, --resource-origin</dt>
+  <dd>Origen del recurso de pertenencia. Valores aceptados: 'CF_ORG', 'IMS_ACCOUNT'.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Listar todos los grupos de recursos de su cuenta de destino actualmente:
+
+```
+bluemix resource groups
+```
+
+Listar el grupo predeterminado de la cuenta de destino actualmente:
+
+```
+bluemix resource groups --default
+```
+
+Lista de grupos de recursos que son la correlación de una organización CloudFoundry
+
+```
+bluemix resource groups -r d0ef0e-12n3632z9f-ef3w54n -o CF_ORG
+```
+
+
+## bluemix resource group
+{: #bluemix_resource_group}
+
+Mostrar detalles de un grupo de recursos
+
+```
+bluemix resource group NAME [--id]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del grupo de recursos</dd>
+  <dt>--id</dt>
+  <dd>Mostrar solo ID</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Mostrar grupo de recursos `example-group`:
+
+```
+bluemix resource group example-group
+```
+
+Mostrar sólo el ID del grupo de recursos `example-group`:
+
+```
+bluemix resourxce group example-group --id
+```
+
+
+## bluemix resource group-update
+{: #bluemix_resource_group_update}
+
+Actualizar un grupo de recursos existente
+
+```
+bluemix resource group-update NAME [-n, --name NEW_NAME] [-q, --quota NEW_QUOTA_NAME]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre del grupo de recursos de destino</dd>
+  <dt>-n, --name</dt>
+  <dd>Nuevo nombre de grupo de recursos</dd>
+  <dt>-q, --quota</dt>
+  <dd>Nombre de la nueva definición de cuota</dd>
+  <dt>-f</dt>
+  <dd>Forzar actualización sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Cambie el nombre del grupo de recursos `example-group` a `trial-group`:
+
+```
+bluemix resource group-update example-group -n trial-group
+```
+
+Cambie la cuota del grupo de recursos `example-group` a `free`:
+
+```
+bluemix resource group-update example-group -q free
+```
+
+## bluemix resource quotas
+{: #bluemix_resource_quotas}
+
+Listar todas las definiciones de cuota
+
+```
+bluemix resource quotas
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Listar todas las definiciones de cuota:
+
+```
+bluemix resource quotas
+```
+
+## bluemix resource quota
+{: #bluemix_resource_quota}
+
+Mostrar detalles de una definición de cuota
+
+```
+bluemix resource quota NAME
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre de la cuota</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar detalles de cuota `free`:
+
+```
+bluemix resource quota free
+```
 
 
 ## bluemix app push
@@ -1643,6 +2581,743 @@ Este mandato tiene la misma función y las mismas opciones que el mandato `cf cr
 Este mandato tiene la misma función y opciones que el mandato `cf update-user-provided-service`.
 
 
+## bluemix resource instances
+{: #bluemix_resource_instances}
+
+Listar instancias de recursos
+
+```
+bluemix resource instances [--resource-name RESOURCE_NAME] [-r, --region REGION_ID] [--long]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>--resource-name</dt>
+  <dd>Nombre de recurso de pertenencia</dd>
+  <dt>-r, --region</dt>
+  <dd>Filtrar por ID de región, si no se especifica, el valor predeterminado es la región actual, '-r, --region all' para mostrar instancias de recurso de todas las regiones</dd>
+  <dt>--long</dt>
+  <dd>Mostrar campos adicionales en la salida</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de instancias de recursos del recurso `test-resource`:
+
+```
+bluemix resource instances --resource-name test-resource
+```
+
+## bluemix resource instance
+{: #bluemix_resource_instance}
+
+Mostrar detalles de una instancia de recursos
+
+```
+bluemix resource instance NAME [-r, --region REGION] [--id]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre de la instancia de recursos</dd>
+  <dt>-r, --region</dt>
+  <dd>Filtrar por ID de región, si no se especifica, el valor predeterminado es la región actual, '-r, --region all' para mostrar instancias de recurso de todas las regiones</dd>
+  <dt>--id</dt>
+  <dd>Mostrar ID de instancia de recurso</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar detalles de instancia de recursos `my-resource-instance`:
+
+```
+bluemix resource instance my-resource-instance
+```
+
+## bluemix resource instance-create
+{: #bluemix_resource_instance_create}
+
+Crear una instancia de recurso
+
+```
+bluemix resource instance-create NAME RESOURCE_NAME|RESOURCE_ID RESOURCE_PLAN_NAME|RESOURCE_PLAN_ID [-r, --region REGION] [-t, --tags TAGS] [-p, --parameters @JSON_FILE | JSON_STRING ]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NAME (necesario)</dt>
+  <dd>Nombre de la instancia de recursos</dd>
+  <dt>RESOURCE_NAME o RESOURCE_ID (necesario)</dt>
+  <dd>Nombre o ID del recurso</dd>
+  <dt>RESOURCE_PLAN_NAME o RESOURCE_PLAN_ID (necesario)</dt>
+  <dd>Nombre o ID del plan de recursos</dd>
+  <dt>-r, --region</dt>
+  <dd>Región para crear la instancia de recurso. Si no se especifica, el valor predeterminado es la región actual.</dd>
+  <dt>-t, --tags</dt>
+  <dd>Etiquetas</dd>
+  <dt>-p, --parameters</dt>
+  <dd>Archivo JSON o serie JSON de parámetros para crear instancia de recurso</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Crear una instancia de recursos denominada `my-resource-instance` utilizando el plan de recursos `test-resource-plan` del recurso `test-resource`:
+
+```
+bluemix resource instance-create my-resource-instance test-resource test-resource-plan
+```
+
+## bluemix resource instance-update
+{: #bluemix_resource_instance_update}
+
+Actualizar instancia de recursos
+
+```
+bluemix resource instance-update RESOURCE_INSTANCE_NAME [-n, --name NEW_NAME] [-t, --tags TAGS] [--resource-plan-id RESOURCE_PLAN_ID] [--update-time UPDATE_TIME] [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>RESOURCE_INSTANCE_NAME (necesario)</dt>
+  <dd>Nombre de la instancia de recursos</dd>
+  <dt>-n, --name</dt>
+  <dd>Nuevo nombre instancia de recursos</dd>
+  <dt>-t, --tags</dt>
+  <dd>Etiquetas nuevas</dd>
+  <dt>--resource-plan-id</dt>
+  <dd>Nuevo ID de plan de recursos</dd>
+  <dt>--update-time</dt>
+  <dd>Tiempo en segundos desde la época en que el registro facturable debería haber entrado en vigor</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar actualización sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Actualizar instancia de recursos `my-resource-instance`, cambiar su nombre a `new-resource-instance`:
+
+```
+bluemix resource instance-update my-resource-instance -n new-resource-instance
+```
+
+## bluemix resource instance-delete
+{: #bluemix_resource_instance_delete}
+
+Suprimir instancia de recurso
+
+```
+bluemix resource instance-delete NAME [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-f, --force</dt>
+  <dd>Forzar la supresión sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Suprimir instancia de recursos `my-resource-instance`:
+
+```
+bluemix resource instance-delete my-resource-instance
+```
+
+## bluemix resource bindings
+{: #bluemix_resource_bindings}
+
+Mostrar enlaces a alias de recurso
+
+```
+bluemix resource bindings RESOURCE_ALIAS
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>RESOURCE_ALIAS (necesario)</dt>
+  <dd>Nombre de alias de recursos</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar enlaces a recursos de alias de recursos `my-resource-alias`:
+
+```
+bluemix resource bindings my-resource-alias
+```
+## bluemix resource binding
+{: #bluemix_resource_binding}
+
+Mostrar detalles de un enlace de recurso
+
+```
+bluemix resource binding ALIAS_NAME APP_NAME [--id]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>ALIAS_NAME (necesario)</dt>
+  <dd>Nombre de alias de recursos</dd>
+  <dt>APP_NAME</dt>
+  <dd>Nombre de aplicación de CloudFoundry</dd>
+  <dt>--id</dt>
+  <dd>Solo se mostrará el ID. Se suprimirá el resto de la salida del enlace de recurso.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar detalles de enlaces a recursos entre el alias de recurso `my-resource-alias` y la app `my-app`:
+
+```
+bluemix resource bindings my-resource-alias my-app
+```
+
+## bluemix resource binding-create
+{: #bluemix_resource_binding_create}
+
+Crear un enlace de recurso
+
+```
+bluemix resource binding-create RESOURCE_ALIAS_NAME APP_NAME ROLE_NAME [--service-id-name SERVICE_ID_NAME [-f, --force]]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>RESOURCE_ALIAS_NAME (necesario)</dt>
+  <dd>Nombre de alias de recursos</dd>
+  <dt>APP_NAME</dt>
+  <dd>Nombre de aplicación de CloudFoundry</dd>
+  <dt>ROLE_NAME</dt>
+  <dd>Nombre del rol de usuario</dd>
+  <dt>--service-id-name</dt>
+  <dd>Nombre del ID de servicio al que pertenece el rol</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar la creación sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Crear enlaces a un recurso entre el alias de recurso `my-resource-alias` y la app `my-app` con el rol de `Administrador`:
+
+```
+bluemix resource binding-create my-resource-alias my-app Administrator
+```
+## bluemix resource binding-delete
+{: #bluemix_resource_binding_delete}
+
+Suprimir un enlace de recurso
+
+```
+bluemix resource binding-delete RESOURCE_ALIAS APP_NAME [-f, --force]
+```
+
+<strong>Requisitos previos</strong>: Ninguno
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>RESOURCE_ALIAS_NAME (necesario)</dt>
+  <dd>Nombre de alias de recursos</dd>
+  <dt>APP_NAME</dt>
+  <dd>Nombre de aplicación de CloudFoundry</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar la supresión sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Suprimir el enlace a recursos entre el alias de recurso `my-resource-alias` y la app `my-app`:
+
+```
+bluemix resource binding-delete my-resource-alias my-app
+```
+
+## bluemix resource keys
+{: #bluemix_resource_keys}
+
+Listar claves de recurso de instancia de recursos o alias de recurso
+
+```
+bluemix resource keys [ --instance-id ID | --instance-name NAME | --alias-id ID | --alias-name NAME ]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>--instance-id</dt>
+  <dd>ID de instancia de recursos</dd>
+  <dt>--instance-name</dt>
+  <dd>Nombre de instancia de recursos</dd>
+  <dt>--alias-id</dt>
+  <dd>ID de alias de recurso</dd>
+  <dt>--alias-name</dt>
+  <dd>Nombre de alias de recursos</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Lista de claves de recursos de instancia de recursos `my-resource-instance`:
+
+```
+bluemix resource keys --instance-name my-resource-instance
+```
+
+## bluemix resource key
+{: #bluemix_resource_key}
+
+Mostrar detalles de una clave de recurso
+
+```
+bluemix resource key KEY_NAME [--id]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>KEY_NAME</dt>
+  <dd>Nombre de la clave</dd>
+  <dt>--id</dt>
+  <dd>Mostrar ID de clave de recurso</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar detalles de claves de recursos `my-resource-key`:
+
+```
+bluemix resource key my-resource-key
+```
+
+## bluemix resource key-create
+{: #bluemix_resource_key_create}
+
+Crear una clave de recurso
+
+```
+bluemix resource key-create NAME ROLE_NAME ( --instance-id RESOURCE_INSTANCE_ID | --instance-name RESOURCE_INSTANCE_NAME | --alias-id RESOURCE_ALIAS_ID | --alias-name RESOURCE_ALIAS_NAME ) [--service-id-name SERVICE_ID_NAME [-f, --force]]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>NOMBRE</dt>
+  <dd>Nombre de la clave</dd>
+  <dt>ROLE_NAME</dt>
+  <dd>Nombre del rol de usuario</dd>
+  <dt>--instance-id</dt>
+  <dd>ID de instancia de recursos</dd>
+  <dt>--instance-name</dt>
+  <dd>Nombre de instancia de recursos</dd>
+  <dt>--alias-id</dt>
+  <dd>ID de alias de recurso</dd>
+  <dt>--alias-name</dt>
+  <dd>Nombre de alias de recursos</dd>
+  <dt>-service-id-name</dt>
+  <dd>Nombre del ID de servicio al que pertenece el rol</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar la creación sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Crear una clave de recurso denominada `my-resource-key` con el rol de `Administrador` para la instancia de recursos `my-resource-instance`:
+
+```
+bluemix resource key-create my-resource-key Administrator --instance-name my-resource-instance
+```
+
+## bluemix resource key-delete
+{: #bluemix_resource_key_delete}
+
+Suprimir una clave de recurso
+
+```
+bluemix resource key-delete KEY_NAME [-f, --forece]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>KEY_NAME</dt>
+  <dd>Nombre de la clave</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar la supresión sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Suprimir la clave de recurso `my-resource-key`:
+
+```
+bluemix resource key-delete my-resource-key
+```
+
+## bluemix resource aliases
+{: #bluemix_resource_aliases}
+
+Listar alias de una instancia de recursos
+
+```
+bluemix resource aliases [ --instance-id ID | --instance-name NAME ]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>--instance-id</dt>
+  <dd>ID de la instancia del recurso de pertenencia.</dd>
+  <dt>--instance-name</dt>
+  <dd>Nombre de la instancia de recurso de pertenencia.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Lista de alias de recursos para la instancia de recursos `my-resource-instance`:
+```
+bluemix resource aliases my-resource-instance
+```
+
+## bluemix resource alias
+{: #bluemix_resource_alias}
+
+Mostrar detalles de un alias de recurso
+
+```
+bluemix resource alias ALIAS_NAME [--id]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>ALIAS_NAME (necesario)</dt>
+  <dd>Nombre del alias de recurso</dd>
+  <dt>--id</dt>
+  <dd>Solo se mostrará el ID del alias de recurso proporcionado. Se suprimirá el resto de la salida para el alias.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Mostrar detalles del alias de recursos `my-resource-alias`:
+```
+bluemix resource aliase  my-resource-alias
+```
+
+## bluemix resource alias-create
+{: #bluemix_resource_alias_create}
+
+Crear un alias de una instancia de recurso
+
+```
+bluemix resource alias-create ALIAS_NAME ( --instance-id ID | --instance-name NAME ) [-s SPACE_NAME] [-t, --tags TAGS] [-p, --parameters @JSON_FILE | JSON_TEXT]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>ALIAS_NAME (necesario)</dt>
+  <dd>Nombre del alias de recurso</dd>
+  <dt>--instance-id</dt>
+  <dd>ID de la instancia del recurso de pertenencia.</dd>
+  <dt>--instance-name</dt>
+  <dd>Nombre de la instancia de recurso de pertenencia.</dd>
+  <dt>-s</dt>
+  <dd>Nombre del espacio en el que se ha creado el alias. El valor predeterminado es el espacio actual.</dd>
+  <dt>-t, --tags</dt>
+  <dd>Lista de etiquetas.</dd>
+  <dt>-p, --parameters</dt>
+  <dd>Parámetros del archivo JSON o de la serie JSON.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Crear un alias de recurso denominado `my-resource-alias` de la instancia de recursos `my-resource-instance`:
+```
+bluemix resource aliase-create my-resource-alias --instance-name my-resource-instance
+```
+
+## bluemix resource alias-update
+{: #bluemix_resource_alias_update}
+
+Actualizar un alias de recurso
+
+```
+bluemix resource alias-update ALIAS_NAME [-n, --name NEW_NAME] [-t, --tags TAGS] [-p, --parameters @JSON_FILE | JSON_STRING ][-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>ALIAS_NAME (necesario)</dt>
+  <dd>Nombre del alias de recurso</dd>
+  <dt>-n, --name</dt>
+  <dd>Nuevo nombre de alias de recurso.</dd>
+  <dt>-t, --tags</dt>
+  <dd>Lista de etiquetas.</dd>
+  <dt>-p, --parameters</dt>
+  <dd>Parámetros del archivo JSON o de la serie JSON.</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar actualización sin confirmación del usuario.</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Actualizar el alias de recurso `my-resource-alias`, cambiar su nombre a `new-resource-alias`:
+
+```
+bluemix resource alias-update my-resource-alias -n new-resource-alias
+```
+
+## bluemix resource alias-delete
+{: #bluemix_resource_alias_delete}
+
+Suprimir un alias de recurso
+
+```
+bluemix resource alias-delete ALIAS_NAME [-f, --force]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>ALIAS_NAME (necesario)</dt>
+  <dd>Nombre del alias de recurso</dd>
+  <dt>-f, --force</dt>
+  <dd>Forzar la supresión sin confirmación</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+Suprimir alias de recurso `my-resource-alias`:
+
+```
+bluemix resource alias-delete my-resource-alias
+```
+
+## bluemix catalog search
+{: #bluemix_catalog_search}
+
+Buscar entradas de catálogo
+
+```
+bluemix catalog search [-q, --query KEY_WORDS] [-r, --region REGION] [-k, --kind KIND] [-p, --price PRICE] [-t, --tag TAG] [--sort-by PROPERTY] [--reverse] [--json] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-q, --query</dt>
+  <dd>Palabra clave de búsqueda</dd>
+  <dt>-r, --region</dt>
+  <dd>Especifique la región geográfica en la que buscar. Actualmente sólo están soportadas "us-south" y "united-kingdom"</dd>
+  <dt>-k, --kind</dt>
+  <dd>Filtrar por tipo de recursos. Actualmente, sólo están soportados "service-cf", "iaas", "runtime", "template" y "dashboard"</dd>
+  <dt>-p, --price</dt>
+  <dd>Filtrar por precio. Actualmente, sólo están soportados "free", "paygo" y "bluemix-subscription"</dd>
+  <dt>-t, --tag</dt>
+  <dd>Filtrar por etiqueta.</dd>
+  <dt>-sort-by</dt>
+  <dd>Propiedad por la que ordenar</dd>
+  <dt>-reverse</dt>
+  <dd>Indica si debe revertirse el orden de clasificación</dd>
+  <dt>-json</dt>
+  <dd>Respuesta JSON original de la salida</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Busque el servicio `Prueba de automatización`:
+
+```
+bluemix catalog search -k service -q 'Automation test'
+```
+
+
+## bluemix catalog entry
+{: #bluemix_catalog_entry}
+
+Obtener una entrada de catálogo
+
+```
+bluemix catalog entry [-i ID] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-i, --id</dt>
+  <dd>El ID de la entrada de catálogo.</dd>
+  <dt>-children</dt>
+  <dd>Obtener todos los hijos para la entrada de catálogo</dd>
+  <dt>-json</dt>
+  <dd>Respuesta JSON original de la salida</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Obtener entrada con el ID `a0ef1-d3b4j0`:
+
+```
+bluemix catalog entry 'a0ef1-d3b4j0'
+```
+
+
+## bluemix catalog entry-create
+{: #bluemix_catalog_entry_create}
+Crear una nueva entrada de catálogo (sólo administrador del catálogo de una cuenta)
+
+```
+bluemix catalog entry-create [-c PARAMETERS_AS_JSON] [-p, --parent PARENT] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-p, --parent</dt>
+  <dd>ID padre del objeto</dd>
+  <dt>-c</dt>
+  <dd>Objeto JSON válido que contiene parámetros de configuración específicos del catálogo, proporcionados en línea o en un archivo. Para obtener una lista de parámetros de configuración soportados, consulte la documentación para la entrada de catálogo concreta.</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Crear recurso desde el archivo JSON con el ID padre `a0ef1-d3b4j0`:
+
+```
+bluemix catalog entry-create -c @entry.json -p 'a0ef1-d3b4j0'
+```
+
+
+## bluemix catalog entry-update
+{: #bluemix_catalog_entry_update}
+Actualizar una entrada de catálogo existente (sólo administrador o editor del catálogo de una cuenta)
+
+```
+bluemix catalog entry-update [-i ID] [-c PARAMETERS_AS_JSON] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-i, --id</dt>
+  <dd>El ID de la entrada de catálogo que se está actualizando.</dd>
+  <dt>-c</dt>
+  <dd>Objeto JSON válido que contiene parámetros de configuración específicos del catálogo, proporcionados en línea o en un archivo. Para obtener una lista de parámetros de configuración soportados, consulte la documentación para la entrada de catálogo concreta.</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Actualizar recurso `j402-dnf1i` desde el archivo JSON:
+
+```
+bluemix entry-update -i 'j402-dnf1i' -c @update.json
+```
+
+## bluemix catalog entry-visibility
+{: #bluemix_catalog_entry_visibility}
+Obtener la visibilidad para una entrada de catálogo (sólo administrador del catálogo de una cuenta)
+
+```
+bluemix catalog entry-visibility [-i ID] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-i, --id</dt>
+  <dd>El ID de la entrada de catálogo.</dd>
+  <dt>-json</dt>
+  <dd>Respuesta JSON original de la salida</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Obtener la visibilidad de recursos `j402-dnf1i` en el ámbito global:
+
+```
+bluemix catalog entry-visibility 'j402-dnf1i' --global
+```
+
+
+## bluemix catalog entry-visibility-set
+{: #bluemix_catalog_entry_visibility_set}
+Actualizar la visibilidad de una entrada de catálogo existente (sólo administrador del catálogo de una cuenta)
+
+```
+bluemix catalog entry-visibility-set [-i ID] [-c PARAMETERS_AS_JSON] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-i, --id</dt>
+  <dd>El ID de la entrada de catálogo que se está actualizando.</dd>
+  <dt>-c</dt>
+  <dd>Objeto JSON válido que contiene parámetros de configuración específicos del catálogo, proporcionados en línea o en un archivo. Para obtener una lista de parámetros de configuración soportados, consulte la documentación para la entrada de catálogo concreta.</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Establecer visibilidad del recurso `j402-dnf1i` desde el archivo JSON:
+
+```
+bluemix catalog entry-visibility-set -i 'j402-dnf1i' -c @visibility.json
+```
+
+
+## bluemix catalog service-marketplace
+{: #bluemix_catalog_service_marketplace}
+Lista de ofertas de servicios en el mercado
+
+```
+bluemix catalog service-marketplace [--cf] [--rc] [--global]
+```
+
+<strong>Requisitos previos</strong>:  Punto final, inicio de sesión, destino
+
+<strong>Opciones de mandato</strong>:
+<dl>
+  <dt>-cf</dt>
+  <dd>Mostrar sólo servicios de Cloud Foundry</dd>
+  <dt>-rc</dt>
+  <dd>Mostrar sólo servicios compatibles con RC</dd>
+  <dt>-global</dt>
+  <dd>Operar en ámbito global</dd>
+</dl>
+
+<strong>Ejemplos</strong>:
+
+Mostrar ofertas de servicio en el ámbito global:
+
+```
+bluemix catalog service-marketplace --global
+```
+
 ## bluemix catalog templates
 {: #bluemix_catalog_templates}
 
@@ -1914,6 +3589,38 @@ Listar todos los plugins del repositorio `bluemix-repo`:
 bluemix plugin repo-plugins -r bluemix-repo
 ```
 
+## bluemix plugin repo-plugin
+{: #bluemix_plugin_repo_plugin}
+
+Mostrar los detalles de un plug-in del repositorio.
+
+```
+bluemix plugin repo-plugin PLUGIN_NAME [-r REPO_NAME]
+```
+
+<strong>Requisitos previos</strong>:  Ninguno
+
+<strong>Opciones de mandato</strong>:
+
+   <dl>
+   <dt>-r <i>REPO_NAME</i> (opcional)</dt>
+   <dd>Nombre del repositorio. Si no se especifica ningún repositorio, el mandato utilizará el repositorio de plug-in predeterminado.</dd>
+   </dl>
+
+<strong>Ejemplos</strong>:
+
+Lista de detalles del plugin "IBM-Containers" en el repositorio "sample-repo":
+
+```
+bluemix plugin repo-plugin IBM-Containers -r sample-repo
+```
+
+Lista de detalles del plugin "IBM-Containers" en el repositorio predeterminado
+
+```
+bluemix plugin repo-plugin IBM-Containers -r sample-repo
+```
+
 
 ## bluemix plugin list
 {: #bluemix_plugin_list}
@@ -1955,7 +3662,7 @@ bluemix plugin install PLUGIN_PATH|PLUGIN_NAME [-r REPO_NAME] [-v VERSION]
    <dt>PLUGIN_PATH|PLUGIN_NAME (necesario)</dt>
    <dd>Si -r <i>REPO_NAME</i> no se especifica, el plugin se instala desde la vía de acceso local o el URL remoto indicados.</dd>
    <dt>-r <i>REPO_NAME</i> (opcional)</dt>
-   <dd>Nombre del repositorio en el que se encuentra el binario del plugin.</dd>
+   <dd>Nombre del repositorio en el que se encuentra el binario del plugin. Si no se especifica ningún repositorio, el mandato utilizará el repositorio de plug-in predeterminado.</dd>
    <dt>-v <i>VERSION</i> (opcional)</dt>
    <dd>Versión del plugin que se debe instalar. Si no se proporciona, se instalará la versión más reciente del plugin. Esta opción sólo es válida al instalar el plugin desde el repositorio.</dd>
     </dl>
@@ -2053,3 +3760,4 @@ Desinstala el plugin `IBM-Containers` que se ha instalado previamente:
 ```
 bluemix plugin uninstall IBM-Containers
 ```
+

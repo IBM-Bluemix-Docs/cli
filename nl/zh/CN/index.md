@@ -1,7 +1,5 @@
 ---
 
-
-
 copyright:
 
   years: 2015, 2017
@@ -16,83 +14,29 @@ lastupdated: "2017-06-30"
 {:tip: .tip}
 {:new_window: target="_blank"}
 
-# 手动 CLI 安装
+# 下载 
+
+## Bluemix CLI
 {: #cli}
 
-{{site.data.keyword.Bluemix}} CLI 提供了管理 {{site.data.keyword.Bluemix_notm}} 环境的命令行体验。其安装中还会包含 Cloud Foundry 命令行界面 (cf)，用于管理 Cloud Foundry 应用程序和服务。
+{{site.data.keyword.Bluemix}} CLI 提供了管理 {{site.data.keyword.Bluemix_notm}} 环境中资源的命令行体验。其安装中还会包含 Cloud Foundry 命令行界面 (cf)，用于管理 Cloud Foundry 应用程序和服务。
 {:shortdesc}
 
-缺省情况下，这两种 CLI 工具均使用 443 端口。如果在 CLI 工具与 {{site.data.keyword.Bluemix_notm}} 环境之间有 HTTP 代理，那么必须使用实际 HTTP 代理 URL 和端口（如有）来配置 `HTTP_PROXY` 环境变量。有关更多详细信息，请参阅 [Using the CLI with an HTTP Proxy Server ![外部链接图标](../icons/launch-glyph.svg)](http://docs.cloudfoundry.org/cf-cli/http-proxy.html){: new_window}。
-
-[下载 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window} 
-
-如果使用的是 macOS，那么最简单的 IBM Cloud 工具入门方法是使用 [IBM Cloud Application Tools 2](/docs/cli/icat.html)。
-{: tip}
-
-## ![](./images/CLI_Plugin.svg) 命令行界面插件
-{: #cliplugins notoc}
-
-使用更多命令轻松扩展 {{site.data.keyword.Bluemix_notm}} 命令行界面。要访问 {{site.data.keyword.Bluemix_notm}} 命令行界面插件，请参阅 [CLI 插件存储库 ![外部链接图标](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window}。
-
-### 扩展 {{site.data.keyword.Bluemix_notm}} 命令行界面：bx
-{: #cli_bluemix_ext notoc}
+[下载](/docs/cli/reference/bluemix_cli/all_versions.html){: new_window}<br>
+[入门](/docs/cli/reference/bluemix_cli/get_started.html){: new_window}<br>
+[查看文档](/docs/cli/reference/bluemix_cli/bx_cli.html){: new_window}<br>
 
 
-安装 {{site.data.keyword.Bluemix_notm}} CLI 工具后，缺省情况下，[CLI 插件存储库 ![外部链接图标](../icons/launch-glyph.svg)](https://plugins.ng.bluemix.net/){: new_window} 预配置了存储库别名 `Bluemix`。您可以直接安装可用的插件。
+## IBM Cloud Application Tools 2 (Beta)
+IBM Cloud Application Tools 2 是一个经过简化的菜单栏应用程序，用于在 macOS 上执行本地环境设置和管理。通过使用 IBM Cloud Application Tools 2，可以轻松安装和更新 Bluemix 工具和 CLI，更改 CLI 部署目标，快速访问常用 Bluemix 链接。
 
-```
-bluemix plugin install plugin_name -r Bluemix
-```
 
-| *{{site.data.keyword.autoscaling}} CLI*|  *IBM Bluemix Container Service*  |
-|-----|-----|
-| 插件名称：auto-scaling<br> [查看文档](/docs/cli/plugins/auto-scaling/index.html)|  插件名称：container-service<br> [查看文档](/docs/containers/cs_cli_devtools.html)|
-{: caption="表 2. 插件" caption-side="top"}
-
-|  *专用网络对等连接*| *Schematics*| *VPN*|
-|-----|-----|-----|
-| 插件名称：private-network-peering<br> [查看文档](/docs/cli/plugins/pnp/index.html)| 插件名称：Schematics<br> [查看文档](/docs/services/schematics/schematics_reference.html)| 插件名称：VPN<br> [查看文档](/docs/cli/plugins/bx_vpn/index.html)|
-{: caption="表 3. 插件" caption-side="top"}
-
-您还可以从符合 {{site.data.keyword.Bluemix_notm}} CLI 体系结构的其他存储库添加插件。
-1. 要从其他存储库安装 {{site.data.keyword.Bluemix_notm}} CLI 插件，请设置插件注册表端点：
-```
-bluemix plugin repo-add bluemix-other-repo [repo_url]
-```
-其中，`repo_url` 是插件存储库的 HTTPS URL。
-
-2. 运行以下命令来安装插件：
-```
-bluemix plugin install plugin_name -r bluemix-other-repo
-```
-
-### 扩展 Cloud Foundry 命令行界面：bx cf
-{: #cli_cf_ext notoc}
-
-安装 {{site.data.keyword.Bluemix_notm}} 命令行界面后，还会在 {{site.data.keyword.Bluemix_notm}} CLI 目录内安装 Cloud Foundry 命令行界面。使用 `bluemix cf` 运行 Cloud Foundry CLI 命令。
-
-* 要从 {{site.data.keyword.Bluemix_notm}} 注册表安装 cf CLI 插件，请设置插件注册表端点：
-
-```
-bluemix cf add-plugin-repo bluemix-cf-repo https://plugins.ng.bluemix.net
-```
-{: codeblock}
-
-* 然后，运行以下命令来安装插件：
-
-```
-bluemix cf install-plugin plugin_name -r bluemix-cf-repo
-```
-{: codeblock}
-
-| *管理控制台* | *VPN*|
-|-----------------|-----------------|
-|  插件名称：bluemix-admin<br> [查看文档](/docs/cli/plugins/bluemix_admin/index.html)| 插件名称：VPN<br> [查看文档](/docs/cli/plugins/vpn/index.html)|
-{: caption="表 4. 插件" caption-side="top"}
+[下载](http://ibm.biz/icat-2-download){: new_window}<br>
+[查看文档](/docs/cli/icat.html){: new_window}<br>
 
 
 ## ![](./images/Integrated_Dev_Tools.svg) 集成开发工具
-{: #ide notoc}
+{: #ide}
 
 下载并安装插件，以集成首选的 {{site.data.keyword.Bluemix_notm}} 服务。
 

@@ -49,7 +49,7 @@ bluemix vpn connection-create CONNECTION_NAME -g GATEWAY_NAME -k PRESHARED_KEY -
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_CONNESSIONE*  (obbligatorio):  il nome della connessione.
 
@@ -98,7 +98,7 @@ bluemix vpn ike-create POLICY_NAME -g GATEWAY_NAME [-d DESCRIPTION] [-pfs GROUP]
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA*  (obbligatorio): il nome della politica IKE.
 
@@ -129,7 +129,7 @@ bluemix vpn ipsec-create POLICY_NAME -g GATEWAY_NAME [-d DESCRIPTION] [-pfs GROU
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA*  (obbligatorio): il nome della politica IPSec.
 
@@ -160,7 +160,7 @@ bluemix vpn gateway-create GATEWAY_NAME -t TYPE [-gateway_ip IP_ADDRESS] [-subne
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_GATEWAY* (obbligatorio): il nome del gateway.
 
@@ -227,7 +227,7 @@ bluemix vpn connection NOME_CONNESSIONE
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_CONNESSIONE*  (obbligatorio): il nome della connessione da visualizzare.
 
@@ -241,7 +241,7 @@ bluemix vpn ike NOME_POLITICA
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA* (obbligatorio): il nome della politica IKE da visualizzare.
 
@@ -255,7 +255,7 @@ bluemix vpn ipsec NOME_POLITICA
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA* (obbligatorio): il nome della politica IPSec da visualizzare.
 
@@ -269,7 +269,7 @@ bluemix vpn gateway NOME_GATEWAY
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_GATEWAY*  (obbligatorio): il nome del gateway da visualizzare.
 
@@ -283,7 +283,7 @@ bluemix vpn connection-delete NOME_CONNESSIONE
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_CONNESSIONE*  (obbligatorio): il nome della connessione da eliminare.
 
@@ -297,7 +297,7 @@ bluemix vpn ike-delete NOME_POLITICA
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA* (obbligatorio): il nome della politica IKE da eliminare.
 
@@ -311,7 +311,7 @@ bluemix vpn ipsec-delete NOME_POLITICA
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA* (obbligatorio): il nome della politica IPSec da eliminare.
 
@@ -325,7 +325,7 @@ bluemix vpn gateway-delete NOME_GATEWAY
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_GATEWAY*  (obbligatorio): il nome del gateway da eliminare.
 
@@ -339,7 +339,7 @@ bluemix vpn connection-update CONNECTION_NAME [-g GATEWAY_NAME] [-k PRESHARED_KE
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_CONNESSIONE*  (obbligatorio):  il nome della connessione.
 
@@ -381,7 +381,7 @@ bluemix vpn ike-update POLICY_NAME [-g GATEWAY_NAME] [-d DESCRIPTION] [-pfs GROU
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA*  (obbligatorio): il nome della politica IKE.
 
@@ -405,7 +405,7 @@ bluemix vpn ipsec-update POLICY_NAME [-g GATEWAY_NAME] [-d DESCRIPTION] [-pfs GR
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_POLITICA*  (obbligatorio): il nome della politica IPSec.
 
@@ -429,7 +429,7 @@ bluemix vpn gateway-update GATEWAY_NAME [-t TYPE] [-gateway_ip IP_ADDRESS] [-sub
 
 **Prerequisiti**:  Endpoint, Accesso, Destinazione
 
-**Opzioni del comando**:
+**Opzioni comando**:
 
 *NOME_GATEWAY* (obbligatorio): il nome del gateway.
 

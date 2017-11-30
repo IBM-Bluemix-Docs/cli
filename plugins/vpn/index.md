@@ -57,9 +57,9 @@ cf uninstall-plugin vpn
 	```
 
 
-### Install from Bluemix repository
+### Install from {{site.data.keyword.Bluemix_notm}}  repository
 
-1. Add the Bluemix repository into the Cloud Foundry CLI repositories. Use the following command:
+1. Add the {{site.data.keyword.Bluemix_notm}}  repository into the Cloud Foundry CLI repositories. Use the following command:
 
 	```
 	cf add-plugin-repo bluemix http://plugins.ng.bluemix.net

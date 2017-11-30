@@ -111,13 +111,13 @@ cf api
 
 移除與 api.ng.bluemix.net 之所有 API 端點的連線
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 停用 api.ng.bluemix.network 的 SSL 驗證處理程序
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 
@@ -697,7 +697,7 @@ cf ssh
 <dd>啟用本端埠轉遞，這會將機器上的輸出埠連結至應用程式 VM 上的輸入埠。</dd>
 <dt>-N</dt>
 <dd>不要執行遠端指令。</dd>
-<dt>-t、-tt 或 -T</dt>
+<dt>-t, -tt 或 -T</dt>
 <dd>可讓您在 pseudo-tty 模式下執行 SSH 階段作業，而不是產生終端機行輸出。<dd>
 </dl>
 

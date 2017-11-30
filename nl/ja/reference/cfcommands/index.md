@@ -32,7 +32,7 @@ Cloud Foundry (cf) コマンド・ライン・インターフェース (CLI) は
 以下の表の索引を使用して、使用頻度の高い Cloud Foundry コマンドを参照してください。
 
 <table summary="アルファベット順の汎用 Cloud Foundry コマンド (コマンドの詳細情報を表示するリンクが含まれています)">
- <caption>表 1. 汎用 Cloud Foundry コマンド</caption>
+<caption>表 1. 汎用 Cloud Foundry コマンド</caption>
  <thead>
  <th colspan="6">汎用 Cloud Foundry コマンド</th>
  </thead>
@@ -50,7 +50,7 @@ Cloud Foundry (cf) コマンド・ライン・インターフェース (CLI) は
 
 
 <table summary="アプリ、スペース、およびサービスを管理するためのアルファベット順のコマンド。各コマンドには、コマンドの詳細を表示するリンクが含まれています。">
- <caption>表 2. アプリ、スペース、およびサービスを管理するためのコマンド</caption>
+<caption>表 2. アプリ、スペース、およびサービスを管理するためのコマンド</caption>
  <thead>
  <th colspan="5">アプリ、スペース、およびサービスを管理するためのコマンド</th>
  </thead>
@@ -111,13 +111,13 @@ cf api
 
 api.ng.bluemix.net のすべての API エンドポイントへの接続を削除します。
 ```
-cf api api.ng.bluemix.network --unset
+cf api api.ng.bluemix.net --unset
 ```
 {: codeblock}
 
 api.ng.bluemix.network の SSL 検証プロセスを無効にします。
 ```
-cf api api.ng.bluemix.network --skip-ssl-validation
+cf api api.ng.bluemix.net --skip-ssl-validation
 ```
 {: codeblock}
 
