@@ -8,11 +8,13 @@ CLI and Dev Tools
 	index.md
 	reference/bluemix_cli/get_started.md
 	[Getting started with CF CLI](https://github.com/cloudfoundry/cli#getting-started)
+	[IBM Cloud Developer Tools](../cloudnative/idt/index.html)
 	{: .navgroup-end}
 	
 	{: .navgroup id="reference"}
 	reference/bluemix_cli/bx_cli.md
 	reference/bluemix_cli/all_versions.md
+	[IBM Cloud developer tools commands](../cloudnative/idt/commands.html)
 	reference/softlayer/index.md
 	reference/cfcommands/index.md
 
@@ -22,9 +24,9 @@ CLI and Dev Tools
 		plugins/registry/index.md
 		[Container Service (Clusters)](../containers/cs_cli_devtools.html)
 		[Container Service (Single and scalable groups)](../containers/container_cli_cfic.html)
-		[IBM Developer](../cloudnative/dev_cli.html)
+		[IBM Developer](../cloudnative/idt/index.html)
 		plugins/pnp/index.md
-		[IBM SDK Generator](../cloudnative/sdk_cli.html)
+		[IBM SDK Generator](../cloudnative/sdk/index.html)
 		[Schematics](../services/schematics/schematics_reference.html)
 		plugins/bx_vpn/index.md
 	
@@ -36,7 +38,8 @@ CLI and Dev Tools
 	
 	{: .topicgroup}
 	Integrated development tools
-		ibm-dev-tools-for-vscode.md
+		[IBM Developer Tools for VSCode](../cloudnative/idt/vscode.html)
+		[IBM Developer Tools for JetBrains](../cloudnative/idt/jetbrains.html)
 		[API Connect developer toolkit](../services/apiconnect/creating_apis.html?pos=2#install_dev_tk)
 		[IBM Cloud Live Sync](../services/ContinuousDelivery/bluemixlive.html)
 		[Deploying apps with IBM Eclipse Tools for IBM Cloud](../manageapps/eclipsetools/eclipsetools.html)
