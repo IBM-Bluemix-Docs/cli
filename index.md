@@ -45,7 +45,7 @@ You need an [{{site.data.keyword.Bluemix_notm}} account](https://console.bluemix
 ## Step 1. Run the install command
 {: #step1}
 
-* For Mac and Linux, run the following command:
+* For Mac and Ubuntu, run the following command:
 
   ```
   curl -sL https://ibm.biz/idt-installer | bash
