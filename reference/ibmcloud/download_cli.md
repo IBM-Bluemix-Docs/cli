@@ -151,8 +151,6 @@ The following sections provide details on how to uninstall the stand-alone {{sit
 
 ### Uninstalling on Linux/macOS
 
-#### Prior to version `0.9.0`
-
 1. Open a terminal, and run the following commands:
   * `rm -rf /usr/local/ibmcloud`
   * `rm -f /usr/local/bin/ibmcloud`
@@ -160,13 +158,6 @@ The following sections provide details on how to uninstall the stand-alone {{sit
   * `rm -f /usr/local/bin/bx`
   * `rm -f /usr/local/bin/ibmcloud-analytics`
 2. Clean up the autocompletion scripts, if you've configured them. For more details, see [Enable CLI Autocompletion](enable_cli_autocompletion.html).
-
-#### Version `0.9.0` and later
-
-1. Open a terminal, and run the following command:
-  * `/usr/local/ibmcloud/uninstall`
-2. Clean up the autocompletion scripts, if you've configured them. For more details, see [Enable CLI Autocompletion](enable_cli_autocompletion.html).
-
 
 ## Other links to further explore {{site.data.keyword.Bluemix_notm}} CLI
 
