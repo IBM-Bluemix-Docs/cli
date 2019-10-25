@@ -82,6 +82,10 @@ ibmcloud dev help
 {: codeblock}
 
 The output lists the usage instructions, the current version, and the supported commands.
+If the output is `'dev' is not a registered command`, then install the `dev` plugin:
+```
+ibmcloud plugin install dev -r bluemix
+```
 
 ## Step 3. Configure your environment
 {: #step3-configure-idt-env}
