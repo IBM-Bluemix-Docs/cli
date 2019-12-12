@@ -879,3 +879,134 @@ ibmcloud cfee monitoring-status [--poll]
    <dt>--poll</dt>
    <dd>Specify whether you'd like to make this call recurring, to poll until in stable state</dd>
   </dl>
+  
+
+## ibmcloud cfee show-alert-manager-config
+
+{: #ibmcloud_cfee_show-alert-manager-config}
+
+Get alert manager configuration for the targeted environment
+```
+ibmcloud cfee show-alert-manager-config [--env Name or ID]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+  </dl>
+  
+## ibmcloud cfee delete
+{: #ibmcloud_cfee_delete}
+Deletes a particular CFEE environment
+
+```
+ibmcloud cfee delete [--env Name or ID] [-f, --force]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+   <dt>-f, --force</dt>
+   <dd>Force CFEE update without confirmation. Use with caution</dd>
+  </dl>
+  
+## ibmcloud cfee logging-enable
+{: #ibmcloud_cfee_logging-enable}
+
+Enable logging on the targeted CFEE environment
+```
+ibmcloud cfee logging-enable --service-guid serviceGUID [--env Name or ID]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+   <dt>--service-guid</dt>
+   <dd>Specify LogDNA service GUID. Can be obtained "ibmcloud resource service-instance < serviceName > </dd>
+  </dl>
+  
+## ibmcloud cfee logging-disable
+{: #ibmcloud_cfee_logging-disable}
+
+Disable logging on the targeted CFEE environment
+```
+ibmcloud cfee logging-disable [--env Name or ID]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+  </dl>
+
+## ibmcloud cfee logging-status
+{: #ibmcloud_cfee_logging-status}
+
+Check the status of the most recent logging enablement/disablement operation of a CFEE environment
+```
+ibmcloud cfee logging-status [--env Name or ID] [--output FORMAT]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+   <dt>--output</dt>
+   <dd>Specify an output. default is friendly display and alternative option is "--output json".</dd>
+  </dl>
+  
+ ## ibmcloud cfee auditing-enable
+{: #ibmcloud_cfee_auditing-enable}
+
+Enable auditing on the targeted CFEE environment
+```
+ibmcloud cfee auditing-enable --service-guid ServiceGUID --ingestion-key IngestionKey [--env NAME OR ID]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+   <dt>--service-guid</dt>
+   <dd>Specify LogDNA service GUID. Can be obtained "ibmcloud resource service-instance < serviceName ></dd>
+   <dt>--ingestion-key</dt>
+   <dd>LogDNA Ingestion Key - see Activity Tracker dashboard > Settings > Organization > API Keys ></dd>
+  </dl>
+  
+## ibmcloud cfee auditing-disable
+{: #ibmcloud_cfee_auditing-disable}
+
+auditing-disable - Disable auditing on the targeted CFEE environment
+```
+ibmcloud cfee auditing-disable [--env NAME OR ID]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+  </dl>
+  
+  
+ ## ibmcloud cfee auditing-status
+{: #ibmcloud_cfee_auditing-status}
+
+Get Activity Tracker with LogDNA auditing configuration for environment.
+```
+ibmcloud cfee auditing-status [--env NAME OR ID] [--output FORMAT]
+```
+<strong>Prerequisites</strong>:  Endpoint, Login
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+   <dt>--output</dt>
+   <dd>Specify an output. default is friendly display and alternative option is "--output json".</dd>
+  </dl>
+
+ 
