@@ -879,3 +879,195 @@ ibmcloud cfee monitoring-status [--poll]
    <dt>--poll</dt>
    <dd>Specify whether you'd like to make this call recurring, to poll until in stable state</dd>
   </dl>
+
+## ibmcloud cfee status
+{: #ibmcloud_cfee_status}
+
+Check the status of a CFEE instance:
+```
+ibmcloud cfee status NAME or ID [--poll] [--output FORMAT]
+```
+
+<strong>Prerequisites</strong>:  Endpoint, Login
+
+<strong>Command options</strong>:
+  <dl>
+   <dt>NAME or ID (required)</dt>
+   <dd>The name or ID of the CFEE instance.</dd>
+   <dt>--poll</dt>
+   <dd>Specify whether you'd like to make this call recurring, to poll until in stable state.</dd>
+   <dt>--output FORMAT</dt>
+   <dd>Specify the status output format, only JSON is supported now.</dd>
+  </dl>
+
+<strong>Examples</strong>:
+
+Get the status of CFEE environment `env_example`:
+```
+ibmcloud cfee status env_example
+```
+{: codeblock}
+
+Get the status of CFEE environment `env_example` in JSON format:
+```
+ibmcloud cfee status env_example --output json
+```
+{: codeblock}
+
+Poll the status of CFEE environment `env_example`:
+```
+ibmcloud cfee status env_example --poll
+```
+{: codeblock}
+
+Poll the status of CFEE environment `env_example` in JSON format:
+```
+ibmcloud cfee status env_example --poll --output json
+```
+{: codeblock}
+
+## ibmcloud cfee version
+{: #ibmcloud_cfee_version}
+
+Get the version of an environment or get the latest available CFEE version
+```
+ibmcloud cfee version [--env NAME or ID | --latest] [--details] [--output FORMAT]
+```
+
+<strong>Prerequisites</strong>:  Endpoint, Login
+
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env ENV</dt>
+   <dd>CFEE environment name. Default to current CFEE environment if not specified.</dd>
+  </dl>
+  <dl>
+   <dt>--latest</dt>
+   <dd>Specify if you just need to find out the latest CFEE version available</dd>
+  </dl>
+  <dl>
+   <dt>--details</dt>
+   <dd>Specify if you want CFEE package version information to be included in the output</dd>
+  </dl>
+  <dl>
+   <dt>--output FORMAT</dt>
+   <dd>Specify the status output format, only JSON is supported now.</dd>
+  </dl>
+
+<strong>Examples</strong>:
+
+Get version information for the currently targeted CFEE environment:
+```
+ibmcloud cfee version
+```
+{: codeblock}
+
+Get version information for the currently targeted CFEE environment in JSON format:
+```
+ibmcloud cfee version --output json
+```
+{: codeblock}
+
+Get version information with package details for the currently targeted CFEE environment:
+```
+ibmcloud cfee version --details
+```
+{: codeblock}
+
+Get version information with package details for the currently targeted CFEE environment in JSON format:
+```
+ibmcloud cfee version --details --output json
+```
+{: codeblock}
+
+Get version information for the CFEE environment `env_example`:
+```
+ibmcloud cfee version --env env_example
+```
+{: codeblock}
+
+Get version information for the CFEE environment `env_example` in JSON format:
+```
+ibmcloud cfee version --env env_example --output json
+```
+{: codeblock}
+
+Get version information with package details for the CFEE environment `env_example`:
+```
+ibmcloud cfee version --env env_example --details
+```
+{: codeblock}
+
+Get version information with package details for the CFEE environment `env_example` in JSON format:
+```
+ibmcloud cfee version --env env_example --details --output json
+```
+{: codeblock}
+
+Get the latest available CFEE version information:
+```
+ibmcloud cfee version --latest
+```
+{: codeblock}
+
+Get the latest available CFEE version information in JSON format:
+```
+ibmcloud cfee version --latest --output json
+```
+{: codeblock}
+
+Get the latest available CFEE version information with details:
+```
+ibmcloud cfee version --latest --details
+```
+{: codeblock}
+
+Get the latest available CFEE version information with details in JSON format:
+```
+ibmcloud cfee version --latest --details --output json
+```
+{: codeblock}
+
+## ibmcloud cfee update
+{: #ibmcloud_cfee_update}
+
+Check or initiate a CFEE environment update to the next available version of CFEE:
+```
+ibmcloud cfee update --env NAME OR ID [-f, --force] [--dryrun]
+```
+
+<strong>Prerequisites</strong>:  Endpoint, Login
+
+<strong>Command options</strong>:
+  <dl>
+   <dt>--env ENV</dt>
+   <dd>Specify an environment. Either the Name or ID will work.</dd>
+  </dl>
+  <dl>
+   <dt>-f or --force</dt>
+   <dd>Force CFEE update without confirmation. Use with caution.</dd>
+  </dl>
+  <dl>
+   <dt>--dryrun</dt>
+   <dd>Check if the update is possible and display actions to be taken based on current and target CFEE versions. No actual update is initiated.</dd>
+  </dl>
+
+<strong>Examples</strong>:
+
+Initiate the update of the CFEE environment `env_example`. The user must confirm before the update is initiated:
+```
+ibmcloud cfee update --env env_example
+```
+{: codeblock}
+
+Initiate the update of the CFEE environment `env_example` without requiring user confirmation:
+```
+ibmcloud cfee update --env env_example --force
+```
+{: codeblock}
+
+Perform a dryrun initiation of the update of the CFEE environment `env_example`:
+```
+ibmcloud cfee update --env env_example --dryrun
+```
+{: codeblock}
