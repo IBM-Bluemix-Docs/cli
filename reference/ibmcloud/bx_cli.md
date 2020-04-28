@@ -591,22 +591,22 @@ USAGE:
 
 COMMANDS:
    block           Classic infrastructure Block Storage
+   call-api        Call arbitrary API endpoints
    file            Classic infrastructure File Storage
    dns             Classic infrastructure Domain Name System
    globalip        Classic infrastructure Global IP addresses
    hardware        Classic infrastructure hardware servers
    image           Classic infrastructure Compute images
    ipsec           Classic infrastructure IPSEC VPN
-   loadbal         Classic infrastructure Load balancers
+   order           Classic infrastructure Orders
+   placement-group Classic infrastructure Placement Group
    security        Classic infrastructure SSH Keys and SSL Certificates
    securitygroup   Classic infrastructure network security groups
    subnet          Classic infrastructure Network subnets
    ticket          Classic infrastructure Manage Tickets
+   user            Classic infrastructure Manage Users
    vlan            Classic infrastructure Network VLANs
    vs              Classic infrastructure Virtual Servers
-   order           Classic infrastructure Orders
-   user            Classic infrastructure Manage Users
-   call-api        Call arbitrary API endpoints.
    help            Print command usage message
 ```
 {: screen}
