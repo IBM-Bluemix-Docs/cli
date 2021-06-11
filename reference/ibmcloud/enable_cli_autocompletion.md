@@ -26,10 +26,10 @@ Starting from version `0.7.0`, the {{site.data.keyword.cloud}} Command Line Inte
 {: #shell-autocomplete-linux}
 
 * If you're using `Bash`, add 
-`source /usr/local/ibmcloud/autocomplete/bash_autocomplete` into one of the following files:
+`[[ -f /usr/local/ibmcloud/autocomplete/bash_autocomplete ]] && source /usr/local/ibmcloud/autocomplete/bash_autocomplete` into one of the following files:
 
   * For Login shell: `~/.bash_profile`
-  * For Non-login shell: `~/.bash_rc`
+  * For Non-login shell: `~/.bashrc`
   
 * If you're using `Zsh`: add 
 `source /usr/local/ibmcloud/autocomplete/zsh_autocomplete` into `~/.zshrc`.
